@@ -8,6 +8,7 @@
 
 import Foundation
 import RxCocoa
+import SwiftyJSON
 
 class MembersViewModel: NSObject {
 
@@ -15,7 +16,15 @@ class MembersViewModel: NSObject {
     
     func getMembers() {
         BackendManager.sharedInstance.getMembers()
-        .done { print("Members: \($0)") }
+        .done {
+            print("Members: \($0)")
+            if let membersDataArray = $0["profiles"] as? [[String: Any]] {
+                let members = membersDataArray.map {
+                    Member(data: $0)
+                }
+                print("Members parsed")
+            }
+        }
         .cauterize()
     }
     
