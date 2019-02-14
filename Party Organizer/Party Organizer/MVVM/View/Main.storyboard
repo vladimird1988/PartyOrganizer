@@ -13,7 +13,6 @@
         <!--Parties-->
         <scene sceneID="5Kn-q3-bnO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fw6-oY-WKP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="EIX-eP-k9H" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Parties" image="starIcon" id="Fne-j6-4DF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XuM-Gt-mdH">
@@ -24,13 +23,14 @@
                         <segue destination="PXO-q6-IAz" kind="relationship" relationship="rootViewController" id="TIh-He-UVS"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fw6-oY-WKP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="297" y="-620"/>
         </scene>
         <!--Parties-->
         <scene sceneID="Y2f-gd-Noa">
             <objects>
-                <viewController id="PXO-q6-IAz" sceneMemberID="viewController">
+                <viewController id="PXO-q6-IAz" customClass="PartiesViewController" customModule="Party_Organizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1cd-ct-oLY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,6 @@
         <!--Members-->
         <scene sceneID="s8p-7Z-IYH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="99x-xC-uvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="s1w-GS-zPD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Members" image="memberIcon" id="MzK-O3-J5L"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KeA-01-Jbk">
@@ -78,13 +77,14 @@
                         <segue destination="9Ym-J5-nlJ" kind="relationship" relationship="rootViewController" id="N2e-Kl-04D"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="99x-xC-uvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="297" y="173"/>
         </scene>
         <!--Members-->
         <scene sceneID="Y42-8F-cBM">
             <objects>
-                <viewController id="9Ym-J5-nlJ" sceneMemberID="viewController">
+                <viewController id="9Ym-J5-nlJ" customClass="MembersViewController" customModule="Party_Organizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i2l-Dz-FMJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

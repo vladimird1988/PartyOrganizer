@@ -14,7 +14,9 @@ class MembersViewModel: NSObject {
     let members = BehaviorRelay<[Member]>(value: [])
     
     func getMembers() {
-        
+        BackendManager.sharedInstance.getMembers()
+        .done { print("Members: \($0)") }
+        .cauterize()
     }
     
 }
