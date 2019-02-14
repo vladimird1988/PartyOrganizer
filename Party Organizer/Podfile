@@ -11,5 +11,7 @@ target 'Party Organizer' do
   pod 'RxCocoa'
   pod 'AERecord'
   pod 'PromiseKit'
+  pod 'SwiftyJSON'
+  pod 'Kingfisher'
 
 end
