@@ -14,22 +14,14 @@ class NetworkManager: NSObject {
     
     static let shared = NetworkManager()
     
-    @discardableResult func performGetRequest(urlAddress: String) -> Promise<[[String: Any]]> {
+    @discardableResult func performGetRequest(url: URL) -> Promise<Any> {
         return Promise { handler in
-            guard let url = URL(string: urlAddress) else {
-                handler.reject(PartyOrganizerError.invalidUrl)
-                return
-            }
             Alamofire.request(url, method: .get, encoding: JSONEncoding.default)
                 .validate()
                 .responseJSON(completionHandler: { dataResponse in
                     switch dataResponse.result {
                     case .success(let result):
-                        if let response = result as? [[String: Any]] {
-                            handler.fulfill(response)
-                        } else {
-                            handler.reject(PartyOrganizerError.invalidResponse)
-                        }
+                        handler.fulfill(result)
                     case .failure(let error):
                         handler.reject(error)
                     }

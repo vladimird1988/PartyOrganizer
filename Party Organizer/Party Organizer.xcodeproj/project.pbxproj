@@ -18,6 +18,8 @@
 		F56803F422160F5C00CA3A1B /* MembersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F322160F5C00CA3A1B /* MembersViewModel.swift */; };
 		F56803F722160F7800CA3A1B /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F622160F7800CA3A1B /* Member.swift */; };
 		F56803F922160F8000CA3A1B /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F822160F8000CA3A1B /* Party.swift */; };
+		F56803FB221610B800CA3A1B /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803FA221610B800CA3A1B /* Server.swift */; };
+		F56803FF2216111A00CA3A1B /* BackendManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803FE2216111A00CA3A1B /* BackendManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		F56803F322160F5C00CA3A1B /* MembersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewModel.swift; sourceTree = "<group>"; };
 		F56803F622160F7800CA3A1B /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		F56803F822160F8000CA3A1B /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
+		F56803FA221610B800CA3A1B /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		F56803FE2216111A00CA3A1B /* BackendManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 		F51554362216090300515928 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F56803FC221610FB00CA3A1B /* DataManager */,
 				F56803F522160F6800CA3A1B /* Entities */,
 				F51554372216090300515928 /* CoreDataModel */,
 			);
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				F51554402216090300515928 /* Info.plist */,
+				F56803FA221610B800CA3A1B /* Server.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -197,6 +203,22 @@
 				F56803F822160F8000CA3A1B /* Party.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		F56803FC221610FB00CA3A1B /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				F56803FD2216110600CA3A1B /* BackendManager */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		F56803FD2216110600CA3A1B /* BackendManager */ = {
+			isa = PBXGroup;
+			children = (
+				F56803FE2216111A00CA3A1B /* BackendManager.swift */,
+			);
+			path = BackendManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +357,8 @@
 				F56803F922160F8000CA3A1B /* Party.swift in Sources */,
 				F51554462216090300515928 /* AppDelegate.swift in Sources */,
 				F51554432216090300515928 /* Party_Organizer.xcdatamodeld in Sources */,
+				F56803FF2216111A00CA3A1B /* BackendManager.swift in Sources */,
+				F56803FB221610B800CA3A1B /* Server.swift in Sources */,
 				F56803F122160EA400CA3A1B /* PartyOrganizerError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
