@@ -13,6 +13,11 @@
 		F51554452216090300515928 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F515543C2216090300515928 /* Main.storyboard */; };
 		F51554462216090300515928 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515543E2216090300515928 /* AppDelegate.swift */; };
 		F51554482216090300515928 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51554422216090300515928 /* Assets.xcassets */; };
+		F56803EE22160DC400CA3A1B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803ED22160DC400CA3A1B /* NetworkManager.swift */; };
+		F56803F122160EA400CA3A1B /* PartyOrganizerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F022160EA400CA3A1B /* PartyOrganizerError.swift */; };
+		F56803F422160F5C00CA3A1B /* MembersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F322160F5C00CA3A1B /* MembersViewModel.swift */; };
+		F56803F722160F7800CA3A1B /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F622160F7800CA3A1B /* Member.swift */; };
+		F56803F922160F8000CA3A1B /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F822160F8000CA3A1B /* Party.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		F515543E2216090300515928 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F51554402216090300515928 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F51554422216090300515928 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F56803ED22160DC400CA3A1B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F56803F022160EA400CA3A1B /* PartyOrganizerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyOrganizerError.swift; sourceTree = "<group>"; };
+		F56803F322160F5C00CA3A1B /* MembersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewModel.swift; sourceTree = "<group>"; };
+		F56803F622160F7800CA3A1B /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		F56803F822160F8000CA3A1B /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +92,7 @@
 				F51554352216090300515928 /* MVVM */,
 				F515543F2216090300515928 /* Config */,
 				F51554412216090300515928 /* Resources */,
+				F56803EB22160DA400CA3A1B /* Utilities */,
 			);
 			path = "Party Organizer";
 			sourceTree = "<group>";
@@ -90,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				F51554362216090300515928 /* Model */,
+				F56803F222160F4700CA3A1B /* ViewModel */,
 				F515543A2216090300515928 /* View */,
 			);
 			path = MVVM;
@@ -98,6 +110,7 @@
 		F51554362216090300515928 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F56803F522160F6800CA3A1B /* Entities */,
 				F51554372216090300515928 /* CoreDataModel */,
 			);
 			path = Model;
@@ -142,6 +155,48 @@
 				F51554422216090300515928 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F56803EB22160DA400CA3A1B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F56803EF22160E9300CA3A1B /* CustomTypes */,
+				F56803EC22160DAE00CA3A1B /* NetworkManager */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F56803EC22160DAE00CA3A1B /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				F56803ED22160DC400CA3A1B /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		F56803EF22160E9300CA3A1B /* CustomTypes */ = {
+			isa = PBXGroup;
+			children = (
+				F56803F022160EA400CA3A1B /* PartyOrganizerError.swift */,
+			);
+			path = CustomTypes;
+			sourceTree = "<group>";
+		};
+		F56803F222160F4700CA3A1B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F56803F322160F5C00CA3A1B /* MembersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F56803F522160F6800CA3A1B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F56803F622160F7800CA3A1B /* Member.swift */,
+				F56803F822160F8000CA3A1B /* Party.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,8 +329,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F56803EE22160DC400CA3A1B /* NetworkManager.swift in Sources */,
+				F56803F722160F7800CA3A1B /* Member.swift in Sources */,
+				F56803F422160F5C00CA3A1B /* MembersViewModel.swift in Sources */,
+				F56803F922160F8000CA3A1B /* Party.swift in Sources */,
 				F51554462216090300515928 /* AppDelegate.swift in Sources */,
 				F51554432216090300515928 /* Party_Organizer.xcdatamodeld in Sources */,
+				F56803F122160EA400CA3A1B /* PartyOrganizerError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
