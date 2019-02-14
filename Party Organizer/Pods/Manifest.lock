@@ -1,3 +1,45 @@
-PODFILE CHECKSUM: 32842d395d3229172943394de6a11a6ef71be15a
+PODS:
+  - AERecord (4.1.2)
+  - Alamofire (4.8.1)
+  - PromiseKit (6.8.3):
+    - PromiseKit/CorePromise (= 6.8.3)
+    - PromiseKit/Foundation (= 6.8.3)
+    - PromiseKit/UIKit (= 6.8.3)
+  - PromiseKit/CorePromise (6.8.3)
+  - PromiseKit/Foundation (6.8.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.8.3):
+    - PromiseKit/CorePromise
+  - RxAtomic (4.4.1)
+  - RxCocoa (4.4.1):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.1):
+    - RxAtomic (~> 4.4)
+
+DEPENDENCIES:
+  - AERecord
+  - Alamofire
+  - PromiseKit
+  - RxCocoa
+  - RxSwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AERecord
+    - Alamofire
+    - PromiseKit
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
+
+SPEC CHECKSUMS:
+  AERecord: ee8e773baa650731f06e89546a8f97e28fe00c32
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
+  RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
+  RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
+  RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
+
+PODFILE CHECKSUM: d7a7ee2882867c3a71e50d5c02d35503b5287de2
 
 COCOAPODS: 1.6.0.beta.1

@@ -6,5 +6,10 @@ target 'Party Organizer' do
   use_frameworks!
 
   # Pods for Party Organizer
+  pod 'Alamofire'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'AERecord'
+  pod 'PromiseKit'
 
 end
