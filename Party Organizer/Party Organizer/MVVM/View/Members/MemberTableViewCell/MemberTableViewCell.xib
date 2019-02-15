@@ -19,6 +19,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="55.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAe-jn-GHS" userLabel="BottomBorderView">
+                        <rect key="frame" x="0.0" y="55" width="320" height="0.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="fOJ-nF-Sy6"/>
+                        </constraints>
+                    </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="UnU-Rv-RaB">
                         <rect key="frame" x="10" y="10" width="35.5" height="35.5"/>
                         <constraints>
@@ -50,10 +57,13 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="37K-OA-WWZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="HNn-pb-VKD"/>
+                    <constraint firstAttribute="bottom" secondItem="EAe-jn-GHS" secondAttribute="bottom" id="Pne-LX-wrA"/>
                     <constraint firstItem="UnU-Rv-RaB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="S9i-Uu-d26"/>
                     <constraint firstItem="P5g-Zt-xMX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="SC4-WU-gTJ"/>
                     <constraint firstItem="UnU-Rv-RaB" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" constant="-20" id="U3b-m5-64y"/>
+                    <constraint firstItem="EAe-jn-GHS" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gTu-E2-Q0M"/>
                     <constraint firstAttribute="trailing" secondItem="37K-OA-WWZ" secondAttribute="trailing" constant="10" id="jto-sk-N3J"/>
+                    <constraint firstItem="EAe-jn-GHS" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="tPx-he-r5W"/>
                     <constraint firstItem="P5g-Zt-xMX" firstAttribute="leading" secondItem="UnU-Rv-RaB" secondAttribute="trailing" constant="10" id="wt5-6P-eiD"/>
                     <constraint firstItem="UnU-Rv-RaB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xcr-2f-WSF"/>
                 </constraints>
