@@ -36,5 +36,8 @@ class ProfileViewController: UIViewController {
     @IBAction func callPressed(_ sender: Any) {
         profileViewModel?.makeACall()
     }
+    @IBAction func addToPartyPressed(_ sender: Any) {
+        
+    }
     
 }
