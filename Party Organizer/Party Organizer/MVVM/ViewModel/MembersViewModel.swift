@@ -16,12 +16,11 @@ class MembersViewModel: NSObject {
     
     func getMembers() {
         BackendManager.sharedInstance.getMembers()
-        .done {
+        .done { [weak self] in
             print("Members: \($0)")
             if let membersDataArray = $0["profiles"] as? [[String: Any]] {
-                let members = membersDataArray.map {
-                    Member(data: $0)
-                }
+                let members = membersDataArray.map { Member(data: $0) }
+                self?.members.accept(members)
                 print("Members parsed")
             }
         }

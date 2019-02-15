@@ -20,9 +20,13 @@
 		F56803F922160F8000CA3A1B /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F822160F8000CA3A1B /* Party.swift */; };
 		F56803FB221610B800CA3A1B /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803FA221610B800CA3A1B /* Server.swift */; };
 		F56803FF2216111A00CA3A1B /* BackendManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803FE2216111A00CA3A1B /* BackendManager.swift */; };
-		F56804032216144400CA3A1B /* PartiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56804022216144400CA3A1B /* PartiesViewController.swift */; };
-		F56804052216144D00CA3A1B /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56804042216144D00CA3A1B /* MembersViewController.swift */; };
 		F56804092216148300CA3A1B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56804082216148300CA3A1B /* CoreDataManager.swift */; };
+		F56E8FC322163CBC0008ED75 /* PartiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E8FC222163CBC0008ED75 /* PartiesTableViewController.swift */; };
+		F56E8FC522163D6C0008ED75 /* MembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E8FC422163D6C0008ED75 /* MembersTableViewController.swift */; };
+		F56E8FC822163E810008ED75 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E8FC722163E810008ED75 /* UITableView+Extension.swift */; };
+		F56E8FCA22163E990008ED75 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E8FC922163E990008ED75 /* UIView+Extension.swift */; };
+		F56E8FCD22163FAD0008ED75 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E8FCB22163FAD0008ED75 /* MemberTableViewCell.swift */; };
+		F56E8FCE22163FAD0008ED75 /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56E8FCC22163FAD0008ED75 /* MemberTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,9 +47,13 @@
 		F56803F822160F8000CA3A1B /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
 		F56803FA221610B800CA3A1B /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		F56803FE2216111A00CA3A1B /* BackendManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendManager.swift; sourceTree = "<group>"; };
-		F56804022216144400CA3A1B /* PartiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiesViewController.swift; sourceTree = "<group>"; };
-		F56804042216144D00CA3A1B /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
 		F56804082216148300CA3A1B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		F56E8FC222163CBC0008ED75 /* PartiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiesTableViewController.swift; sourceTree = "<group>"; };
+		F56E8FC422163D6C0008ED75 /* MembersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersTableViewController.swift; sourceTree = "<group>"; };
+		F56E8FC722163E810008ED75 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		F56E8FC922163E990008ED75 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		F56E8FCB22163FAD0008ED75 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
+		F56E8FCC22163FAD0008ED75 /* MemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +148,8 @@
 			children = (
 				F515543B2216090300515928 /* LaunchScreen.storyboard */,
 				F515543C2216090300515928 /* Main.storyboard */,
-				F56804022216144400CA3A1B /* PartiesViewController.swift */,
-				F56804042216144D00CA3A1B /* MembersViewController.swift */,
+				F56E8FD122163FD70008ED75 /* Parties */,
+				F56E8FD022163FCA0008ED75 /* Members */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 		F56803EB22160DA400CA3A1B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F56E8FC622163E700008ED75 /* Extensions */,
 				F56804072216147300CA3A1B /* Managers */,
 				F56803EF22160E9300CA3A1B /* CustomTypes */,
 			);
@@ -246,6 +255,41 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		F56E8FC622163E700008ED75 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F56E8FC722163E810008ED75 /* UITableView+Extension.swift */,
+				F56E8FC922163E990008ED75 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F56E8FCF22163FB10008ED75 /* MemberTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F56E8FCB22163FAD0008ED75 /* MemberTableViewCell.swift */,
+				F56E8FCC22163FAD0008ED75 /* MemberTableViewCell.xib */,
+			);
+			path = MemberTableViewCell;
+			sourceTree = "<group>";
+		};
+		F56E8FD022163FCA0008ED75 /* Members */ = {
+			isa = PBXGroup;
+			children = (
+				F56E8FC422163D6C0008ED75 /* MembersTableViewController.swift */,
+				F56E8FCF22163FB10008ED75 /* MemberTableViewCell */,
+			);
+			path = Members;
+			sourceTree = "<group>";
+		};
+		F56E8FD122163FD70008ED75 /* Parties */ = {
+			isa = PBXGroup;
+			children = (
+				F56E8FC222163CBC0008ED75 /* PartiesTableViewController.swift */,
+			);
+			path = Parties;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,6 +353,7 @@
 				F51554442216090300515928 /* LaunchScreen.storyboard in Resources */,
 				F51554452216090300515928 /* Main.storyboard in Resources */,
 				F51554482216090300515928 /* Assets.xcassets in Resources */,
+				F56E8FCE22163FAD0008ED75 /* MemberTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,15 +428,18 @@
 				F56803EE22160DC400CA3A1B /* NetworkManager.swift in Sources */,
 				F56803F722160F7800CA3A1B /* Member.swift in Sources */,
 				F56803F422160F5C00CA3A1B /* MembersViewModel.swift in Sources */,
-				F56804052216144D00CA3A1B /* MembersViewController.swift in Sources */,
 				F56803F922160F8000CA3A1B /* Party.swift in Sources */,
 				F51554462216090300515928 /* AppDelegate.swift in Sources */,
 				F56804092216148300CA3A1B /* CoreDataManager.swift in Sources */,
+				F56E8FC322163CBC0008ED75 /* PartiesTableViewController.swift in Sources */,
 				F51554432216090300515928 /* Party_Organizer.xcdatamodeld in Sources */,
+				F56E8FCA22163E990008ED75 /* UIView+Extension.swift in Sources */,
 				F56803FF2216111A00CA3A1B /* BackendManager.swift in Sources */,
-				F56804032216144400CA3A1B /* PartiesViewController.swift in Sources */,
+				F56E8FCD22163FAD0008ED75 /* MemberTableViewCell.swift in Sources */,
+				F56E8FC522163D6C0008ED75 /* MembersTableViewController.swift in Sources */,
 				F56803FB221610B800CA3A1B /* Server.swift in Sources */,
 				F56803F122160EA400CA3A1B /* PartyOrganizerError.swift in Sources */,
+				F56E8FC822163E810008ED75 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
