@@ -21,13 +21,13 @@ class Member: NSObject {
         case aboutMe
     }
     
-    var id: Int64
-    var username: String
-    var cell: String
-    var photo: String
-    var email: String
-    var gender: String
-    var aboutMe: String
+    let id: Int64
+    let username: String
+    let cell: String
+    let photo: String
+    let email: String
+    let gender: String
+    let aboutMe: String
     
     init(data: [String: Any]) {
         let json = JSON(data)
