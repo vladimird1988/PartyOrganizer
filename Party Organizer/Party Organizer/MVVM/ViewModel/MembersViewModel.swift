@@ -8,7 +8,6 @@
 
 import Foundation
 import RxCocoa
-import SwiftyJSON
 
 class MembersViewModel: NSObject {
 
@@ -19,12 +18,22 @@ class MembersViewModel: NSObject {
         .done { [weak self] in
             print("Members: \($0)")
             if let membersDataArray = $0["profiles"] as? [[String: Any]] {
-                let members = membersDataArray.map { Member(data: $0) }
-                self?.members.accept(members)
+                let members = membersDataArray.compactMap {
+                    try? self?.getMember(from: JSONSerialization.data(withJSONObject: $0, options: .prettyPrinted))
+                }
+                self?.members.accept(members.compactMap { return $0 })
                 print("Members parsed")
             }
         }
         .cauterize()
+    }
+    
+    func getMember(from data: Data) throws -> Member {
+        do {
+            return try JSONDecoder().decode(Member.self, from: data)
+        } catch let error {
+            throw error
+        }
     }
     
 }

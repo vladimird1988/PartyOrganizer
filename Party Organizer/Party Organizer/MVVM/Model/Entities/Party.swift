@@ -10,14 +10,12 @@ import UIKit
 
 class Party: NSObject {
 
-    let name: String
+    let partyName: String
     let startDate: Date
     let partyDescription: String
     
-    
-    
-    init(name: String, startDate: Date, partyDescription: String) {
-        self.name = name
+    init(partyName: String, startDate: Date, partyDescription: String) {
+        self.partyName = partyName
         self.startDate = startDate
         self.partyDescription = partyDescription
     }

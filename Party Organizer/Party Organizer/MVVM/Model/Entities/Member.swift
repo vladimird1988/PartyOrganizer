@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import SwiftyJSON
+import AERecord
 
-class Member: NSObject {
+final class Member: NSObject, Codable {
 
     private enum Key: String {
         case id
@@ -21,23 +21,13 @@ class Member: NSObject {
         case aboutMe
     }
     
-    let id: Int64
-    let username: String
-    let cell: String
-    let photo: String
-    let email: String
-    let gender: String
-    let aboutMe: String
-    
-    init(data: [String: Any]) {
-        let json = JSON(data)
-        id = json[Key.id.rawValue].int64Value
-        username = json[Key.username.rawValue].stringValue
-        cell = json[Key.cell.rawValue].stringValue
-        photo = json[Key.photo.rawValue].stringValue
-        aboutMe = json[Key.aboutMe.rawValue].stringValue
-        email = json[Key.email.rawValue].stringValue
-        gender = json[Key.gender.rawValue].stringValue
-    }
+    var id: Int
+    var username: String
+    var cell: String
+    var photo: String
+    var email: String
+    var gender: String
+    var aboutMe: String
     
 }
+

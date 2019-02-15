@@ -8,10 +8,16 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="photo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parties" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBParty" inverseName="members" inverseEntity="DBParty" syncable="YES"/>
     </entity>
-    <entity name="DBParty" representedClassName="DBParty" syncable="YES" codeGenerationType="class"/>
+    <entity name="DBParty" representedClassName="DBParty" syncable="YES" codeGenerationType="class">
+        <attribute name="partyDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="partyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBMember" inverseName="parties" inverseEntity="DBMember" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="DBMember" positionX="-63" positionY="-18" width="128" height="150"/>
-        <element name="DBParty" positionX="-54" positionY="-9" width="128" height="45"/>
+        <element name="DBMember" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="DBParty" positionX="-54" positionY="-9" width="128" height="105"/>
     </elements>
 </model>
