@@ -43,7 +43,7 @@
                     <navigationItem key="navigationItem" title="Parties" id="3yE-Am-xKH">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="ihR-hf-qXb">
                             <connections>
-                                <segue destination="fe4-3Q-Rvq" kind="show" id="jI3-45-upI"/>
+                                <segue destination="fe4-3Q-Rvq" kind="show" id="a7q-lP-JbX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -98,7 +98,7 @@ Create some!</string>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <segue destination="fe4-3Q-Rvq" kind="show" id="fm8-rd-nM2"/>
+                                <segue destination="fe4-3Q-Rvq" kind="show" id="4Wr-iS-AJW"/>
                             </connections>
                         </button>
                     </subviews>
@@ -124,7 +124,7 @@ Create some!</string>
         <scene sceneID="lCc-PH-WSi">
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="fe4-3Q-Rvq" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wVg-pi-IeN">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wVg-pi-IeN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -463,6 +463,6 @@ Create some!</string>
         <image name="starIcon" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jI3-45-upI"/>
+        <segue reference="4Wr-iS-AJW"/>
     </inferredMetricsTieBreakers>
 </document>
