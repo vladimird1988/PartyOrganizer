@@ -10,14 +10,51 @@ import UIKit
 
 class Party: NSObject {
 
-    let partyName: String
-    let startDate: Date
-    let partyDescription: String
+    enum Key: String {
+        case partyId
+        case partyName
+        case startDate
+        case partyDescription
+    }
     
-    init(partyName: String, startDate: Date, partyDescription: String) {
+    var partyId: Int64
+    var partyName: String
+    var startTime: Date
+    var partyDescription: String
+    
+    init(partyName: String, startTime: Date, partyDescription: String) {
+        let generatedPartyId: Int = {
+            let lastId = UserDefaults.standard.integer(forKey: Key.partyId.rawValue)
+            let generatedId = lastId + 1
+            UserDefaults.standard.set(generatedId, forKey: Key.partyId.rawValue)
+            return generatedId
+        }()
+        self.partyId = Int64(generatedPartyId)
         self.partyName = partyName
-        self.startDate = startDate
+        self.startTime = startTime
         self.partyDescription = partyDescription
+    }
+
+    
+    func save() {
+        let dbParty = DBParty.first(with: [Key.partyId.rawValue: partyId]) ?? DBParty.create()
+        dbParty.partyId = partyId
+        dbParty.partyName = partyName
+        dbParty.startTime = startTime
+        dbParty.partyDescription = partyDescription
+        CoreDataManager.shared.saveContext()
+    }
+    
+    init(dbParty: DBParty) {
+        partyId = dbParty.partyId
+        partyName = dbParty.partyName ?? ""
+        startTime = dbParty.startTime ?? Date()
+        partyDescription = dbParty.partyDescription ?? ""
+    }
+    
+    static var allParties: [Party] {
+        let allDBParties = DBParty.all() as? [DBParty] ?? []
+        return allDBParties.map { Party(dbParty: $0) }
     }
     
 }

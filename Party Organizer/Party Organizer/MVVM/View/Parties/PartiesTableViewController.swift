@@ -13,16 +13,12 @@ class PartiesTableViewController: UITableViewController {
     @IBOutlet weak var backgroundTopOffset: NSLayoutConstraint!
     @IBOutlet var backgroundView: UIView!
     
+    let partiesViewModel = PartiesViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(type: PartyTableViewCell.self)
-    }
-    
-    func setBackgroundView() {
-        tableView.backgroundView = backgroundView
-        backgroundTopOffset.constant = (navigationController?.navigationBar.frame ?? .zero).height + UIApplication.shared.statusBarFrame.height
-        backgroundView.layoutIfNeeded()
     }
 
     // MARK: - Table view data source
@@ -32,12 +28,22 @@ class PartiesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        let numberOfParties = partiesViewModel.parties.value.count
+        if numberOfParties > 0 {
+            tableView.backgroundView = nil
+        } else {
+            tableView.backgroundView = backgroundView
+            backgroundTopOffset.constant = (navigationController?.navigationBar.frame ?? .zero).height + UIApplication.shared.statusBarFrame.height
+            backgroundView.layoutIfNeeded()
+        }
+        return numberOfParties
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PartyTableViewCell.identifier, for: indexPath)
-
+        if let partyCell = cell as? PartyTableViewCell {
+            
+        }
         return cell
     }
 

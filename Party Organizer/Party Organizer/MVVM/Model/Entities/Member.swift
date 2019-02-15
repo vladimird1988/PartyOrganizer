@@ -12,7 +12,7 @@ import AERecord
 final class Member: NSObject, Codable {
 
     private enum Key: String {
-        case id
+        case memberId
         case username
         case cell
         case email
@@ -30,8 +30,8 @@ final class Member: NSObject, Codable {
     var aboutMe: String
     
     func save() {
-        let dbMember = DBMember.first(with: [Key.id.rawValue: id]) ?? DBMember.create()
-        dbMember.id = id
+        let dbMember = DBMember.first(with: [Key.memberId.rawValue: id]) ?? DBMember.create()
+        dbMember.memberId = id
         dbMember.aboutMe = aboutMe
         dbMember.cell = cell
         dbMember.email = email
@@ -42,7 +42,7 @@ final class Member: NSObject, Codable {
     }
     
     init(dbMember: DBMember) {
-        id = dbMember.id
+        id = dbMember.memberId
         aboutMe = dbMember.aboutMe ?? ""
         cell = dbMember.cell ?? ""
         email = dbMember.email ?? ""
