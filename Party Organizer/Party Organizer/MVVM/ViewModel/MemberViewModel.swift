@@ -16,6 +16,22 @@ class MemberViewModel: NSObject {
         self.member = member
     }
     
+    var fullName: String {
+        return member.username
+    }
+    
+    var gender: String {
+        return member.gender
+    }
+    
+    var email: String {
+        return member.email
+    }
+    
+    var about: String {
+        return member.aboutMe
+    }
+    
     var imageUrl: String {
         return member.photo
     }
