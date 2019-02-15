@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import RxSwift
 
 class MembersTableViewController: UITableViewController {
 
     let membersViewModel = MembersViewModel()
     
+    let bag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(type: MemberTableViewCell.self)
+        
+        membersViewModel.members.asObservable()
+        .subscribe(onNext: { [weak self] _ in
+            self?.tableView.reloadData()
+        }).disposed(by: bag)
+        
         membersViewModel.getMembers()
     }
 
@@ -31,8 +40,17 @@ class MembersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MemberTableViewCell.identifier, for: indexPath)
-
+        if let memberCell = cell as? MemberTableViewCell {
+            memberCell.userLabel.text = membersViewModel.members.value[indexPath.row].username
+            if let placeholder = UIImage(named: "profileIcon") {
+                memberCell.userImage.setImage(url: membersViewModel.members.value[indexPath.row].photo, placeholder: placeholder)
+            }
+        }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70.0
     }
 
 }
