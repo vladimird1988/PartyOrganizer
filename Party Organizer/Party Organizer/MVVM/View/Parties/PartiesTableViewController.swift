@@ -15,7 +15,11 @@ class PartiesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.register(type: PartyTableViewCell.self)
+    }
+    
+    func setBackgroundView() {
         tableView.backgroundView = backgroundView
         backgroundTopOffset.constant = (navigationController?.navigationBar.frame ?? .zero).height + UIApplication.shared.statusBarFrame.height
         backgroundView.layoutIfNeeded()
@@ -28,15 +32,17 @@ class PartiesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 5
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: PartyTableViewCell.identifier, for: indexPath)
 
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 125.0
+    }
+    
 }

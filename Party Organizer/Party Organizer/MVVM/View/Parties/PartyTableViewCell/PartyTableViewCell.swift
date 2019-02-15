@@ -1,5 +1,7 @@
+
+
 //
-//  MemberTableViewCell.swift
+//  PartyTableViewCell.swift
 //  Party Organizer
 //
 //  Created by Vladimir Dinic on 2/15/19.
@@ -8,16 +10,20 @@
 
 import UIKit
 
-class MemberTableViewCell: UITableViewCell {
+class PartyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var arrowImageView: UIImageView!
-    @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var userLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
         arrowImageView.tintColor = UIColor.lightGray.withAlphaComponent(0.5)    // Note: Setting tint color in storyboard doesn't works (XCode bug)
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
     }
     
 }
