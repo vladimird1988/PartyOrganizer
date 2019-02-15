@@ -10,18 +10,8 @@ import Foundation
 import AERecord
 
 final class Member: NSObject, Codable {
-
-    private enum Key: String {
-        case id
-        case username
-        case cell
-        case email
-        case gender
-        case photo
-        case aboutMe
-    }
     
-    var id: Int
+    var id: Int64
     var username: String
     var cell: String
     var photo: String
