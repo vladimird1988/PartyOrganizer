@@ -55,7 +55,68 @@
                     <view key="view" contentMode="scaleToFill" id="Qhd-wp-jiT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FSZ-c7-yfr">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5h4-6v-GGF">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Abv-MZ-eTa">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="LS7-qC-nh7">
+                                                        <rect key="frame" x="94" y="10" width="187.5" height="187.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="LS7-qC-nh7" secondAttribute="height" id="FXY-hV-NXW"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="asCircle" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="LS7-qC-nh7" firstAttribute="top" secondItem="Abv-MZ-eTa" secondAttribute="top" constant="10" id="YGF-Xv-kWN"/>
+                                                    <constraint firstItem="LS7-qC-nh7" firstAttribute="centerX" secondItem="Abv-MZ-eTa" secondAttribute="centerX" id="Yxe-rd-dQy"/>
+                                                    <constraint firstItem="LS7-qC-nh7" firstAttribute="width" secondItem="Abv-MZ-eTa" secondAttribute="width" multiplier="0.5" id="zlW-Sg-ckr"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Abv-MZ-eTa" firstAttribute="centerX" secondItem="5h4-6v-GGF" secondAttribute="centerX" id="6vW-3j-Deh"/>
+                                            <constraint firstItem="Abv-MZ-eTa" firstAttribute="leading" secondItem="5h4-6v-GGF" secondAttribute="leading" id="YPE-Xo-9G3"/>
+                                            <constraint firstAttribute="trailing" secondItem="Abv-MZ-eTa" secondAttribute="trailing" id="meB-bn-JWp"/>
+                                            <constraint firstAttribute="bottom" secondItem="Abv-MZ-eTa" secondAttribute="bottom" id="rj1-fr-H7u"/>
+                                            <constraint firstItem="Abv-MZ-eTa" firstAttribute="top" secondItem="5h4-6v-GGF" secondAttribute="top" id="tac-tV-ZI4"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="5h4-6v-GGF" secondAttribute="bottom" id="1o1-qM-Khz"/>
+                                    <constraint firstItem="5h4-6v-GGF" firstAttribute="leading" secondItem="FSZ-c7-yfr" secondAttribute="leading" id="eVi-p7-ELg"/>
+                                    <constraint firstItem="5h4-6v-GGF" firstAttribute="centerX" secondItem="FSZ-c7-yfr" secondAttribute="centerX" id="lB4-uJ-4oH"/>
+                                    <constraint firstItem="5h4-6v-GGF" firstAttribute="width" secondItem="FSZ-c7-yfr" secondAttribute="width" id="pSx-0L-YLI"/>
+                                    <constraint firstAttribute="trailing" secondItem="5h4-6v-GGF" secondAttribute="trailing" id="rSq-RH-fen"/>
+                                    <constraint firstItem="Abv-MZ-eTa" firstAttribute="height" secondItem="FSZ-c7-yfr" secondAttribute="height" priority="999" id="vKo-6O-yXT"/>
+                                    <constraint firstItem="5h4-6v-GGF" firstAttribute="top" secondItem="FSZ-c7-yfr" secondAttribute="top" id="zcl-uf-Tdv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FSZ-c7-yfr" firstAttribute="centerX" secondItem="Sw6-JP-FhX" secondAttribute="centerX" id="MGp-dA-I7e"/>
+                            <constraint firstItem="FSZ-c7-yfr" firstAttribute="width" secondItem="Qhd-wp-jiT" secondAttribute="width" id="Pka-GB-b6O"/>
+                            <constraint firstItem="FSZ-c7-yfr" firstAttribute="top" secondItem="Sw6-JP-FhX" secondAttribute="top" id="WZV-Qe-hzm"/>
+                            <constraint firstItem="Sw6-JP-FhX" firstAttribute="bottom" secondItem="FSZ-c7-yfr" secondAttribute="bottom" id="rjw-ZP-ZUV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Sw6-JP-FhX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="OYD-Ay-txJ">
@@ -65,6 +126,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="profileImageView" destination="LS7-qC-nh7" id="hhb-Gi-FXj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pph-6U-oVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,6 +195,7 @@
     </scenes>
     <resources>
         <image name="memberIcon" width="28" height="28"/>
+        <image name="profileIcon" width="128" height="128"/>
         <image name="starIcon" width="28" height="28"/>
     </resources>
 </document>

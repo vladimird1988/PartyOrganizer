@@ -12,9 +12,15 @@ class ProfileViewController: UIViewController {
 
     var profileViewModel: MemberViewModel?
     
+    @IBOutlet weak var profileImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if
+            let profileImageUrl = profileViewModel?.imageUrl,
+            let placeholder = UIImage(named: "profileIcon") {
+            profileImageView.setImage(url: profileImageUrl, placeholder: placeholder)
+        }
+        
     }
     
     @IBAction func callPressed(_ sender: Any) {

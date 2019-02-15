@@ -16,6 +16,10 @@ class MemberViewModel: NSObject {
         self.member = member
     }
     
+    var imageUrl: String {
+        return member.photo
+    }
+    
     func makeACall() {
         let phoneNumber = member.cell
         let phoneNumberRegex = "^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\./0-9]*$"
