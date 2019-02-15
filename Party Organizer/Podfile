@@ -13,5 +13,4 @@ target 'Party Organizer' do
   pod 'PromiseKit'
   pod 'SwiftyJSON'
   pod 'Kingfisher'
-
 end

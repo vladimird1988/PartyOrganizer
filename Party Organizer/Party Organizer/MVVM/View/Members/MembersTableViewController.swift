@@ -53,4 +53,18 @@ class MembersTableViewController: UITableViewController {
         return 70.0
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowProfile", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowProfile" {
+            guard let indexPath = sender as? IndexPath else {
+                return
+            }
+            if let dest = segue.destination as? ProfileViewController {
+                dest.profileViewModel = MemberViewModel(member: membersViewModel.members.value[indexPath.row])
+            }
+        }
+    }
 }
