@@ -10,6 +10,30 @@ import UIKit
 
 class MemberTableViewCell: UITableViewCell {
 
+    var isMemberSelected = false
+    
+    enum CellType {
+        case show
+        case select
+    }
+    
+    var cellType: CellType = .show {
+        didSet {
+            switch cellType {
+            case .show:
+                selectionStyle = .default
+                cellRightIcon.image = UIImage(named: "arrowIcon")
+                cellRightIcon.tintColor = UIColor.lightGray.withAlphaComponent(0.5)
+            case .select:
+                selectionStyle = .none
+                cellRightIcon.image = UIImage(named: "checkMarkIcon")
+                cellRightIcon.isHidden = !isMemberSelected
+                cellRightIcon.tintColor = UIButton().tintColor  // Get default tint color
+            }
+        }
+    }
+    
+    @IBOutlet weak var cellRightIcon: UIImageView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
     

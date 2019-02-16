@@ -10,6 +10,10 @@ import UIKit
 
 class PartyViewModel: NSObject {
 
-    let members = HomeViewModel.shared.appData.members.value
+    let party: Party
+    
+    init(party: Party) {
+        self.party = party
+    }
     
 }

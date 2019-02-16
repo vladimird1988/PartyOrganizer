@@ -78,6 +78,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cellRightIcon" destination="37K-OA-WWZ" id="1eO-wp-AiV"/>
                 <outlet property="userImage" destination="UnU-Rv-RaB" id="IoX-di-zKJ"/>
                 <outlet property="userLabel" destination="P5g-Zt-xMX" id="XDW-ze-nxn"/>
             </connections>

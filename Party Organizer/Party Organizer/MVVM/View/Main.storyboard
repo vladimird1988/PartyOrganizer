@@ -142,11 +142,33 @@ Create some!</string>
                     </navigationItem>
                     <connections>
                         <segue destination="F0G-Z9-Pf6" kind="show" identifier="ShowProfileSegue" id="Ac9-uz-WN7"/>
+                        <segue destination="60c-dg-939" kind="show" identifier="ShowPartyMembersSegue" id="s8C-c4-jXB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PPN-NN-mgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1916" y="-620"/>
+        </scene>
+        <!--Members-->
+        <scene sceneID="pz7-ca-uai">
+            <objects>
+                <tableViewController id="60c-dg-939" customClass="PartyMembersTableViewController" customModule="Party_Organizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZL7-E8-p0U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="60c-dg-939" id="BYd-aW-xo1"/>
+                            <outlet property="delegate" destination="60c-dg-939" id="2mh-fS-o8Y"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Members" id="lKG-OZ-WGI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="17z-ru-JJt"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qGm-xK-UfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2734" y="-615"/>
         </scene>
         <!--Profile-->
         <scene sceneID="wU0-cO-EVi">

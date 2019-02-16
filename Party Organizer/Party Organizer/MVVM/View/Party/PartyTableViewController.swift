@@ -10,7 +10,7 @@ import UIKit
 
 class PartyTableViewController: POTableViewController {
 
-    var partyViewModel: PartyViewModel? = PartyViewModel()
+    var partyViewModel: PartyViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class PartyTableViewController: POTableViewController {
             let profilePage = segue.destination as? ProfileViewController,
             let partyViewModel = partyViewModel,
             let indexPath = sender as? IndexPath {
-                profilePage.profileViewModel = MemberViewModel(member: partyViewModel.members[indexPath.row - 1])
+                profilePage.profileViewModel = MemberViewModel(member: partyViewModel.party.partyMembers[indexPath.row - 1])
             }
     }
     
@@ -46,7 +46,7 @@ class PartyTableViewController: POTableViewController {
         case 0:
             return 2
         case 1:
-            return 1 + (partyViewModel?.members.count ?? 0)
+            return 1 + (partyViewModel?.party.partyMembers.count ?? 0)
         case 2:
             return 1
         default:
@@ -73,6 +73,9 @@ class PartyTableViewController: POTableViewController {
             switch indexPath.row {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: PartyMembersTableViewCell.identifier, for: indexPath)
+                if let partyMembersTableViewCell = cell as? PartyMembersTableViewCell {
+                    partyMembersTableViewCell.memberLabel.text = "Members (\(partyViewModel?.party.partyMembers.count ?? 0))"
+                }
                 return cell
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: PartySingleMemberTableViewCell.identifier, for: indexPath)
@@ -100,7 +103,9 @@ class PartyTableViewController: POTableViewController {
     }
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 && indexPath.row > 0 {
+        if indexPath.section == 1 && indexPath.row == 0 {
+            performSegue(withIdentifier: "ShowPartyMembersSegue", sender: indexPath)
+        } else if indexPath.section == 1 && indexPath.row > 0 {
             performSegue(withIdentifier: "ShowProfileSegue", sender: indexPath)
         }
     }
