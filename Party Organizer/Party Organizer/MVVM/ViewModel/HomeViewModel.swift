@@ -19,8 +19,14 @@ class HomeViewModel: NSObject {
     override init() {
         super.init()
         
-        members.accept(Member.allMembers)
-        parties.accept(Party.allParties)
+        members.accept({
+            let allDBMembers = DBMember.all() as? [DBMember] ?? []
+            return allDBMembers.map { Member(dbMember: $0) }
+        }())
+        parties.accept({
+            let allDBParties = DBParty.all() as? [DBParty] ?? []
+            return allDBParties.map { Party(dbParty: $0) }
+        }())
     }
     
     func getMembers() {

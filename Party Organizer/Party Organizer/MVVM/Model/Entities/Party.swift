@@ -6,7 +6,7 @@
 //  Copyright © 2019 Vladimir Dinic. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class Party: NSObject {
 
@@ -52,11 +52,6 @@ class Party: NSObject {
         startTime = dbParty.startTime ?? Date()
         partyDescription = dbParty.partyDescription ?? ""
         partyMembers = (dbParty.members?.allObjects as? [DBMember] ?? []).map { Member(dbMember: $0) }
-    }
-    
-    static var allParties: [Party] {
-        let allDBParties = DBParty.all() as? [DBParty] ?? []
-        return allDBParties.map { Party(dbParty: $0) }
     }
     
 }

@@ -66,11 +66,5 @@ final class Member: NSObject {
         CoreDataManager.shared.saveContext()
     }
     
-    
-    static var allMembers: [Member] {
-        let allDBMembers = DBMember.all() as? [DBMember] ?? []
-        return allDBMembers.map { Member(dbMember: $0) }
-    }
-    
 }
 
