@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxCocoa
 
 class Party: NSObject {
 
@@ -18,9 +19,9 @@ class Party: NSObject {
     }
     
     var partyId: Int64
-    var partyName: String
-    var startTime: Date?
-    var partyDescription: String
+    let partyName = BehaviorRelay<String>(value: "")
+    let startTime = BehaviorRelay<Date?>(value: nil)
+    let partyDescription = BehaviorRelay<String>(value: "")
     var partyMembers = [Member]()
     
     static var newParty: Party {
@@ -35,26 +36,26 @@ class Party: NSObject {
             return generatedId
         }()
         self.partyId = Int64(generatedPartyId)
-        self.partyName = partyName
-        self.startTime = startTime
-        self.partyDescription = partyDescription
+        self.partyName.accept(partyName)
+        self.startTime.accept(startTime)
+        self.partyDescription.accept(partyDescription)
     }
 
     
     func save() {
         let dbParty = DBParty.first(with: [Key.partyId.rawValue: partyId]) ?? DBParty.create()
         dbParty.partyId = partyId
-        dbParty.partyName = partyName
-        dbParty.startTime = startTime
-        dbParty.partyDescription = partyDescription
+        dbParty.partyName = partyName.value
+        dbParty.startTime = startTime.value
+        dbParty.partyDescription = partyDescription.value
         CoreDataManager.shared.saveContext()
     }
     
     init(dbParty: DBParty) {
         partyId = dbParty.partyId
-        partyName = dbParty.partyName ?? ""
-        startTime = dbParty.startTime
-        partyDescription = dbParty.partyDescription ?? ""
+        partyName.accept(dbParty.partyName ?? "")
+        startTime.accept(dbParty.startTime)
+        partyDescription.accept(dbParty.partyDescription ?? "")
     }
     
 }

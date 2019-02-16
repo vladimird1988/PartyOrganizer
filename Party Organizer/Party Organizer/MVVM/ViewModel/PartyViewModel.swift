@@ -15,16 +15,29 @@ class PartyViewModel: NSObject {
     var party: Party
     
     let partyId: Int64
-    let partyName = BehaviorRelay<String>(value: "")
-    let partyDescription = BehaviorRelay<String>(value: "")
-    let partyTime = BehaviorRelay<Date?>(value: nil)
+    let viewPartyName = BehaviorRelay<String>(value: "")
+    let viewPartyDescription = BehaviorRelay<String>(value: "")
+    let viewPartyTime = BehaviorRelay<Date?>(value: nil)
+    
+    var partyName: BehaviorRelay<String> { return party.partyName }
+    var partyTime: BehaviorRelay<Date?> { return party.startTime }
+    var partyDescription: BehaviorRelay<String> { return party.partyDescription }
     
     init(party: Party) {
         self.party = party
         self.partyId = party.partyId
-        partyName.accept(party.partyName)
-        partyDescription.accept(party.partyDescription)
-        partyTime.accept(party.startTime)
+        super.init()
+        update()
+    }
+    
+    func reset() {
+        update()
+    }
+    
+    func update() {
+        viewPartyName.accept(party.partyName.value)
+        viewPartyDescription.accept(party.partyDescription.value)
+        viewPartyTime.accept(party.startTime.value)
     }
     
     static var newPartyViewModel: PartyViewModel {
@@ -33,9 +46,9 @@ class PartyViewModel: NSObject {
     
     func save() {
         party.partyId = partyId
-        party.partyDescription = partyDescription.value
-        party.partyName = partyName.value
-        party.startTime = partyTime.value
+        party.partyDescription.accept(viewPartyDescription.value)
+        party.partyName.accept(viewPartyName.value)
+        party.startTime.accept(viewPartyTime.value)
         party.save()
     }
     

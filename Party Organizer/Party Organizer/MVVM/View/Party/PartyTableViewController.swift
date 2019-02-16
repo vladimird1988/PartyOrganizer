@@ -27,8 +27,15 @@ class PartyTableViewController: POTableViewController {
         tableView.register(type: PartyDescriptionTableViewCell.self)
     }
     
+    override func didMove(toParent parent: UIViewController?) {
+        if parent == nil {  // Go back
+            partyViewModel?.reset()
+        }
+    }
+    
     @IBAction func savePressed(_ sender: Any) {
         partyViewModel?.save()
+        navigationController?.popViewController(animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,13 +75,13 @@ class PartyTableViewController: POTableViewController {
                 switch indexPath.row {
                 case 0:
                     partyInfoCell.cellType = .name
-                    if let partyName = partyViewModel?.partyName {
+                    if let partyName = partyViewModel?.viewPartyName {
                         partyInfoCell.infoTextField.text = partyName.value
                         partyInfoCell.infoTextField.rx.text.orEmpty.bind(to: partyName).disposed(by: bag)
                     }
                 case 1:
                     partyInfoCell.cellType = .startTime
-                    if let partyTime = partyViewModel?.partyTime {
+                    if let partyTime = partyViewModel?.viewPartyTime {
                         partyInfoCell.infoTextField.text = partyTime.value?.asString()
                         partyInfoCell.dateSelectionObservable.bind(to: partyTime).disposed(by: bag)
                     }
@@ -98,7 +105,7 @@ class PartyTableViewController: POTableViewController {
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: PartyDescriptionTableViewCell.identifier, for: indexPath)
             if let partyDescriptionTableViewCell = cell as? PartyDescriptionTableViewCell {
-                if let partyDescription = partyViewModel?.partyDescription {
+                if let partyDescription = partyViewModel?.viewPartyDescription {
                     partyDescriptionTableViewCell.descriptionTextView.text = partyDescription.value
                     partyDescriptionTableViewCell.descriptionTextView.rx.text.orEmpty.bind(to: partyDescription).disposed(by: bag)
                 }

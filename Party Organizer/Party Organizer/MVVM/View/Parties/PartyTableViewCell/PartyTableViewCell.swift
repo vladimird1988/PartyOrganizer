@@ -11,8 +11,10 @@
 import UIKit
 
 class PartyTableViewCell: UITableViewCell {
-    @IBOutlet weak var partyNameLabel: UILabel!
     
+    var partyViewModel: PartyViewModel?
+    
+    @IBOutlet weak var partyNameLabel: UILabel!
     @IBOutlet weak var partyTimeLabel: UILabel!
     @IBOutlet weak var partyDescriptionLabel: UILabel!
     

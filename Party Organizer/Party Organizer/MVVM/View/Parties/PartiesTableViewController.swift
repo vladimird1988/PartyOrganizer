@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class PartiesTableViewController: POTableViewController {
+    
+    let bag = DisposeBag()
     
     @IBOutlet weak var backgroundTopOffset: NSLayoutConstraint!
     @IBOutlet var backgroundView: UIView!
@@ -56,15 +59,24 @@ class PartiesTableViewController: POTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PartyTableViewCell.identifier, for: indexPath)
         if let partyCell = cell as? PartyTableViewCell {
-            partyCell.partyNameLabel.text = partiesViewModel.appData.parties.value[indexPath.row].partyName
-            partyCell.partyTimeLabel.text = partiesViewModel.appData.parties.value[indexPath.row].startTime?.asString()
-            partyCell.partyDescriptionLabel.text = partiesViewModel.appData.parties.value[indexPath.row].partyDescription
+            let partyViewModel = partiesViewModel.partyViewModel(at: indexPath.row)
+            partyCell.partyViewModel = partyViewModel
+            partyViewModel.partyName.bind(to: partyCell.partyNameLabel.rx.text).disposed(by: bag)
+            partyViewModel.partyDescription.subscribe(onNext: {
+                partyCell.partyDescriptionLabel.text = $0
+                tableView.beginUpdates()
+                tableView.endUpdates()
+            }).disposed(by: bag)
+            partyViewModel.partyTime.subscribe(onNext: {
+                partyCell.partyTimeLabel.text = $0?.asString()
+            }).disposed(by: bag)
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowPartySegue", sender: partiesViewModel.partyViewModel(at: indexPath.row))
+        let partyViewModel = (tableView.cellForRow(at: indexPath) as? PartyTableViewCell)?.partyViewModel
+        performSegue(withIdentifier: "ShowPartySegue", sender: partyViewModel)
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
