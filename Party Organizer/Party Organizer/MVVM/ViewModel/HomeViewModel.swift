@@ -30,8 +30,8 @@ class HomeViewModel: NSObject {
             .cauterize()
     }
     
-    var partiesObserver: Observable<[Party]> {
-        return appData.parties.asObservable()
+    var partiesObserver: Observable<AppData.DataEvent> {
+        return appData.dataEventObserver
     }
     
     func partyViewModel(at position: Int) -> PartyViewModel {

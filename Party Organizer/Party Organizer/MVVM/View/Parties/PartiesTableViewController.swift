@@ -22,8 +22,15 @@ class PartiesTableViewController: POTableViewController {
         super.viewDidLoad()
         
         tableView.register(type: PartyTableViewCell.self)
-        partiesViewModel.partiesObserver.subscribe(onNext: { [weak self] _ in
-            self?.tableView.reloadData()
+        partiesViewModel.partiesObserver.subscribe(onNext: { [weak self] in
+            switch $0 {
+            case .addNewParty:
+                self?.tableView.beginUpdates()
+                self?.tableView.insertRows(at: [IndexPath(row: (self?.partiesViewModel.appData.parties.value.count ?? 1) - 1, section: 0)], with: .automatic)
+                self?.tableView.endUpdates()
+            default:
+                break
+            }
         }).disposed(by: bag)
     }
 

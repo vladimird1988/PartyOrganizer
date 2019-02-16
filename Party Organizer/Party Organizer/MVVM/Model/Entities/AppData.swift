@@ -7,18 +7,36 @@
 //
 
 import Foundation
+import RxSwift
 import RxCocoa
 
 class AppData: NSObject {
 
+    enum DataEvent {
+        case noEvents
+        case addNewParty
+        case deleteParty(Party)
+    }
+    
+    private var onAddParty: voidMethod = { }
+    
+    lazy var dataEventObserver: Observable<DataEvent> = {
+        return Observable<DataEvent>.create { [weak self] observer in
+            self?.onAddParty = {
+                observer.onNext(.addNewParty)
+            }
+            return Disposables.create()
+        }
+    }()
+    
     static let shared = AppData()
     
     let parties = BehaviorRelay<[Party]>(value: [])
     let members = BehaviorRelay<[Member]>(value: [])
     
     override init() {
-        super.init()
         
+        super.init()
         members.accept({
             let allDBMembers = DBMember.all() as? [DBMember] ?? []
             return allDBMembers.map { Member(dbMember: $0) }
@@ -38,6 +56,18 @@ class AppData: NSObject {
                 return party
             }
             }())
+    }
+    
+    func add(party: Party) {
+        if !parties.value.contains(party) {
+            parties.accept(AppData.shared.parties.value + [party])
+            onAddParty()
+        }
+        
+    }
+    
+    func delete(party: Party) {
+        
     }
     
 }
