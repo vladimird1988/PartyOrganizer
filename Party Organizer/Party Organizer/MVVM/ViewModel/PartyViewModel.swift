@@ -16,4 +16,8 @@ class PartyViewModel: NSObject {
         self.party = party
     }
     
+    static var newPartyViewModel: PartyViewModel {
+        return PartyViewModel(party: Party.newParty)
+    }
+    
 }

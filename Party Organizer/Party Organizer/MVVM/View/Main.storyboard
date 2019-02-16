@@ -43,13 +43,14 @@
                     <navigationItem key="navigationItem" title="Parties" id="3yE-Am-xKH">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="ihR-hf-qXb">
                             <connections>
-                                <segue destination="fe4-3Q-Rvq" kind="show" id="a7q-lP-JbX"/>
+                                <segue destination="fe4-3Q-Rvq" kind="show" identifier="AddNewPartySegue1" id="a7q-lP-JbX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundTopOffset" destination="RJt-tY-OYX" id="ATr-Ce-Weh"/>
                         <outlet property="backgroundView" destination="DiH-HW-82U" id="gET-9t-IbG"/>
+                        <segue destination="fe4-3Q-Rvq" kind="show" identifier="ShowPartySegue" id="rBz-Gx-JG1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hke-cZ-n31" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,7 +99,7 @@ Create some!</string>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <segue destination="fe4-3Q-Rvq" kind="show" id="4Wr-iS-AJW"/>
+                                <segue destination="fe4-3Q-Rvq" kind="show" identifier="AddNewPartySegue2" id="4Wr-iS-AJW"/>
                             </connections>
                         </button>
                     </subviews>
@@ -496,6 +497,6 @@ Create some!</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ac9-uz-WN7"/>
-        <segue reference="4Wr-iS-AJW"/>
+        <segue reference="rBz-Gx-JG1"/>
     </inferredMetricsTieBreakers>
 </document>

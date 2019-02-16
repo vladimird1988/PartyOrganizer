@@ -19,12 +19,16 @@ class Party: NSObject {
     
     var partyId: Int64
     var partyName: String
-    var startTime: Date
+    var startTime: Date?
     var partyDescription: String
     var partyMembers = [Member]()
     
-    init(partyName: String, startTime: Date, partyDescription: String) {
-        let generatedPartyId: Int = {
+    static var newParty: Party {
+        return Party(partyId: 0, partyName: "", partyDescription: "")
+    }
+    
+    init(partyId: Int? = nil, partyName: String, startTime: Date? = nil, partyDescription: String) {
+        let generatedPartyId: Int = partyId ?? {
             let lastId = UserDefaults.standard.integer(forKey: Key.partyId.rawValue)
             let generatedId = lastId + 1
             UserDefaults.standard.set(generatedId, forKey: Key.partyId.rawValue)
@@ -49,7 +53,7 @@ class Party: NSObject {
     init(dbParty: DBParty) {
         partyId = dbParty.partyId
         partyName = dbParty.partyName ?? ""
-        startTime = dbParty.startTime ?? Date()
+        startTime = dbParty.startTime
         partyDescription = dbParty.partyDescription ?? ""
     }
     

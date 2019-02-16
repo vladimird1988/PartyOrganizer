@@ -29,4 +29,8 @@ class HomeViewModel: NSObject {
             .cauterize()
     }
     
+    func partyViewModel(at position: Int) -> PartyViewModel {
+        return PartyViewModel(party: appData.parties.value[position])
+    }
+    
 }

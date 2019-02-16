@@ -21,6 +21,20 @@ class PartiesTableViewController: POTableViewController {
         tableView.register(type: PartyTableViewCell.self)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddNewPartySegue1" || segue.identifier == "AddNewPartySegue2" {
+            if let partyPage = segue.destination as? PartyTableViewController {
+                partyPage.partyViewModel = PartyViewModel.newPartyViewModel
+            }
+        } else if segue.identifier == "ShowPartySegue" {
+            if
+                let partyViewModel = sender as? PartyViewModel,
+                let partyPage = segue.destination as? PartyTableViewController {
+                partyPage.partyViewModel = partyViewModel
+            }
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -45,6 +59,10 @@ class PartiesTableViewController: POTableViewController {
             
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowPartySegue", sender: partiesViewModel.partyViewModel(at: indexPath.row))
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

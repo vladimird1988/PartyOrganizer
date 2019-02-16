@@ -10,6 +10,8 @@ import UIKit
 
 class AddMemberToPartyTableViewController: POTableViewController {
 
+    var partyViewModel: PartyViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +25,7 @@ class AddMemberToPartyTableViewController: POTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return partyViewModel?.party.partyMembers.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
