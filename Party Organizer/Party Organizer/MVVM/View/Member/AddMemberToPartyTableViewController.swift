@@ -13,7 +13,7 @@ class AddMemberToPartyTableViewController: POTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
+        tableView.register(type: AddMemberToPartyTableViewCell.self)
     }
 
     // MARK: - Table view data source
@@ -27,8 +27,12 @@ class AddMemberToPartyTableViewController: POTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: AddMemberToPartyTableViewCell.identifier, for: indexPath)
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50.0
+    }
+    
 }

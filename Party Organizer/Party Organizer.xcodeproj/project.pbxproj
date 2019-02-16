@@ -48,6 +48,8 @@
 		F5FE7B382218399600B5B12E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B372218399600B5B12E /* HomeViewModel.swift */; };
 		F5FE7B3A2218611F00B5B12E /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B392218611F00B5B12E /* AppData.swift */; };
 		F5FE7B3C22186F0400B5B12E /* PartyMembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B3B22186F0400B5B12E /* PartyMembersTableViewController.swift */; };
+		F5FE7B3F2218752200B5B12E /* AddMemberToPartyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B3D2218752200B5B12E /* AddMemberToPartyTableViewCell.swift */; };
+		F5FE7B402218752200B5B12E /* AddMemberToPartyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FE7B3E2218752200B5B12E /* AddMemberToPartyTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		F5FE7B372218399600B5B12E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F5FE7B392218611F00B5B12E /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		F5FE7B3B22186F0400B5B12E /* PartyMembersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyMembersTableViewController.swift; sourceTree = "<group>"; };
+		F5FE7B3D2218752200B5B12E /* AddMemberToPartyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberToPartyTableViewCell.swift; sourceTree = "<group>"; };
+		F5FE7B3E2218752200B5B12E /* AddMemberToPartyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMemberToPartyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +258,7 @@
 			children = (
 				F535F94B22170DF300594EA9 /* ProfileViewController.swift */,
 				F535F94F22173AE900594EA9 /* AddMemberToPartyTableViewController.swift */,
+				F5FE7B412218752400B5B12E /* AddMemberToPartyTableViewCell */,
 			);
 			path = Member;
 			sourceTree = "<group>";
@@ -425,6 +430,15 @@
 			path = PartySingleMemberTableViewCell;
 			sourceTree = "<group>";
 		};
+		F5FE7B412218752400B5B12E /* AddMemberToPartyTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F5FE7B3D2218752200B5B12E /* AddMemberToPartyTableViewCell.swift */,
+				F5FE7B3E2218752200B5B12E /* AddMemberToPartyTableViewCell.xib */,
+			);
+			path = AddMemberToPartyTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,6 +504,7 @@
 				F51554442216090300515928 /* LaunchScreen.storyboard in Resources */,
 				F535F9552217486800594EA9 /* PartyTableViewCell.xib in Resources */,
 				F52666D52217960B007FDE7E /* PartyDescriptionTableViewCell.xib in Resources */,
+				F5FE7B402218752200B5B12E /* AddMemberToPartyTableViewCell.xib in Resources */,
 				F51554452216090300515928 /* Main.storyboard in Resources */,
 				F51554482216090300515928 /* Assets.xcassets in Resources */,
 				F535F95E22177CF700594EA9 /* PartyInfoTableViewCell.xib in Resources */,
@@ -598,6 +613,7 @@
 				F535F96222178D6500594EA9 /* POTableViewController.swift in Sources */,
 				F56803FB221610B800CA3A1B /* Server.swift in Sources */,
 				F56803F122160EA400CA3A1B /* CustomTypes.swift in Sources */,
+				F5FE7B3F2218752200B5B12E /* AddMemberToPartyTableViewCell.swift in Sources */,
 				F56E8FC822163E810008ED75 /* UITableView+Extension.swift in Sources */,
 				F5FE7B3A2218611F00B5B12E /* AppData.swift in Sources */,
 			);

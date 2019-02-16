@@ -428,7 +428,7 @@ Create some!</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pF-Xt-8zu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2743" y="171"/>
+            <point key="canvasLocation" x="2734" y="134"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Jgh-f0-7FR">

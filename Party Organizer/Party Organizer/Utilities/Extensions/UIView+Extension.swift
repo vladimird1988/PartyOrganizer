@@ -89,4 +89,6 @@ extension UIView {
         }
     }
     
+    static let defaultTintColor = UIView().tintColor
+    
 }

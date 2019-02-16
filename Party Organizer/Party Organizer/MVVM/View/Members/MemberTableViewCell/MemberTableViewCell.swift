@@ -28,7 +28,7 @@ class MemberTableViewCell: UITableViewCell {
                 selectionStyle = .none
                 cellRightIcon.image = UIImage(named: "checkMarkIcon")
                 cellRightIcon.isHidden = !isMemberSelected
-                cellRightIcon.tintColor = UIButton().tintColor  // Get default tint color
+                cellRightIcon.tintColor = UIView.defaultTintColor
             }
         }
     }
