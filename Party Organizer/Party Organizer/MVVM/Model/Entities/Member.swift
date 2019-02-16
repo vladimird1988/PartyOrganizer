@@ -8,11 +8,12 @@
 
 import Foundation
 import AERecord
+import SwiftyJSON
 
-final class Member: NSObject, Codable {
+final class Member: NSObject {
 
     private enum Key: String {
-        case memberId
+        case id
         case username
         case cell
         case email
@@ -29,9 +30,33 @@ final class Member: NSObject, Codable {
     var gender: String
     var aboutMe: String
     
+    var parties = [Party]()
+    
+    init(dbMember: DBMember) {
+        id = dbMember.id
+        aboutMe = dbMember.aboutMe ?? ""
+        cell = dbMember.cell ?? ""
+        email = dbMember.email ?? ""
+        gender = dbMember.gender ?? ""
+        photo = dbMember.photo ?? ""
+        username = dbMember.username ?? ""
+        parties = (dbMember.parties?.allObjects as? [DBParty] ?? []).map { Party(dbParty: $0) }
+    }
+    
+    init(data: [String: Any]) {
+        let json = JSON(data)
+        id = json[Key.id.rawValue].int64Value
+        aboutMe = json[Key.aboutMe.rawValue].stringValue
+        cell = json[Key.cell.rawValue].stringValue
+        email = json[Key.email.rawValue].stringValue
+        gender = json[Key.gender.rawValue].stringValue
+        username = json[Key.username.rawValue].stringValue
+        photo = json[Key.photo.rawValue].stringValue
+    }
+    
     func save() {
-        let dbMember = DBMember.first(with: [Key.memberId.rawValue: id]) ?? DBMember.create()
-        dbMember.memberId = id
+        let dbMember = DBMember.first(with: [Key.id.rawValue: id]) ?? DBMember.create()
+        dbMember.id = id
         dbMember.aboutMe = aboutMe
         dbMember.cell = cell
         dbMember.email = email
@@ -41,15 +66,6 @@ final class Member: NSObject, Codable {
         CoreDataManager.shared.saveContext()
     }
     
-    init(dbMember: DBMember) {
-        id = dbMember.memberId
-        aboutMe = dbMember.aboutMe ?? ""
-        cell = dbMember.cell ?? ""
-        email = dbMember.email ?? ""
-        gender = dbMember.gender ?? ""
-        photo = dbMember.photo ?? ""
-        username = dbMember.username ?? ""
-    }
     
     static var allMembers: [Member] {
         let allDBMembers = DBMember.all() as? [DBMember] ?? []

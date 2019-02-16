@@ -21,6 +21,7 @@ class Party: NSObject {
     var partyName: String
     var startTime: Date
     var partyDescription: String
+    var partyMembers = [Member]()
     
     init(partyName: String, startTime: Date, partyDescription: String) {
         let generatedPartyId: Int = {
@@ -50,6 +51,7 @@ class Party: NSObject {
         partyName = dbParty.partyName ?? ""
         startTime = dbParty.startTime ?? Date()
         partyDescription = dbParty.partyDescription ?? ""
+        partyMembers = (dbParty.members?.allObjects as? [DBMember] ?? []).map { Member(dbMember: $0) }
     }
     
     static var allParties: [Party] {

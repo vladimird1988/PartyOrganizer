@@ -24,24 +24,13 @@ class MembersViewModel: NSObject {
         .done { [weak self] in
             print("Members: \($0)")
             if let membersDataArray = $0["profiles"] as? [[String: Any]] {
-                let members = membersDataArray
-                    .compactMap {
-                        try? self?.getMember(from: JSONSerialization.data(withJSONObject: $0, options: .prettyPrinted))
-                    }.compactMap { return $0 }
+                let members = membersDataArray.map { Member(data: $0) }
                 members.forEach { $0.save() }
                 self?.members.accept(members)
                 print("Members parsed")
             }
         }
         .cauterize()
-    }
-    
-    func getMember(from data: Data) throws -> Member {
-        do {
-            return try JSONDecoder().decode(Member.self, from: data)
-        } catch let error {
-            throw error
-        }
     }
     
 }
