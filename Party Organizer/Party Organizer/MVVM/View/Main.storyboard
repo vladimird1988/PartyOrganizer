@@ -120,7 +120,7 @@ Create some!</string>
             </objects>
             <point key="canvasLocation" x="1114" y="-620"/>
         </scene>
-        <!--Party Table View Controller-->
+        <!--Party-->
         <scene sceneID="lCc-PH-WSi">
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="fe4-3Q-Rvq" customClass="PartyTableViewController" customModule="Party_Organizer" customModuleProvider="target" sceneMemberID="viewController">
@@ -133,6 +133,7 @@ Create some!</string>
                             <outlet property="delegate" destination="fe4-3Q-Rvq" id="IP8-oI-jOs"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Party" id="iQ5-FR-8RU"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PPN-NN-mgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -20,10 +20,4 @@ class PartyTableViewCell: UITableViewCell {
         arrowImageView.tintColor = UIColor.lightGray.withAlphaComponent(0.5)    // Note: Setting tint color in storyboard doesn't works (XCode bug)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

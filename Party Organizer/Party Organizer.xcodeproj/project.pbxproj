@@ -21,6 +21,8 @@
 		F535F9552217486800594EA9 /* PartyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F535F9532217486800594EA9 /* PartyTableViewCell.xib */; };
 		F535F95722176B5400594EA9 /* PartiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535F95622176B5400594EA9 /* PartiesViewModel.swift */; };
 		F535F95A221779CE00594EA9 /* PartyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535F959221779CE00594EA9 /* PartyTableViewController.swift */; };
+		F535F95D22177CF700594EA9 /* PartyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535F95B22177CF700594EA9 /* PartyInfoTableViewCell.swift */; };
+		F535F95E22177CF700594EA9 /* PartyInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F535F95C22177CF700594EA9 /* PartyInfoTableViewCell.xib */; };
 		F56803EE22160DC400CA3A1B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803ED22160DC400CA3A1B /* NetworkManager.swift */; };
 		F56803F122160EA400CA3A1B /* PartyOrganizerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F022160EA400CA3A1B /* PartyOrganizerError.swift */; };
 		F56803F422160F5C00CA3A1B /* MembersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F322160F5C00CA3A1B /* MembersViewModel.swift */; };
@@ -56,6 +58,8 @@
 		F535F9532217486800594EA9 /* PartyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartyTableViewCell.xib; sourceTree = "<group>"; };
 		F535F95622176B5400594EA9 /* PartiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiesViewModel.swift; sourceTree = "<group>"; };
 		F535F959221779CE00594EA9 /* PartyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTableViewController.swift; sourceTree = "<group>"; };
+		F535F95B22177CF700594EA9 /* PartyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyInfoTableViewCell.swift; sourceTree = "<group>"; };
+		F535F95C22177CF700594EA9 /* PartyInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartyInfoTableViewCell.xib; sourceTree = "<group>"; };
 		F56803ED22160DC400CA3A1B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F56803F022160EA400CA3A1B /* PartyOrganizerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyOrganizerError.swift; sourceTree = "<group>"; };
 		F56803F322160F5C00CA3A1B /* MembersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewModel.swift; sourceTree = "<group>"; };
@@ -219,8 +223,18 @@
 			isa = PBXGroup;
 			children = (
 				F535F959221779CE00594EA9 /* PartyTableViewController.swift */,
+				F535F95F22177CFB00594EA9 /* PartyInfoTableViewCell */,
 			);
 			path = Party;
+			sourceTree = "<group>";
+		};
+		F535F95F22177CFB00594EA9 /* PartyInfoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F535F95B22177CF700594EA9 /* PartyInfoTableViewCell.swift */,
+				F535F95C22177CF700594EA9 /* PartyInfoTableViewCell.xib */,
+			);
+			path = PartyInfoTableViewCell;
 			sourceTree = "<group>";
 		};
 		F56803EB22160DA400CA3A1B /* Utilities */ = {
@@ -402,6 +416,7 @@
 				F535F9552217486800594EA9 /* PartyTableViewCell.xib in Resources */,
 				F51554452216090300515928 /* Main.storyboard in Resources */,
 				F51554482216090300515928 /* Assets.xcassets in Resources */,
+				F535F95E22177CF700594EA9 /* PartyInfoTableViewCell.xib in Resources */,
 				F56E8FCE22163FAD0008ED75 /* MemberTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +492,7 @@
 				F56803F422160F5C00CA3A1B /* MembersViewModel.swift in Sources */,
 				F56803F922160F8000CA3A1B /* Party.swift in Sources */,
 				F51554462216090300515928 /* AppDelegate.swift in Sources */,
+				F535F95D22177CF700594EA9 /* PartyInfoTableViewCell.swift in Sources */,
 				F535F95722176B5400594EA9 /* PartiesViewModel.swift in Sources */,
 				F56804092216148300CA3A1B /* CoreDataManager.swift in Sources */,
 				F56E8FC322163CBC0008ED75 /* PartiesTableViewController.swift in Sources */,
