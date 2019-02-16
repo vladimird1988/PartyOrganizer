@@ -8,8 +8,15 @@
 
 import UIKit
 
-extension UITextView {
+extension UITextView: TextEditingProtocol {
     
+    func finishEditing() {
+        onFinishEditing?()
+        endEditing(true)
+    }
     
+    func cancel() {
+        endEditing(true)
+    }
     
 }
