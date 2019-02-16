@@ -20,16 +20,33 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members (2)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnz-HU-DPh">
-                        <rect key="frame" x="20" y="11.5" width="280" height="21"/>
+                        <rect key="frame" x="20" y="11.5" width="250" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rdB-Y2-pFs">
+                        <rect key="frame" x="275" y="9.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="PUc-vK-4Qy"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="imageTintColor">
+                                <color key="value" white="0.66666666669999997" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="lnz-HU-DPh" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" constant="-40" id="FAo-hc-m37"/>
+                    <constraint firstItem="rdB-Y2-pFs" firstAttribute="leading" secondItem="lnz-HU-DPh" secondAttribute="trailing" constant="5" id="HQJ-fE-ch6"/>
                     <constraint firstItem="lnz-HU-DPh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cKv-vA-OUj"/>
-                    <constraint firstItem="lnz-HU-DPh" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="jAh-kw-F9g"/>
+                    <constraint firstItem="lnz-HU-DPh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="jAh-kw-F9g"/>
+                    <constraint firstItem="rdB-Y2-pFs" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kqh-ig-cEs"/>
+                    <constraint firstItem="rdB-Y2-pFs" firstAttribute="width" secondItem="rdB-Y2-pFs" secondAttribute="height" id="p0f-nP-oij"/>
+                    <constraint firstAttribute="trailing" secondItem="rdB-Y2-pFs" secondAttribute="trailing" constant="20" id="zY1-Js-5w5"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -38,4 +55,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="arrowIcon" width="128" height="128"/>
+    </resources>
 </document>

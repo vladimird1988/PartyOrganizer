@@ -15,6 +15,7 @@ class PartyTableViewController: POTableViewController {
 
         tableView.register(type: PartyInfoTableViewCell.self)
         tableView.register(type: PartyMembersTableViewCell.self)
+        tableView.register(type: PartySingleMemberTableViewCell.self)
         tableView.register(type: PartyDescriptionTableViewCell.self)
     }
     
@@ -33,7 +34,7 @@ class PartyTableViewController: POTableViewController {
         case 0:
             return 2
         case 1:
-            return 1
+            return 3
         case 2:
             return 1
         default:
@@ -57,8 +58,14 @@ class PartyTableViewController: POTableViewController {
             }
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: PartyMembersTableViewCell.identifier, for: indexPath)
-            return cell
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: PartyMembersTableViewCell.identifier, for: indexPath)
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: PartySingleMemberTableViewCell.identifier, for: indexPath)
+                return cell
+            }
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: PartyDescriptionTableViewCell.identifier, for: indexPath)
             return cell

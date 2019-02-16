@@ -44,6 +44,8 @@
 		F56E8FCA22163E990008ED75 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E8FC922163E990008ED75 /* UIView+Extension.swift */; };
 		F56E8FCD22163FAD0008ED75 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E8FCB22163FAD0008ED75 /* MemberTableViewCell.swift */; };
 		F56E8FCE22163FAD0008ED75 /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56E8FCC22163FAD0008ED75 /* MemberTableViewCell.xib */; };
+		F5FE7B322218242800B5B12E /* PartySingleMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B302218242800B5B12E /* PartySingleMemberTableViewCell.swift */; };
+		F5FE7B332218242800B5B12E /* PartySingleMemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FE7B312218242800B5B12E /* PartySingleMemberTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		F56E8FC922163E990008ED75 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		F56E8FCB22163FAD0008ED75 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		F56E8FCC22163FAD0008ED75 /* MemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberTableViewCell.xib; sourceTree = "<group>"; };
+		F5FE7B302218242800B5B12E /* PartySingleMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartySingleMemberTableViewCell.swift; sourceTree = "<group>"; };
+		F5FE7B312218242800B5B12E /* PartySingleMemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartySingleMemberTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +270,7 @@
 				F535F95F22177CFB00594EA9 /* PartyInfoTableViewCell */,
 				F52666D122179475007FDE7E /* PartyMembersTableViewCell */,
 				F52666D622179660007FDE7E /* PartyDescriptionTableViewCell */,
+				F5FE7B342218243C00B5B12E /* PartySingleMemberTableViewCell */,
 			);
 			path = Party;
 			sourceTree = "<group>";
@@ -405,6 +410,15 @@
 			path = Parties;
 			sourceTree = "<group>";
 		};
+		F5FE7B342218243C00B5B12E /* PartySingleMemberTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F5FE7B302218242800B5B12E /* PartySingleMemberTableViewCell.swift */,
+				F5FE7B312218242800B5B12E /* PartySingleMemberTableViewCell.xib */,
+			);
+			path = PartySingleMemberTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -466,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F52666D022179472007FDE7E /* PartyMembersTableViewCell.xib in Resources */,
+				F5FE7B332218242800B5B12E /* PartySingleMemberTableViewCell.xib in Resources */,
 				F51554442216090300515928 /* LaunchScreen.storyboard in Resources */,
 				F535F9552217486800594EA9 /* PartyTableViewCell.xib in Resources */,
 				F52666D52217960B007FDE7E /* PartyDescriptionTableViewCell.xib in Resources */,
@@ -563,6 +578,7 @@
 				F535F96622178E6D00594EA9 /* UIViewController+Extension.swift in Sources */,
 				F535F95A221779CE00594EA9 /* PartyTableViewController.swift in Sources */,
 				F535F95022173AE900594EA9 /* AddMemberToPartyTableViewController.swift in Sources */,
+				F5FE7B322218242800B5B12E /* PartySingleMemberTableViewCell.swift in Sources */,
 				F56803FF2216111A00CA3A1B /* BackendManager.swift in Sources */,
 				F535F9482217078E00594EA9 /* UIImageView+Extension.swift in Sources */,
 				F52666CF22179472007FDE7E /* PartyMembersTableViewCell.swift in Sources */,

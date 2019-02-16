@@ -10,14 +10,12 @@ import UIKit
 
 class MemberTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        arrowImageView.tintColor = UIColor.lightGray.withAlphaComponent(0.5)    // Note: Setting tint color in storyboard doesn't works (XCode bug)
     }
     
 }
