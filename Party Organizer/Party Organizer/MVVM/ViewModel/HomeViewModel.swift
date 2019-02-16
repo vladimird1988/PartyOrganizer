@@ -16,8 +16,6 @@ class HomeViewModel: NSObject {
     
     let appData = AppData.shared
     
-    let selectedParties = BehaviorRelay<[Party]>(value: [])
-    
     func getMembers() {
         BackendManager.sharedInstance.getMembers()
             .done { [weak self] in
@@ -36,18 +34,8 @@ class HomeViewModel: NSObject {
         return appData.dataEventObserver
     }
     
-    func select(party: Party) {
-        selectedParties.accept(selectedParties.value + [party])
-    }
-    
-    func deselect(party: Party) {
-        selectedParties.accept(selectedParties.value.filter { $0.partyId != party.partyId })
-    }
-    
     func partyViewModel(at position: Int) -> PartyViewModel {
-        let partyViewModel = PartyViewModel(party: appData.parties.value[position])
-        partyViewModel.homeViewModel = self
-        return partyViewModel
+        return PartyViewModel(party: appData.parties.value[position])
     }
     
     func deleteParty(at position: Int) {

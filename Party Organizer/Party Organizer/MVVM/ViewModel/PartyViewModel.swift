@@ -12,7 +12,7 @@ import RxCocoa
 
 class PartyViewModel: NSObject {
 
-    var homeViewModel: HomeViewModel?
+    var memberViewModel: MemberViewModel?
     
     var party: Party
     
@@ -61,9 +61,9 @@ class PartyViewModel: NSObject {
         return observable.do(onNext: { [weak self] in
             guard let party = self?.party else { return }
             if $0.selected {
-                self?.homeViewModel?.select(party: party)
+                self?.memberViewModel?.select(party: party)
             } else {
-                self?.homeViewModel?.deselect(party: party)
+                self?.memberViewModel?.deselect(party: party)
             }
         })
     }

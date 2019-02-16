@@ -40,7 +40,7 @@ class ProfileViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddMemberToPartySegue" {
             if let page = segue.destination as? AddMemberToPartyTableViewController {
-                
+                page.memberViewModel = profileViewModel
             }
         }
     }

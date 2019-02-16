@@ -13,11 +13,12 @@ class AddMemberToPartyTableViewController: POTableViewController {
 
     let bag = DisposeBag()
     
-    var partiesViewModel = HomeViewModel.shared
+    var memberViewModel: MemberViewModel? 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = memberViewModel?.fullName
         tableView.register(type: AddMemberToPartyTableViewCell.self)
     }
 
@@ -28,13 +29,13 @@ class AddMemberToPartyTableViewController: POTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return partiesViewModel.appData.parties.value.count
+        return memberViewModel?.allParties.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AddMemberToPartyTableViewCell.identifier, for: indexPath)
         if let addMemberToPartyTableViewCell = cell as? AddMemberToPartyTableViewCell {
-            addMemberToPartyTableViewCell.partyViewModel = partiesViewModel.partyViewModel(at: indexPath.row)
+            addMemberToPartyTableViewCell.partyViewModel = memberViewModel?.partyViewModel(at: indexPath.row)
             addMemberToPartyTableViewCell.partyViewModel?
             .selectionObserver
             .subscribe(onNext: {
