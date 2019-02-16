@@ -11,7 +11,7 @@ import RxSwift
 
 class MembersTableViewController: POTableViewController {
 
-    let membersViewModel = MembersViewModel()
+    let membersViewModel = HomeViewModel.shared
     
     let bag = DisposeBag()
     

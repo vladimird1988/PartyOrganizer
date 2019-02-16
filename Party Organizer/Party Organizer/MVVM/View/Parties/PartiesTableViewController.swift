@@ -13,7 +13,7 @@ class PartiesTableViewController: POTableViewController {
     @IBOutlet weak var backgroundTopOffset: NSLayoutConstraint!
     @IBOutlet var backgroundView: UIView!
     
-    let partiesViewModel = PartiesViewModel()
+    let partiesViewModel = HomeViewModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
