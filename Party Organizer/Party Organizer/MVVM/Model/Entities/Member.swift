@@ -40,7 +40,6 @@ final class Member: NSObject {
         gender = dbMember.gender ?? ""
         photo = dbMember.photo ?? ""
         username = dbMember.username ?? ""
-        parties = (dbMember.parties?.allObjects as? [DBParty] ?? []).map { Party(dbParty: $0) }
     }
     
     init(data: [String: Any]) {

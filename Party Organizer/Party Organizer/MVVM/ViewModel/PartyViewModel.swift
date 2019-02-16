@@ -10,6 +10,6 @@ import UIKit
 
 class PartyViewModel: NSObject {
 
-    let members = HomeViewModel.shared.members.value
+    let members = HomeViewModel.shared.appData.members.value
     
 }

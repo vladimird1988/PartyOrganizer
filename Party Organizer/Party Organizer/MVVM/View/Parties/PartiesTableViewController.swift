@@ -28,7 +28,7 @@ class PartiesTableViewController: POTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfParties = partiesViewModel.parties.value.count
+        let numberOfParties = partiesViewModel.appData.parties.value.count
         if numberOfParties > 0 {
             tableView.backgroundView = nil
         } else {

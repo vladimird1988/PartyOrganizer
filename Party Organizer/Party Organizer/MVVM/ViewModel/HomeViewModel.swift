@@ -13,21 +13,7 @@ class HomeViewModel: NSObject {
 
     static let shared = HomeViewModel()
     
-    let parties = BehaviorRelay<[Party]>(value: [])
-    let members = BehaviorRelay<[Member]>(value: [])
-    
-    override init() {
-        super.init()
-        
-        members.accept({
-            let allDBMembers = DBMember.all() as? [DBMember] ?? []
-            return allDBMembers.map { Member(dbMember: $0) }
-        }())
-        parties.accept({
-            let allDBParties = DBParty.all() as? [DBParty] ?? []
-            return allDBParties.map { Party(dbParty: $0) }
-        }())
-    }
+    let appData = AppData()
     
     func getMembers() {
         BackendManager.sharedInstance.getMembers()
@@ -36,7 +22,7 @@ class HomeViewModel: NSObject {
                 if let membersDataArray = $0["profiles"] as? [[String: Any]] {
                     let members = membersDataArray.map { Member(data: $0) }
                     members.forEach { $0.save() }
-                    self?.members.accept(members)
+                    self?.appData.members.accept(members)
                     print("Members parsed")
                 }
             }

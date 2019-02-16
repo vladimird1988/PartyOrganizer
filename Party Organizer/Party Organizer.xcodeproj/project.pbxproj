@@ -46,6 +46,7 @@
 		F5FE7B332218242800B5B12E /* PartySingleMemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FE7B312218242800B5B12E /* PartySingleMemberTableViewCell.xib */; };
 		F5FE7B3622182EE000B5B12E /* PartyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B3522182EE000B5B12E /* PartyViewModel.swift */; };
 		F5FE7B382218399600B5B12E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B372218399600B5B12E /* HomeViewModel.swift */; };
+		F5FE7B3A2218611F00B5B12E /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B392218611F00B5B12E /* AppData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		F5FE7B312218242800B5B12E /* PartySingleMemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartySingleMemberTableViewCell.xib; sourceTree = "<group>"; };
 		F5FE7B3522182EE000B5B12E /* PartyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewModel.swift; sourceTree = "<group>"; };
 		F5FE7B372218399600B5B12E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F5FE7B392218611F00B5B12E /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +335,7 @@
 		F56803F522160F6800CA3A1B /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				F5FE7B392218611F00B5B12E /* AppData.swift */,
 				F56803F622160F7800CA3A1B /* Member.swift */,
 				F56803F822160F8000CA3A1B /* Party.swift */,
 			);
@@ -592,6 +595,7 @@
 				F56803FB221610B800CA3A1B /* Server.swift in Sources */,
 				F56803F122160EA400CA3A1B /* CustomTypes.swift in Sources */,
 				F56E8FC822163E810008ED75 /* UITableView+Extension.swift in Sources */,
+				F5FE7B3A2218611F00B5B12E /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

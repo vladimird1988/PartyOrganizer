@@ -20,7 +20,7 @@ class MembersTableViewController: POTableViewController {
         
         tableView.register(type: MemberTableViewCell.self)
         
-        membersViewModel.members.asObservable()
+        membersViewModel.appData.members.asObservable()
         .subscribe(onNext: { [weak self] _ in
             self?.tableView.reloadData()
         }).disposed(by: bag)
@@ -35,15 +35,15 @@ class MembersTableViewController: POTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return membersViewModel.members.value.count
+        return membersViewModel.appData.members.value.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MemberTableViewCell.identifier, for: indexPath)
         if let memberCell = cell as? MemberTableViewCell {
-            memberCell.userLabel.text = membersViewModel.members.value[indexPath.row].username
+            memberCell.userLabel.text = membersViewModel.appData.members.value[indexPath.row].username
             if let placeholder = UIImage(named: "profileIcon") {
-                memberCell.userImage.setImage(url: membersViewModel.members.value[indexPath.row].photo, placeholder: placeholder)
+                memberCell.userImage.setImage(url: membersViewModel.appData.members.value[indexPath.row].photo, placeholder: placeholder)
             }
         }
         return cell
@@ -63,7 +63,7 @@ class MembersTableViewController: POTableViewController {
                 return
             }
             if let dest = segue.destination as? ProfileViewController {
-                dest.profileViewModel = MemberViewModel(member: membersViewModel.members.value[indexPath.row])
+                dest.profileViewModel = MemberViewModel(member: membersViewModel.appData.members.value[indexPath.row])
             }
         }
     }

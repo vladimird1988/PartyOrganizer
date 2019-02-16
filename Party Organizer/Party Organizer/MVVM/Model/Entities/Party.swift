@@ -51,7 +51,6 @@ class Party: NSObject {
         partyName = dbParty.partyName ?? ""
         startTime = dbParty.startTime ?? Date()
         partyDescription = dbParty.partyDescription ?? ""
-        partyMembers = (dbParty.members?.allObjects as? [DBMember] ?? []).map { Member(dbMember: $0) }
     }
     
 }
