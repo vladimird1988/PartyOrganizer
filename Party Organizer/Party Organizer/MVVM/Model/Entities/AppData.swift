@@ -11,6 +11,8 @@ import RxCocoa
 
 class AppData: NSObject {
 
+    static let shared = AppData()
+    
     let parties = BehaviorRelay<[Party]>(value: [])
     let members = BehaviorRelay<[Member]>(value: [])
     

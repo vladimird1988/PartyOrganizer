@@ -49,6 +49,9 @@ class PartyViewModel: NSObject {
         party.partyDescription.accept(viewPartyDescription.value)
         party.partyName.accept(viewPartyName.value)
         party.startTime.accept(viewPartyTime.value)
+        if !AppData.shared.parties.value.contains(party) {
+            AppData.shared.parties.accept(AppData.shared.parties.value + [party])
+        }
         party.save()
     }
     

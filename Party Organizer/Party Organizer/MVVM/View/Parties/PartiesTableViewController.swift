@@ -22,6 +22,9 @@ class PartiesTableViewController: POTableViewController {
         super.viewDidLoad()
         
         tableView.register(type: PartyTableViewCell.self)
+        partiesViewModel.partiesObserver.subscribe(onNext: { [weak self] _ in
+            self?.tableView.reloadData()
+        }).disposed(by: bag)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

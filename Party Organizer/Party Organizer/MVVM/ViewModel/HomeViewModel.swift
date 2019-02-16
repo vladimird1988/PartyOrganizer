@@ -8,12 +8,13 @@
 
 import Foundation
 import RxCocoa
+import RxSwift
 
 class HomeViewModel: NSObject {
 
     static let shared = HomeViewModel()
     
-    let appData = AppData()
+    let appData = AppData.shared
     
     func getMembers() {
         BackendManager.sharedInstance.getMembers()
@@ -27,6 +28,10 @@ class HomeViewModel: NSObject {
                 }
             }
             .cauterize()
+    }
+    
+    var partiesObserver: Observable<[Party]> {
+        return appData.parties.asObservable()
     }
     
     func partyViewModel(at position: Int) -> PartyViewModel {
