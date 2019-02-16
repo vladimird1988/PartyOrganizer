@@ -56,7 +56,9 @@ class PartiesTableViewController: POTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PartyTableViewCell.identifier, for: indexPath)
         if let partyCell = cell as? PartyTableViewCell {
-            
+            partyCell.partyNameLabel.text = partiesViewModel.appData.parties.value[indexPath.row].partyName
+            partyCell.partyTimeLabel.text = partiesViewModel.appData.parties.value[indexPath.row].startTime?.asString()
+            partyCell.partyDescriptionLabel.text = partiesViewModel.appData.parties.value[indexPath.row].partyDescription
         }
         return cell
     }
@@ -66,7 +68,7 @@ class PartiesTableViewController: POTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 125.0
+        return UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

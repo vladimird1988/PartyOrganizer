@@ -11,7 +11,11 @@
 import UIKit
 
 class PartyTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var partyNameLabel: UILabel!
+    
+    @IBOutlet weak var partyTimeLabel: UILabel!
+    @IBOutlet weak var partyDescriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
