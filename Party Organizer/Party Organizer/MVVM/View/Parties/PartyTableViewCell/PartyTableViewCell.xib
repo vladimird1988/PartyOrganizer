@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyv-B5-3rb">
-                        <rect key="frame" x="40" y="0.0" width="279" height="123"/>
+                        <rect key="frame" x="40" y="0.0" width="279" height="128"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="999" verticalHuggingPriority="999" horizontalCompressionResistancePriority="999" verticalCompressionResistancePriority="999" text="New years" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4dn-gk-DHY">
                                 <rect key="frame" x="0.0" y="10" width="249" height="20.5"/>
@@ -61,7 +61,7 @@
                             <constraint firstItem="37I-yq-gTe" firstAttribute="width" secondItem="4dn-gk-DHY" secondAttribute="width" id="IyN-nl-10f"/>
                             <constraint firstItem="zD2-OM-15G" firstAttribute="top" secondItem="4dn-gk-DHY" secondAttribute="top" id="KeH-3X-aze"/>
                             <constraint firstItem="37I-yq-gTe" firstAttribute="leading" secondItem="4dn-gk-DHY" secondAttribute="leading" id="L7G-Fn-9iO"/>
-                            <constraint firstAttribute="bottom" secondItem="frO-QQ-n3Q" secondAttribute="bottom" constant="5" id="YUM-1D-p95"/>
+                            <constraint firstAttribute="bottom" secondItem="frO-QQ-n3Q" secondAttribute="bottom" constant="10" id="YUM-1D-p95"/>
                             <constraint firstItem="zD2-OM-15G" firstAttribute="leading" secondItem="4dn-gk-DHY" secondAttribute="trailing" constant="5" id="fQS-G6-9le"/>
                             <constraint firstItem="37I-yq-gTe" firstAttribute="top" secondItem="4dn-gk-DHY" secondAttribute="bottom" constant="3" id="ihW-a5-Rdr"/>
                             <constraint firstAttribute="trailing" secondItem="zD2-OM-15G" secondAttribute="trailing" id="j2k-VJ-Yls"/>
@@ -71,7 +71,7 @@
                         </constraints>
                     </view>
                     <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3f-YK-tbC" userLabel="BottomBorderView">
-                        <rect key="frame" x="0.0" y="122.5" width="359" height="0.5"/>
+                        <rect key="frame" x="0.0" y="127.5" width="359" height="0.5"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="0.5" id="y1Y-bc-9Ue"/>

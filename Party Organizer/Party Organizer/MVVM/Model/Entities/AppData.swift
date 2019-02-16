@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import AERecord
 
 class AppData: NSObject {
 
@@ -35,6 +36,13 @@ class AppData: NSObject {
     
     static let shared = AppData()
     
+    private var allDBParties: [DBParty] {
+        return (DBParty.all() as? [DBParty] ?? [])
+    }
+    private var allDBMembers: [DBMember] {
+        return DBMember.all() as? [DBMember] ?? []
+    }
+    
     let parties = BehaviorRelay<[Party]>(value: [])
     let members = BehaviorRelay<[Member]>(value: [])
     
@@ -42,11 +50,9 @@ class AppData: NSObject {
         
         super.init()
         members.accept({
-            let allDBMembers = DBMember.all() as? [DBMember] ?? []
             return allDBMembers.map { Member(dbMember: $0) }
             }())
         parties.accept({
-            let allDBParties = DBParty.all() as? [DBParty] ?? []
             return allDBParties.map { dbParty in
                 let party = Party(dbParty: dbParty)
                 let partyMembers: [DBMember] = (dbParty.members?.allObjects as? [DBMember] ?? [])
@@ -67,7 +73,7 @@ class AppData: NSObject {
             parties.accept(parties.value + [party])
             onAddParty()
         }
-        
+        save()
     }
     
     func deleteParty(at position: Int) {
@@ -75,6 +81,16 @@ class AppData: NSObject {
             let party = parties.value[position]
             parties.accept(parties.value.filter { $0.partyId != party.partyId })
             onDeleteParty(position)
+        }
+        save()
+    }
+    
+    func save() {
+        allDBParties.forEach {
+            $0.delete()
+        }
+        parties.value.forEach {
+            $0.save()
         }
     }
     

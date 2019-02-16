@@ -50,7 +50,6 @@ class PartyViewModel: NSObject {
         party.partyName.accept(viewPartyName.value)
         party.startTime.accept(viewPartyTime.value)
         AppData.shared.add(party: party)
-        party.save()
     }
     
 }
