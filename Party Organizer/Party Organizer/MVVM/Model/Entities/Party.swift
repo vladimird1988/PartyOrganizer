@@ -48,9 +48,6 @@ class Party: NSObject {
         dbParty.partyName = partyName.value
         dbParty.startTime = startTime.value
         dbParty.partyDescription = partyDescription.value
-        partyMembers.forEach {
-            dbParty.addToMembers($0.save())
-        }
         CoreDataManager.shared.saveContext()
         return dbParty
     }

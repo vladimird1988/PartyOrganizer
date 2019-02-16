@@ -9,7 +9,9 @@
 import UIKit
 
 class PartySingleMemberTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var userNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

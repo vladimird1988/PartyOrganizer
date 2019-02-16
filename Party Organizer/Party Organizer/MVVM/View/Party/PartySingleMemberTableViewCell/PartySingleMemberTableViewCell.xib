@@ -34,6 +34,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="userNameLabel" destination="Ze7-gb-gyX" id="TDc-FR-U18"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

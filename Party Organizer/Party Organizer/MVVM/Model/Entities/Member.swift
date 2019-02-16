@@ -30,7 +30,13 @@ final class Member: NSObject {
     var gender: String
     var aboutMe: String
     
-    var parties = [Party]()
+    var parties = [Party]() {
+        didSet {
+            parties.forEach {
+                $0.partyMembers.append(self)
+            }
+        }
+    }
     
     init(dbMember: DBMember) {
         id = dbMember.id
@@ -62,6 +68,14 @@ final class Member: NSObject {
         dbMember.gender = gender
         dbMember.photo = photo
         dbMember.username = username
+        dbMember.parties?.forEach {
+            if let dbParty = $0 as? DBParty {
+                dbMember.removeFromParties(dbParty)
+            }
+        }
+        parties.forEach {
+            dbMember.addToParties($0.save())
+        }
         CoreDataManager.shared.saveContext()
         return dbMember
     }

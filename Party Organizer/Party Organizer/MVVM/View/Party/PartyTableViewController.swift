@@ -100,6 +100,9 @@ class PartyTableViewController: POTableViewController {
                 return cell
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: PartySingleMemberTableViewCell.identifier, for: indexPath)
+                if let partySingleMemberTableViewCell = cell as? PartySingleMemberTableViewCell {
+                    partySingleMemberTableViewCell.userNameLabel.text = partyViewModel?.party.partyMembers[indexPath.row - 1].username
+                }
                 return cell
             }
         case 2:

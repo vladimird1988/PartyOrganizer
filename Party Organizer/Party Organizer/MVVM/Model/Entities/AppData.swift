@@ -51,7 +51,7 @@ class AppData: NSObject {
         super.init()
         members.accept({
             return allDBMembers.map { Member(dbMember: $0) }
-            }())
+        }())
         parties.accept({
             return allDBParties.map { dbParty in
                 let party = Party(dbParty: dbParty)
@@ -65,7 +65,8 @@ class AppData: NSObject {
                 }
                 return party
             }
-            }())
+        }())
+        
     }
     
     func add(party: Party) {
