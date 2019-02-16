@@ -15,15 +15,19 @@ class AppData: NSObject {
     enum DataEvent {
         case noEvents
         case addNewParty
-        case deleteParty(Party)
+        case deleteParty(Int)
     }
     
     private var onAddParty: voidMethod = { }
+    private var onDeleteParty: (Int) -> Void = { _ in }
     
     lazy var dataEventObserver: Observable<DataEvent> = {
         return Observable<DataEvent>.create { [weak self] observer in
             self?.onAddParty = {
                 observer.onNext(.addNewParty)
+            }
+            self?.onDeleteParty = {
+                observer.onNext(.deleteParty($0))
             }
             return Disposables.create()
         }
@@ -60,14 +64,18 @@ class AppData: NSObject {
     
     func add(party: Party) {
         if !parties.value.contains(party) {
-            parties.accept(AppData.shared.parties.value + [party])
+            parties.accept(parties.value + [party])
             onAddParty()
         }
         
     }
     
-    func delete(party: Party) {
-        
+    func deleteParty(at position: Int) {
+        if parties.value.count > position {
+            let party = parties.value[position]
+            parties.accept(parties.value.filter { $0.partyId != party.partyId })
+            onDeleteParty(position)
+        }
     }
     
 }

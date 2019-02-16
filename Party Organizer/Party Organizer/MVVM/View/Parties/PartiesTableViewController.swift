@@ -28,6 +28,10 @@ class PartiesTableViewController: POTableViewController {
                 self?.tableView.beginUpdates()
                 self?.tableView.insertRows(at: [IndexPath(row: (self?.partiesViewModel.appData.parties.value.count ?? 1) - 1, section: 0)], with: .automatic)
                 self?.tableView.endUpdates()
+            case .deleteParty(let position):
+                self?.tableView.beginUpdates()
+                self?.tableView.deleteRows(at: [IndexPath(row: position, section: 0)], with: .automatic)
+                self?.tableView.endUpdates()
             default:
                 break
             }
@@ -99,11 +103,7 @@ class PartiesTableViewController: POTableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Deleting new item in the table
-            tableView.beginUpdates()
-            //yourDataArray.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.endUpdates()
+            partiesViewModel.deleteParty(at: indexPath.row)
         }
     }
     

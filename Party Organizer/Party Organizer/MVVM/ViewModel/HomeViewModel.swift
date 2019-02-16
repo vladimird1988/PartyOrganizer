@@ -38,4 +38,8 @@ class HomeViewModel: NSObject {
         return PartyViewModel(party: appData.parties.value[position])
     }
     
+    func deleteParty(at position: Int) {
+        appData.deleteParty(at: position)
+    }
+    
 }
