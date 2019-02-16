@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddMemberToPartyTableViewController: UITableViewController {
+class AddMemberToPartyTableViewController: POTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

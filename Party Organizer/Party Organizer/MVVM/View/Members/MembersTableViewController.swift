@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class MembersTableViewController: UITableViewController {
+class MembersTableViewController: POTableViewController {
 
     let membersViewModel = MembersViewModel()
     

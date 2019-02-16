@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PartyTableViewController: UITableViewController {
+class PartyTableViewController: POTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

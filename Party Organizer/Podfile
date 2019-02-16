@@ -12,4 +12,5 @@ target 'Party Organizer' do
   pod 'AERecord'
   pod 'PromiseKit'
   pod 'Kingfisher'
+  pod 'Device'
 end

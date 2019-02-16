@@ -1,6 +1,7 @@
 PODS:
   - AERecord (4.1.2)
   - Alamofire (4.8.1)
+  - Device (3.1.2)
   - Kingfisher (5.1.1)
   - PromiseKit (6.8.3):
     - PromiseKit/CorePromise (= 6.8.3)
@@ -20,6 +21,7 @@ PODS:
 DEPENDENCIES:
   - AERecord
   - Alamofire
+  - Device
   - Kingfisher
   - PromiseKit
   - RxCocoa
@@ -29,6 +31,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AERecord
     - Alamofire
+    - Device
     - Kingfisher
     - PromiseKit
     - RxAtomic
@@ -38,12 +41,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AERecord: ee8e773baa650731f06e89546a8f97e28fe00c32
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Device: 62242076214c30fb5760174b3601cefafa70a481
   Kingfisher: 2558186963e5be42d98c5b110ccb3130148b77e4
   PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
   RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
   RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
   RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
 
-PODFILE CHECKSUM: 4fe071d3af63a0632ca1104fe48926c05bd20d09
+PODFILE CHECKSUM: 88c70ad0714191a4f6e7fe9039f19c999b28c2fe
 
 COCOAPODS: 1.6.0.beta.1

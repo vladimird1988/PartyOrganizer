@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PartiesTableViewController: UITableViewController {
+class PartiesTableViewController: POTableViewController {
     
     @IBOutlet weak var backgroundTopOffset: NSLayoutConstraint!
     @IBOutlet var backgroundView: UIView!
@@ -33,7 +33,7 @@ class PartiesTableViewController: UITableViewController {
             tableView.backgroundView = nil
         } else {
             tableView.backgroundView = backgroundView
-            backgroundTopOffset.constant = (navigationController?.navigationBar.frame ?? .zero).height + UIApplication.shared.statusBarFrame.height
+            backgroundTopOffset.constant = navigationBarHeight + statusBarHeight
             backgroundView.layoutIfNeeded()
         }
         return numberOfParties

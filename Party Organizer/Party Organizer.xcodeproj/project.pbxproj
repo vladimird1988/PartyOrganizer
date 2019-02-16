@@ -23,6 +23,8 @@
 		F535F95A221779CE00594EA9 /* PartyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535F959221779CE00594EA9 /* PartyTableViewController.swift */; };
 		F535F95D22177CF700594EA9 /* PartyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535F95B22177CF700594EA9 /* PartyInfoTableViewCell.swift */; };
 		F535F95E22177CF700594EA9 /* PartyInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F535F95C22177CF700594EA9 /* PartyInfoTableViewCell.xib */; };
+		F535F96222178D6500594EA9 /* POTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535F96122178D6500594EA9 /* POTableViewController.swift */; };
+		F535F96622178E6D00594EA9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535F96522178E6D00594EA9 /* UIViewController+Extension.swift */; };
 		F56803EE22160DC400CA3A1B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803ED22160DC400CA3A1B /* NetworkManager.swift */; };
 		F56803F122160EA400CA3A1B /* PartyOrganizerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F022160EA400CA3A1B /* PartyOrganizerError.swift */; };
 		F56803F422160F5C00CA3A1B /* MembersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F322160F5C00CA3A1B /* MembersViewModel.swift */; };
@@ -60,6 +62,8 @@
 		F535F959221779CE00594EA9 /* PartyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTableViewController.swift; sourceTree = "<group>"; };
 		F535F95B22177CF700594EA9 /* PartyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyInfoTableViewCell.swift; sourceTree = "<group>"; };
 		F535F95C22177CF700594EA9 /* PartyInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartyInfoTableViewCell.xib; sourceTree = "<group>"; };
+		F535F96122178D6500594EA9 /* POTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POTableViewController.swift; sourceTree = "<group>"; };
+		F535F96522178E6D00594EA9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		F56803ED22160DC400CA3A1B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F56803F022160EA400CA3A1B /* PartyOrganizerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyOrganizerError.swift; sourceTree = "<group>"; };
 		F56803F322160F5C00CA3A1B /* MembersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewModel.swift; sourceTree = "<group>"; };
@@ -237,9 +241,18 @@
 			path = PartyInfoTableViewCell;
 			sourceTree = "<group>";
 		};
+		F535F96022178D4800594EA9 /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				F535F96122178D6500594EA9 /* POTableViewController.swift */,
+			);
+			path = CustomClasses;
+			sourceTree = "<group>";
+		};
 		F56803EB22160DA400CA3A1B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F535F96022178D4800594EA9 /* CustomClasses */,
 				F56E8FC622163E700008ED75 /* Extensions */,
 				F56804072216147300CA3A1B /* Managers */,
 				F56803EF22160E9300CA3A1B /* CustomTypes */,
@@ -321,6 +334,7 @@
 				F56E8FC722163E810008ED75 /* UITableView+Extension.swift */,
 				F56E8FC922163E990008ED75 /* UIView+Extension.swift */,
 				F535F9472217078E00594EA9 /* UIImageView+Extension.swift */,
+				F535F96522178E6D00594EA9 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -435,6 +449,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Party Organizer/Pods-Party Organizer-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AERecord/AERecord.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Device/Device.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
@@ -447,6 +462,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AERecord.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
@@ -500,6 +516,7 @@
 				F535F94E221710FB00594EA9 /* MemberViewModel.swift in Sources */,
 				F51554432216090300515928 /* Party_Organizer.xcdatamodeld in Sources */,
 				F56E8FCA22163E990008ED75 /* UIView+Extension.swift in Sources */,
+				F535F96622178E6D00594EA9 /* UIViewController+Extension.swift in Sources */,
 				F535F95A221779CE00594EA9 /* PartyTableViewController.swift in Sources */,
 				F535F95022173AE900594EA9 /* AddMemberToPartyTableViewController.swift in Sources */,
 				F56803FF2216111A00CA3A1B /* BackendManager.swift in Sources */,
@@ -507,6 +524,7 @@
 				F535F9542217486800594EA9 /* PartyTableViewCell.swift in Sources */,
 				F56E8FCD22163FAD0008ED75 /* MemberTableViewCell.swift in Sources */,
 				F56E8FC522163D6C0008ED75 /* MembersTableViewController.swift in Sources */,
+				F535F96222178D6500594EA9 /* POTableViewController.swift in Sources */,
 				F56803FB221610B800CA3A1B /* Server.swift in Sources */,
 				F56803F122160EA400CA3A1B /* PartyOrganizerError.swift in Sources */,
 				F56E8FC822163E810008ED75 /* UITableView+Extension.swift in Sources */,
