@@ -12,7 +12,11 @@ import RxSwift
 class PartyTableViewController: POTableViewController {
 
     let bag = DisposeBag()
-    var partyViewModel: PartyViewModel?
+    var partyViewModel: PartyViewModel? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,11 +69,13 @@ class PartyTableViewController: POTableViewController {
                 case 0:
                     partyInfoCell.cellType = .name
                     if let partyName = partyViewModel?.partyName {
+                        partyInfoCell.infoTextField.text = partyName.value
                         partyInfoCell.infoTextField.rx.text.orEmpty.bind(to: partyName).disposed(by: bag)
                     }
                 case 1:
                     partyInfoCell.cellType = .startTime
                     if let partyTime = partyViewModel?.partyTime {
+                        partyInfoCell.infoTextField.text = partyTime.value?.asString()
                         partyInfoCell.dateSelectionObservable.bind(to: partyTime).disposed(by: bag)
                     }
                 default:
@@ -93,6 +99,7 @@ class PartyTableViewController: POTableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: PartyDescriptionTableViewCell.identifier, for: indexPath)
             if let partyDescriptionTableViewCell = cell as? PartyDescriptionTableViewCell {
                 if let partyDescription = partyViewModel?.partyDescription {
+                    partyDescriptionTableViewCell.descriptionTextView.text = partyDescription.value
                     partyDescriptionTableViewCell.descriptionTextView.rx.text.orEmpty.bind(to: partyDescription).disposed(by: bag)
                 }
             }

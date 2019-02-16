@@ -12,13 +12,7 @@ import RxCocoa
 
 class PartyViewModel: NSObject {
 
-    var party: Party {
-        didSet {
-            partyName.accept(party.partyName)
-            partyDescription.accept(party.partyDescription)
-            partyTime.accept(party.startTime)
-        }
-    }
+    var party: Party
     
     let partyId: Int64
     let partyName = BehaviorRelay<String>(value: "")
@@ -28,6 +22,9 @@ class PartyViewModel: NSObject {
     init(party: Party) {
         self.party = party
         self.partyId = party.partyId
+        partyName.accept(party.partyName)
+        partyDescription.accept(party.partyDescription)
+        partyTime.accept(party.startTime)
     }
     
     static var newPartyViewModel: PartyViewModel {
