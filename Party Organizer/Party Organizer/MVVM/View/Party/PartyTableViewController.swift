@@ -14,35 +14,66 @@ class PartyTableViewController: POTableViewController {
         super.viewDidLoad()
 
         tableView.register(type: PartyInfoTableViewCell.self)
+        tableView.register(type: PartyMembersTableViewCell.self)
+        tableView.register(type: PartyDescriptionTableViewCell.self)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        switch section {
+        case 0:
+            return 2
+        case 1:
+            return 1
+        case 2:
+            return 1
+        default:
+            return 0
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PartyInfoTableViewCell.identifier, for: indexPath)
-        if let partyInfoCell = cell as? PartyInfoTableViewCell {
-            switch indexPath.row {
-            case 0:
-                partyInfoCell.cellType = .name
-            case 1:
-                partyInfoCell.cellType = .startTime
-            default:
-                break
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: PartyInfoTableViewCell.identifier, for: indexPath)
+            if let partyInfoCell = cell as? PartyInfoTableViewCell {
+                switch indexPath.row {
+                case 0:
+                    partyInfoCell.cellType = .name
+                case 1:
+                    partyInfoCell.cellType = .startTime
+                default:
+                    break
+                }
             }
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: PartyMembersTableViewCell.identifier, for: indexPath)
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: PartyDescriptionTableViewCell.identifier, for: indexPath)
+            return cell
+        default:
+            return UITableViewCell()
         }
-        return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50.0
+        switch indexPath.section {
+        case 0:
+            return 50.0
+        case 1:
+            return 50.0
+        case 2:
+            return 200.0
+        default:
+            return 0.0
+        }
     }
  
 

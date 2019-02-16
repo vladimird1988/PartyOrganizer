@@ -31,12 +31,33 @@ class PartyInfoTableViewCell: UITableViewCell {
                 return "Party date and time"
             }
         }
+        
+        var inputView: UIView? {
+            switch self {
+            case .name:
+                return nil
+            case .startTime:
+                return UIDatePicker()
+            }
+        }
+        
+        var toolbarTitle: String {
+            switch self {
+            case .name:
+                return "Party name"
+            case .startTime:
+                return "Party date and time"            }
+        }
     }
     
     var cellType: CellType = .name {
         didSet {
             infoLabel.text = cellType.title
             infoTextField.placeholder = cellType.placeholder
+            infoTextField.inputView = cellType.inputView
+            infoTextField.addEndEditingToolbar(title: cellType.toolbarTitle, onFinishEditing: {
+                
+            })
         }
     }
     

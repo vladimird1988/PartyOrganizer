@@ -27,3 +27,5 @@ enum PartyOrganizerError: Error, LocalizedError {
         }
     }
 }
+
+typealias voidMethod = () -> Void

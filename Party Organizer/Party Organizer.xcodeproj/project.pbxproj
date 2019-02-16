@@ -13,6 +13,12 @@
 		F51554452216090300515928 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F515543C2216090300515928 /* Main.storyboard */; };
 		F51554462216090300515928 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F515543E2216090300515928 /* AppDelegate.swift */; };
 		F51554482216090300515928 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F51554422216090300515928 /* Assets.xcassets */; };
+		F52666CF22179472007FDE7E /* PartyMembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52666CD22179472007FDE7E /* PartyMembersTableViewCell.swift */; };
+		F52666D022179472007FDE7E /* PartyMembersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F52666CE22179472007FDE7E /* PartyMembersTableViewCell.xib */; };
+		F52666D42217960B007FDE7E /* PartyDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52666D22217960B007FDE7E /* PartyDescriptionTableViewCell.swift */; };
+		F52666D52217960B007FDE7E /* PartyDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F52666D32217960B007FDE7E /* PartyDescriptionTableViewCell.xib */; };
+		F52666D8221798B4007FDE7E /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52666D7221798B4007FDE7E /* UITextField+Extension.swift */; };
+		F52666DA22179AF0007FDE7E /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52666D922179AF0007FDE7E /* UITextView+Extension.swift */; };
 		F535F9482217078E00594EA9 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535F9472217078E00594EA9 /* UIImageView+Extension.swift */; };
 		F535F94C22170DF300594EA9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535F94B22170DF300594EA9 /* ProfileViewController.swift */; };
 		F535F94E221710FB00594EA9 /* MemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535F94D221710FB00594EA9 /* MemberViewModel.swift */; };
@@ -52,6 +58,12 @@
 		F515543E2216090300515928 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F51554402216090300515928 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F51554422216090300515928 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F52666CD22179472007FDE7E /* PartyMembersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyMembersTableViewCell.swift; sourceTree = "<group>"; };
+		F52666CE22179472007FDE7E /* PartyMembersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartyMembersTableViewCell.xib; sourceTree = "<group>"; };
+		F52666D22217960B007FDE7E /* PartyDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		F52666D32217960B007FDE7E /* PartyDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartyDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		F52666D7221798B4007FDE7E /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		F52666D922179AF0007FDE7E /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		F535F9472217078E00594EA9 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		F535F94B22170DF300594EA9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F535F94D221710FB00594EA9 /* MemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewModel.swift; sourceTree = "<group>"; };
@@ -205,6 +217,24 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F52666D122179475007FDE7E /* PartyMembersTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F52666CD22179472007FDE7E /* PartyMembersTableViewCell.swift */,
+				F52666CE22179472007FDE7E /* PartyMembersTableViewCell.xib */,
+			);
+			path = PartyMembersTableViewCell;
+			sourceTree = "<group>";
+		};
+		F52666D622179660007FDE7E /* PartyDescriptionTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F52666D22217960B007FDE7E /* PartyDescriptionTableViewCell.swift */,
+				F52666D32217960B007FDE7E /* PartyDescriptionTableViewCell.xib */,
+			);
+			path = PartyDescriptionTableViewCell;
+			sourceTree = "<group>";
+		};
 		F535F94A22170DB600594EA9 /* Member */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +258,8 @@
 			children = (
 				F535F959221779CE00594EA9 /* PartyTableViewController.swift */,
 				F535F95F22177CFB00594EA9 /* PartyInfoTableViewCell */,
+				F52666D122179475007FDE7E /* PartyMembersTableViewCell */,
+				F52666D622179660007FDE7E /* PartyDescriptionTableViewCell */,
 			);
 			path = Party;
 			sourceTree = "<group>";
@@ -254,8 +286,8 @@
 			children = (
 				F535F96022178D4800594EA9 /* CustomClasses */,
 				F56E8FC622163E700008ED75 /* Extensions */,
-				F56804072216147300CA3A1B /* Managers */,
 				F56803EF22160E9300CA3A1B /* CustomTypes */,
+				F56804072216147300CA3A1B /* Managers */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -335,6 +367,8 @@
 				F56E8FC922163E990008ED75 /* UIView+Extension.swift */,
 				F535F9472217078E00594EA9 /* UIImageView+Extension.swift */,
 				F535F96522178E6D00594EA9 /* UIViewController+Extension.swift */,
+				F52666D7221798B4007FDE7E /* UITextField+Extension.swift */,
+				F52666D922179AF0007FDE7E /* UITextView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -426,8 +460,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F52666D022179472007FDE7E /* PartyMembersTableViewCell.xib in Resources */,
 				F51554442216090300515928 /* LaunchScreen.storyboard in Resources */,
 				F535F9552217486800594EA9 /* PartyTableViewCell.xib in Resources */,
+				F52666D52217960B007FDE7E /* PartyDescriptionTableViewCell.xib in Resources */,
 				F51554452216090300515928 /* Main.storyboard in Resources */,
 				F51554482216090300515928 /* Assets.xcassets in Resources */,
 				F535F95E22177CF700594EA9 /* PartyInfoTableViewCell.xib in Resources */,
@@ -512,15 +548,19 @@
 				F535F95722176B5400594EA9 /* PartiesViewModel.swift in Sources */,
 				F56804092216148300CA3A1B /* CoreDataManager.swift in Sources */,
 				F56E8FC322163CBC0008ED75 /* PartiesTableViewController.swift in Sources */,
+				F52666D8221798B4007FDE7E /* UITextField+Extension.swift in Sources */,
+				F52666D42217960B007FDE7E /* PartyDescriptionTableViewCell.swift in Sources */,
 				F535F94C22170DF300594EA9 /* ProfileViewController.swift in Sources */,
 				F535F94E221710FB00594EA9 /* MemberViewModel.swift in Sources */,
 				F51554432216090300515928 /* Party_Organizer.xcdatamodeld in Sources */,
+				F52666DA22179AF0007FDE7E /* UITextView+Extension.swift in Sources */,
 				F56E8FCA22163E990008ED75 /* UIView+Extension.swift in Sources */,
 				F535F96622178E6D00594EA9 /* UIViewController+Extension.swift in Sources */,
 				F535F95A221779CE00594EA9 /* PartyTableViewController.swift in Sources */,
 				F535F95022173AE900594EA9 /* AddMemberToPartyTableViewController.swift in Sources */,
 				F56803FF2216111A00CA3A1B /* BackendManager.swift in Sources */,
 				F535F9482217078E00594EA9 /* UIImageView+Extension.swift in Sources */,
+				F52666CF22179472007FDE7E /* PartyMembersTableViewCell.swift in Sources */,
 				F535F9542217486800594EA9 /* PartyTableViewCell.swift in Sources */,
 				F56E8FCD22163FAD0008ED75 /* MemberTableViewCell.swift in Sources */,
 				F56E8FC522163D6C0008ED75 /* MembersTableViewController.swift in Sources */,
