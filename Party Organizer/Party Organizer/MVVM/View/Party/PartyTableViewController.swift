@@ -10,6 +10,8 @@ import UIKit
 
 class PartyTableViewController: POTableViewController {
 
+    var partyViewModel: PartyViewModel? = PartyViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +25,16 @@ class PartyTableViewController: POTableViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if
+            segue.identifier == "ShowProfileSegue",
+            let profilePage = segue.destination as? ProfileViewController,
+            let partyViewModel = partyViewModel,
+            let indexPath = sender as? IndexPath {
+                profilePage.profileViewModel = MemberViewModel(member: partyViewModel.members[indexPath.row - 1])
+            }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,7 +46,7 @@ class PartyTableViewController: POTableViewController {
         case 0:
             return 2
         case 1:
-            return 3
+            return 1 + (partyViewModel?.members.count ?? 0)
         case 2:
             return 1
         default:
@@ -87,5 +99,10 @@ class PartyTableViewController: POTableViewController {
         }
     }
  
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 && indexPath.row > 0 {
+            performSegue(withIdentifier: "ShowProfileSegue", sender: indexPath)
+        }
+    }
 
 }

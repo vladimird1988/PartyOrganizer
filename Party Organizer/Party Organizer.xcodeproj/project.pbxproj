@@ -46,6 +46,7 @@
 		F56E8FCE22163FAD0008ED75 /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56E8FCC22163FAD0008ED75 /* MemberTableViewCell.xib */; };
 		F5FE7B322218242800B5B12E /* PartySingleMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B302218242800B5B12E /* PartySingleMemberTableViewCell.swift */; };
 		F5FE7B332218242800B5B12E /* PartySingleMemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FE7B312218242800B5B12E /* PartySingleMemberTableViewCell.xib */; };
+		F5FE7B3622182EE000B5B12E /* PartyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B3522182EE000B5B12E /* PartyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		F56E8FCC22163FAD0008ED75 /* MemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberTableViewCell.xib; sourceTree = "<group>"; };
 		F5FE7B302218242800B5B12E /* PartySingleMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartySingleMemberTableViewCell.swift; sourceTree = "<group>"; };
 		F5FE7B312218242800B5B12E /* PartySingleMemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartySingleMemberTableViewCell.xib; sourceTree = "<group>"; };
+		F5FE7B3522182EE000B5B12E /* PartyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +328,7 @@
 				F56803F322160F5C00CA3A1B /* MembersViewModel.swift */,
 				F535F94D221710FB00594EA9 /* MemberViewModel.swift */,
 				F535F95622176B5400594EA9 /* PartiesViewModel.swift */,
+				F5FE7B3522182EE000B5B12E /* PartyViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				F56803FF2216111A00CA3A1B /* BackendManager.swift in Sources */,
 				F535F9482217078E00594EA9 /* UIImageView+Extension.swift in Sources */,
 				F52666CF22179472007FDE7E /* PartyMembersTableViewCell.swift in Sources */,
+				F5FE7B3622182EE000B5B12E /* PartyViewModel.swift in Sources */,
 				F535F9542217486800594EA9 /* PartyTableViewCell.swift in Sources */,
 				F52666E22217A373007FDE7E /* TextEditingProtocol.swift in Sources */,
 				F56E8FCD22163FAD0008ED75 /* MemberTableViewCell.swift in Sources */,
