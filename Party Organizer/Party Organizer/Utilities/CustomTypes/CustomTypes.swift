@@ -1,5 +1,5 @@
 //
-//  PartyOrganizerError.swift
+//  CustomTypes.swift
 //  Party Organizer
 //
 //  Created by Vladimir Dinic on 2/14/19.

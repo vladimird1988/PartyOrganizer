@@ -17,7 +17,11 @@ class PartyTableViewController: POTableViewController {
         tableView.register(type: PartyMembersTableViewCell.self)
         tableView.register(type: PartyDescriptionTableViewCell.self)
     }
-
+    
+    @IBAction func savePressed(_ sender: Any) {
+        
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

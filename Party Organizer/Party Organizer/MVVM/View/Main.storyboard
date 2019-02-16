@@ -133,7 +133,13 @@ Create some!</string>
                             <outlet property="delegate" destination="fe4-3Q-Rvq" id="IP8-oI-jOs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Party" id="iQ5-FR-8RU"/>
+                    <navigationItem key="navigationItem" title="Party" id="iQ5-FR-8RU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="5Oe-aM-cIf">
+                            <connections>
+                                <action selector="savePressed:" destination="fe4-3Q-Rvq" id="Bx2-et-V1o"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PPN-NN-mgS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

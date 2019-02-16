@@ -36,7 +36,7 @@ extension TextEditingPrivateProtocol {
 
 extension TextEditingProtocol {
     
-    func addEndEditingToolbar(title: String? = nil, onFinishEditing: voidMethod? = nil) {
+    func addEndEditingToolbar(title: String? = nil, withCancelButton: Bool = false, onFinishEditing: voidMethod? = nil) {
         guard let textEditingSelf = self as? TextEditingPrivateProtocol  else {
             return
         }
@@ -44,7 +44,7 @@ extension TextEditingProtocol {
         toolbar.barStyle = .default
         toolbar.tintColor = .black
         toolbar.items = [
-            UIBarButtonItem(barButtonSystemItem: .cancel, target: textEditingSelf, action: #selector(textEditingSelf.cancelEditing)),
+            (withCancelButton ? UIBarButtonItem(barButtonSystemItem: .cancel, target: textEditingSelf, action: #selector(textEditingSelf.cancelEditing)) : UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)),
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
             UIBarButtonItem(title: title, style: .plain, target: nil, action: nil),
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),

@@ -3,6 +3,7 @@ PODS:
   - Alamofire (4.8.1)
   - Device (3.1.2)
   - Kingfisher (5.1.1)
+  - KMPlaceholderTextView (1.4.0)
   - PromiseKit (6.8.3):
     - PromiseKit/CorePromise (= 6.8.3)
     - PromiseKit/Foundation (= 6.8.3)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - Alamofire
   - Device
   - Kingfisher
+  - KMPlaceholderTextView
   - PromiseKit
   - RxCocoa
   - RxSwift
@@ -33,6 +35,7 @@ SPEC REPOS:
     - Alamofire
     - Device
     - Kingfisher
+    - KMPlaceholderTextView
     - PromiseKit
     - RxAtomic
     - RxCocoa
@@ -43,11 +46,12 @@ SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   Device: 62242076214c30fb5760174b3601cefafa70a481
   Kingfisher: 2558186963e5be42d98c5b110ccb3130148b77e4
+  KMPlaceholderTextView: 2206c3df39979e9396e2d96fa9f427a8951121b0
   PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
   RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
   RxCocoa: 2f35a76bf8887872e28a1914112395b11b8e0e64
   RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
 
-PODFILE CHECKSUM: 88c70ad0714191a4f6e7fe9039f19c999b28c2fe
+PODFILE CHECKSUM: 9a600b1f75d25a81759ceea848b79887c5284299
 
 COCOAPODS: 1.6.0.beta.1

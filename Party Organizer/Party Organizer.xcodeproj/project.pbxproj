@@ -31,7 +31,7 @@
 		F535F96222178D6500594EA9 /* POTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535F96122178D6500594EA9 /* POTableViewController.swift */; };
 		F535F96622178E6D00594EA9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535F96522178E6D00594EA9 /* UIViewController+Extension.swift */; };
 		F56803EE22160DC400CA3A1B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803ED22160DC400CA3A1B /* NetworkManager.swift */; };
-		F56803F122160EA400CA3A1B /* PartyOrganizerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F022160EA400CA3A1B /* PartyOrganizerError.swift */; };
+		F56803F122160EA400CA3A1B /* CustomTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F022160EA400CA3A1B /* CustomTypes.swift */; };
 		F56803F422160F5C00CA3A1B /* MembersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F322160F5C00CA3A1B /* MembersViewModel.swift */; };
 		F56803F722160F7800CA3A1B /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F622160F7800CA3A1B /* Member.swift */; };
 		F56803F922160F8000CA3A1B /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56803F822160F8000CA3A1B /* Party.swift */; };
@@ -75,7 +75,7 @@
 		F535F96122178D6500594EA9 /* POTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POTableViewController.swift; sourceTree = "<group>"; };
 		F535F96522178E6D00594EA9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		F56803ED22160DC400CA3A1B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		F56803F022160EA400CA3A1B /* PartyOrganizerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyOrganizerError.swift; sourceTree = "<group>"; };
+		F56803F022160EA400CA3A1B /* CustomTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTypes.swift; sourceTree = "<group>"; };
 		F56803F322160F5C00CA3A1B /* MembersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewModel.swift; sourceTree = "<group>"; };
 		F56803F622160F7800CA3A1B /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		F56803F822160F8000CA3A1B /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
@@ -310,7 +310,7 @@
 		F56803EF22160E9300CA3A1B /* CustomTypes */ = {
 			isa = PBXGroup;
 			children = (
-				F56803F022160EA400CA3A1B /* PartyOrganizerError.swift */,
+				F56803F022160EA400CA3A1B /* CustomTypes.swift */,
 			);
 			path = CustomTypes;
 			sourceTree = "<group>";
@@ -491,6 +491,7 @@
 				"${BUILT_PRODUCTS_DIR}/AERecord/AERecord.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Device/Device.framework",
+				"${BUILT_PRODUCTS_DIR}/KMPlaceholderTextView/KMPlaceholderTextView.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
@@ -504,6 +505,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AERecord.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KMPlaceholderTextView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
@@ -570,7 +572,7 @@
 				F56E8FC522163D6C0008ED75 /* MembersTableViewController.swift in Sources */,
 				F535F96222178D6500594EA9 /* POTableViewController.swift in Sources */,
 				F56803FB221610B800CA3A1B /* Server.swift in Sources */,
-				F56803F122160EA400CA3A1B /* PartyOrganizerError.swift in Sources */,
+				F56803F122160EA400CA3A1B /* CustomTypes.swift in Sources */,
 				F56E8FC822163E810008ED75 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

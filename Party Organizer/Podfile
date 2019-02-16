@@ -13,4 +13,5 @@ target 'Party Organizer' do
   pod 'PromiseKit'
   pod 'Kingfisher'
   pod 'Device'
+  pod 'KMPlaceholderTextView'
 end

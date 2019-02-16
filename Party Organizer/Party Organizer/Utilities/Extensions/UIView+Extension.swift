@@ -44,9 +44,29 @@ extension UIView {
     }
     
     @IBInspectable
+    var bottomBorderColor: UIColor? {
+        get {
+            guard let bottomBorderColor = layer.sublayers?.first?.borderColor else {
+                return nil
+            }
+            let color = UIColor.init(cgColor: bottomBorderColor)
+            return color
+        }
+        set {
+            let border = CALayer()
+            border.backgroundColor = newValue?.cgColor
+            border.frame = CGRect(x: 0, y: self.frame.size.height - borderWidth, width: self.frame.size.width, height: borderWidth)
+            self.layer.addSublayer(border)
+        }
+    }
+    
+    @IBInspectable
     var borderColor: UIColor? {
         get {
-            let color = UIColor.init(cgColor: layer.borderColor!)
+            guard let borderColor = layer.borderColor else {
+                return nil
+            }
+            let color = UIColor.init(cgColor: borderColor)
             return color
         }
         set {

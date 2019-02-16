@@ -10,9 +10,12 @@ import UIKit
 
 class PartyDescriptionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        descriptionTextView.addEndEditingToolbar(title: "Party description")
     }
     
 }
