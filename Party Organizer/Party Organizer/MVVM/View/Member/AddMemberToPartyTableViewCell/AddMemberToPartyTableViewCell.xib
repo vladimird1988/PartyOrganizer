@@ -53,6 +53,7 @@
             <viewLayoutGuide key="safeArea" id="aQp-vj-5GZ"/>
             <connections>
                 <outlet property="checkMarkImageView" destination="srE-8w-a5D" id="bCo-uh-LMj"/>
+                <outlet property="partyNameLabel" destination="12q-EX-Qgc" id="xOu-1v-OgZ"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="157.42128935532236"/>
         </tableViewCell>

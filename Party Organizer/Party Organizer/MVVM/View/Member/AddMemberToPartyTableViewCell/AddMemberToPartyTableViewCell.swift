@@ -10,6 +10,7 @@ import UIKit
 
 class AddMemberToPartyTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var partyNameLabel: UILabel!
     @IBOutlet weak var checkMarkImageView: UIImageView!
     
     override func awakeFromNib() {

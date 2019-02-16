@@ -42,13 +42,17 @@ class Party: NSObject {
     }
 
     
-    func save() {
+    @discardableResult func save() -> DBParty {
         let dbParty = DBParty.first(with: [Key.partyId.rawValue: partyId]) ?? DBParty.create()
         dbParty.partyId = partyId
         dbParty.partyName = partyName.value
         dbParty.startTime = startTime.value
         dbParty.partyDescription = partyDescription.value
+        partyMembers.forEach {
+            dbParty.addToMembers($0.save())
+        }
         CoreDataManager.shared.saveContext()
+        return dbParty
     }
     
     init(dbParty: DBParty) {

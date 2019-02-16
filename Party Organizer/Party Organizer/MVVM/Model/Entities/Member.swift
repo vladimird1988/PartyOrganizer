@@ -53,7 +53,7 @@ final class Member: NSObject {
         photo = json[Key.photo.rawValue].stringValue
     }
     
-    func save() {
+    @discardableResult func save() -> DBMember {
         let dbMember = DBMember.first(with: [Key.id.rawValue: id]) ?? DBMember.create()
         dbMember.id = id
         dbMember.aboutMe = aboutMe
@@ -63,6 +63,7 @@ final class Member: NSObject {
         dbMember.photo = photo
         dbMember.username = username
         CoreDataManager.shared.saveContext()
+        return dbMember
     }
     
 }

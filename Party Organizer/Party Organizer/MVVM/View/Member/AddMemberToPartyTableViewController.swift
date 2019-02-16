@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RxSwift
 
 class AddMemberToPartyTableViewController: POTableViewController {
 
-    var partyViewModel: PartyViewModel?
+    let bag = DisposeBag()
+    
+    var partiesViewModel = HomeViewModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +28,14 @@ class AddMemberToPartyTableViewController: POTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return partyViewModel?.party.partyMembers.count ?? 0
+        return partiesViewModel.appData.parties.value.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AddMemberToPartyTableViewCell.identifier, for: indexPath)
+        if let addMemberToPartyTableViewCell = cell as? AddMemberToPartyTableViewCell {
+            partiesViewModel.partyViewModel(at: indexPath.row).partyName.bind(to: addMemberToPartyTableViewCell.partyNameLabel.rx.text).disposed(by: bag)
+        }
         return cell
     }
 
