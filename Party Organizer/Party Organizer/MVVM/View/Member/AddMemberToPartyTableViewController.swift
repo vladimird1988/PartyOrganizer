@@ -34,9 +34,25 @@ class AddMemberToPartyTableViewController: POTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AddMemberToPartyTableViewCell.identifier, for: indexPath)
         if let addMemberToPartyTableViewCell = cell as? AddMemberToPartyTableViewCell {
-            partiesViewModel.partyViewModel(at: indexPath.row).partyName.bind(to: addMemberToPartyTableViewCell.partyNameLabel.rx.text).disposed(by: bag)
+            addMemberToPartyTableViewCell.partyViewModel = partiesViewModel.partyViewModel(at: indexPath.row)
+            addMemberToPartyTableViewCell.partyViewModel?
+            .selectionObserver
+            .subscribe(onNext: {
+                addMemberToPartyTableViewCell.checkMarkImageView.isHidden = !$0.selected
+                addMemberToPartyTableViewCell.partyNameLabel.text = $0.name
+            })
+            .disposed(by: bag)
+            
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        (tableView.cellForRow(at: indexPath) as? AddMemberToPartyTableViewCell)?.partyViewModel?.isSelected.accept(true)
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        (tableView.cellForRow(at: indexPath) as? AddMemberToPartyTableViewCell)?.partyViewModel?.isSelected.accept(false)
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

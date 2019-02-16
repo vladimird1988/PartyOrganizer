@@ -10,6 +10,8 @@ import UIKit
 
 class AddMemberToPartyTableViewCell: UITableViewCell {
     
+    var partyViewModel: PartyViewModel?
+    
     @IBOutlet weak var partyNameLabel: UILabel!
     @IBOutlet weak var checkMarkImageView: UIImageView!
     

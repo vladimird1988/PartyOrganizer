@@ -12,7 +12,11 @@ import RxCocoa
 
 class PartyViewModel: NSObject {
 
+    var homeViewModel: HomeViewModel?
+    
     var party: Party
+    
+    let isSelected = BehaviorRelay<Bool>(value: false)
     
     let partyId: Int64
     let viewPartyName = BehaviorRelay<String>(value: "")
@@ -50,6 +54,18 @@ class PartyViewModel: NSObject {
         party.partyName.accept(viewPartyName.value)
         party.startTime.accept(viewPartyTime.value)
         AppData.shared.add(party: party)
+    }
+    
+    var selectionObserver: Observable<(selected: Bool, name: String)> {
+        let observable = Observable.combineLatest(isSelected.asObservable(), partyName.asObservable(), resultSelector: { (selected: $0, name: $1) })
+        return observable.do(onNext: { [weak self] in
+            guard let party = self?.party else { return }
+            if $0.selected {
+                self?.homeViewModel?.select(party: party)
+            } else {
+                self?.homeViewModel?.deselect(party: party)
+            }
+        })
     }
     
 }
