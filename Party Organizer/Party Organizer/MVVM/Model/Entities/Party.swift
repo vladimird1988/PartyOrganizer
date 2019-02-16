@@ -24,11 +24,11 @@ class Party: NSObject {
     var partyMembers = [Member]()
     
     static var newParty: Party {
-        return Party(partyId: 0, partyName: "", partyDescription: "")
+        return Party(partyName: "", partyDescription: "")
     }
     
-    init(partyId: Int? = nil, partyName: String, startTime: Date? = nil, partyDescription: String) {
-        let generatedPartyId: Int = partyId ?? {
+    init( partyName: String, startTime: Date? = nil, partyDescription: String) {
+        let generatedPartyId: Int = {
             let lastId = UserDefaults.standard.integer(forKey: Key.partyId.rawValue)
             let generatedId = lastId + 1
             UserDefaults.standard.set(generatedId, forKey: Key.partyId.rawValue)

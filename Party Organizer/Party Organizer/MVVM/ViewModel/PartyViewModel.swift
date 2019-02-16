@@ -15,14 +15,19 @@ class PartyViewModel: NSObject {
     var party: Party {
         didSet {
             partyName.accept(party.partyName)
+            partyDescription.accept(party.partyDescription)
+            partyTime.accept(party.startTime)
         }
     }
     
+    let partyId: Int64
     let partyName = BehaviorRelay<String>(value: "")
+    let partyDescription = BehaviorRelay<String>(value: "")
     let partyTime = BehaviorRelay<Date?>(value: nil)
     
     init(party: Party) {
         self.party = party
+        self.partyId = party.partyId
     }
     
     static var newPartyViewModel: PartyViewModel {
@@ -30,6 +35,8 @@ class PartyViewModel: NSObject {
     }
     
     func save() {
+        party.partyId = partyId
+        party.partyDescription = partyDescription.value
         party.partyName = partyName.value
         party.startTime = partyTime.value
         party.save()

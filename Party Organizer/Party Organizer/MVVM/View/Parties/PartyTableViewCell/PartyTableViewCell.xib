@@ -35,7 +35,7 @@
                                     <constraint firstAttribute="width" secondItem="zD2-OM-15G" secondAttribute="height" id="z22-qx-wvc"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="imageTintColor">
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                         <color key="value" white="0.66666666669999997" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>

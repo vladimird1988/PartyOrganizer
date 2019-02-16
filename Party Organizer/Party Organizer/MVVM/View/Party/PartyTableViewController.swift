@@ -91,6 +91,11 @@ class PartyTableViewController: POTableViewController {
             }
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: PartyDescriptionTableViewCell.identifier, for: indexPath)
+            if let partyDescriptionTableViewCell = cell as? PartyDescriptionTableViewCell {
+                if let partyDescription = partyViewModel?.partyDescription {
+                    partyDescriptionTableViewCell.descriptionTextView.rx.text.orEmpty.bind(to: partyDescription).disposed(by: bag)
+                }
+            }
             return cell
         default:
             return UITableViewCell()
