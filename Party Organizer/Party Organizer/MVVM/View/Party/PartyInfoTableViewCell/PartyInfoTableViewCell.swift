@@ -7,9 +7,19 @@
 //
 
 import UIKit
+import RxSwift
 
 class PartyInfoTableViewCell: UITableViewCell {
-
+    
+    private var dateSelected: (Date) -> Void = { _ in }
+    
+    var dateSelectionObservable: Observable<Date> {
+        return Observable.create({ [weak self] observer in
+            self?.dateSelected = { observer.onNext($0) }
+            return Disposables.create()
+        })
+    }
+    
     enum CellType {
         case name
         case startTime
@@ -46,7 +56,8 @@ class PartyInfoTableViewCell: UITableViewCell {
             case .name:
                 return "Party name"
             case .startTime:
-                return "Party date and time"            }
+                return "Party date and time"
+            }
         }
     }
     
@@ -55,8 +66,18 @@ class PartyInfoTableViewCell: UITableViewCell {
             infoLabel.text = cellType.title
             infoTextField.placeholder = cellType.placeholder
             infoTextField.inputView = cellType.inputView
-            infoTextField.addEndEditingToolbar(title: cellType.toolbarTitle, withCancelButton: true, onFinishEditing: {
-                print("Text did end editing")
+            infoTextField.addEndEditingToolbar(title: cellType.toolbarTitle, withCancelButton: true, onFinishEditing: { [weak self] in
+                if let cellType = self?.cellType {
+                    switch cellType {
+                    case .name:
+                        break
+                    case .startTime:
+                        if let datePicker = self?.infoTextField.inputView as? UIDatePicker {
+                            self?.infoTextField.text = datePicker.date.asString()
+                            self?.dateSelected(datePicker.date)
+                        }
+                    }
+                }
             })
         }
     }

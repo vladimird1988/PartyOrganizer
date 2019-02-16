@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class PartyTableViewController: POTableViewController {
 
+    let bag = DisposeBag()
     var partyViewModel: PartyViewModel?
     
     override func viewDidLoad() {
@@ -22,7 +24,7 @@ class PartyTableViewController: POTableViewController {
     }
     
     @IBAction func savePressed(_ sender: Any) {
-        
+        partyViewModel?.save()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -62,8 +64,14 @@ class PartyTableViewController: POTableViewController {
                 switch indexPath.row {
                 case 0:
                     partyInfoCell.cellType = .name
+                    if let partyName = partyViewModel?.partyName {
+                        partyInfoCell.infoTextField.rx.text.orEmpty.bind(to: partyName).disposed(by: bag)
+                    }
                 case 1:
                     partyInfoCell.cellType = .startTime
+                    if let partyTime = partyViewModel?.partyTime {
+                        partyInfoCell.dateSelectionObservable.bind(to: partyTime).disposed(by: bag)
+                    }
                 default:
                     break
                 }
