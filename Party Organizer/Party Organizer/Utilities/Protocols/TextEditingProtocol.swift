@@ -10,14 +10,14 @@ import UIKit
 
 @objc protocol TextEditingProtocol {
     @objc func finishEditing()
-    @objc func cancel()
+    @objc func cancelEditing()
 }
 
 fileprivate struct AssociatedKeys {
     static var onFinishEditing = "onFinishEditing"
 }
 
-extension TextEditingProtocol where Self: UIView {
+extension TextEditingProtocol {
     
     var onFinishEditing: voidMethod? {
         get {
@@ -33,16 +33,42 @@ extension TextEditingProtocol where Self: UIView {
         toolbar.barStyle = .default
         toolbar.tintColor = .black
         toolbar.items = [
-            UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel)),
+            UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelEditing)),
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
             UIBarButtonItem(title: title, style: .plain, target: nil, action: nil),
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(finishEditing))
+            UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(finishEditing)),
         ]
         (self as? UITextField)?.inputAccessoryView = toolbar
         (self as? UITextView)?.inputAccessoryView = toolbar
         self.onFinishEditing = onFinishEditing
     }
     
+}
+
+extension UITextField: TextEditingProtocol {
+    
+    func finishEditing() {
+        onFinishEditing?()
+        endEditing(true)
+        
+    }
+    
+    func cancelEditing() {
+        endEditing(true)
+    }
+}
+
+extension UITextView: TextEditingProtocol {
+    
+    func finishEditing() {
+        onFinishEditing?()
+        endEditing(true)
+        
+    }
+    
+    func cancelEditing() {
+        endEditing(true)
+    }
 }
 

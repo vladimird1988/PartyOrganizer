@@ -56,7 +56,7 @@ class PartyInfoTableViewCell: UITableViewCell {
             infoTextField.placeholder = cellType.placeholder
             infoTextField.inputView = cellType.inputView
             infoTextField.addEndEditingToolbar(title: cellType.toolbarTitle, onFinishEditing: {
-                
+                print("Text did end editing")
             })
         }
     }

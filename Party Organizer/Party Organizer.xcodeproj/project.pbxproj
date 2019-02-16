@@ -17,8 +17,6 @@
 		F52666D022179472007FDE7E /* PartyMembersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F52666CE22179472007FDE7E /* PartyMembersTableViewCell.xib */; };
 		F52666D42217960B007FDE7E /* PartyDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52666D22217960B007FDE7E /* PartyDescriptionTableViewCell.swift */; };
 		F52666D52217960B007FDE7E /* PartyDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F52666D32217960B007FDE7E /* PartyDescriptionTableViewCell.xib */; };
-		F52666D8221798B4007FDE7E /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52666D7221798B4007FDE7E /* UITextField+Extension.swift */; };
-		F52666DA22179AF0007FDE7E /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52666D922179AF0007FDE7E /* UITextView+Extension.swift */; };
 		F52666E22217A373007FDE7E /* TextEditingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52666E12217A373007FDE7E /* TextEditingProtocol.swift */; };
 		F535F9482217078E00594EA9 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535F9472217078E00594EA9 /* UIImageView+Extension.swift */; };
 		F535F94C22170DF300594EA9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F535F94B22170DF300594EA9 /* ProfileViewController.swift */; };
@@ -63,8 +61,6 @@
 		F52666CE22179472007FDE7E /* PartyMembersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartyMembersTableViewCell.xib; sourceTree = "<group>"; };
 		F52666D22217960B007FDE7E /* PartyDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		F52666D32217960B007FDE7E /* PartyDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartyDescriptionTableViewCell.xib; sourceTree = "<group>"; };
-		F52666D7221798B4007FDE7E /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
-		F52666D922179AF0007FDE7E /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
 		F52666E12217A373007FDE7E /* TextEditingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditingProtocol.swift; sourceTree = "<group>"; };
 		F535F9472217078E00594EA9 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		F535F94B22170DF300594EA9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -378,8 +374,6 @@
 				F56E8FC922163E990008ED75 /* UIView+Extension.swift */,
 				F535F9472217078E00594EA9 /* UIImageView+Extension.swift */,
 				F535F96522178E6D00594EA9 /* UIViewController+Extension.swift */,
-				F52666D7221798B4007FDE7E /* UITextField+Extension.swift */,
-				F52666D922179AF0007FDE7E /* UITextView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -559,12 +553,10 @@
 				F535F95722176B5400594EA9 /* PartiesViewModel.swift in Sources */,
 				F56804092216148300CA3A1B /* CoreDataManager.swift in Sources */,
 				F56E8FC322163CBC0008ED75 /* PartiesTableViewController.swift in Sources */,
-				F52666D8221798B4007FDE7E /* UITextField+Extension.swift in Sources */,
 				F52666D42217960B007FDE7E /* PartyDescriptionTableViewCell.swift in Sources */,
 				F535F94C22170DF300594EA9 /* ProfileViewController.swift in Sources */,
 				F535F94E221710FB00594EA9 /* MemberViewModel.swift in Sources */,
 				F51554432216090300515928 /* Party_Organizer.xcdatamodeld in Sources */,
-				F52666DA22179AF0007FDE7E /* UITextView+Extension.swift in Sources */,
 				F56E8FCA22163E990008ED75 /* UIView+Extension.swift in Sources */,
 				F535F96622178E6D00594EA9 /* UIViewController+Extension.swift in Sources */,
 				F535F95A221779CE00594EA9 /* PartyTableViewController.swift in Sources */,
