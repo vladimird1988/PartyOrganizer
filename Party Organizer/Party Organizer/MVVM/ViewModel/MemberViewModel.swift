@@ -83,4 +83,15 @@ class MemberViewModel: NSObject {
         return partyViewModel
     }
     
+    var selectionObserver: Observable<Bool> {
+        return isSelected.asObservable().do(onNext: { [weak self] _ in
+            guard let member = self?.member else { return }
+//            if $0.selected {
+//                self?.memberViewModel?.select(party: party)
+//            } else {
+//                self?.memberViewModel?.deselect(party: party)
+//            }
+        })
+    }
+    
 }

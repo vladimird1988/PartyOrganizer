@@ -49,6 +49,7 @@ class PartyMembersTableViewController: POTableViewController {
         if
             let memberTableViewCell = cell as? MemberTableViewCell,
             let memberViewModel = partyViewModel?.memberViewModel(at: indexPath.row) {
+            memberTableViewCell.memberViewModel = memberViewModel
             memberTableViewCell.isMemberSelected = memberViewModel.isSelected.value
             memberTableViewCell.cellType = .select
             memberTableViewCell.userLabel.text = memberViewModel.fullName
@@ -68,16 +69,12 @@ class PartyMembersTableViewController: POTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let member = partyViewModel?.allMembers[indexPath.row] {
-            partyViewModel?.select(member: member)
-        }
+        (tableView.cellForRow(at: indexPath) as? MemberTableViewCell)?.memberViewModel?.isSelected.accept(true)
         
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let member = partyViewModel?.allMembers[indexPath.row] {
-            partyViewModel?.deselect(member: member)
-        }
+        (tableView.cellForRow(at: indexPath) as? MemberTableViewCell)?.memberViewModel?.isSelected.accept(false)
     }
 
 }

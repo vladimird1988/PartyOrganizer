@@ -14,6 +14,8 @@ class MemberTableViewCell: UITableViewCell {
     var onOpenProfilePagePressed: voidMethod = { }
     var isMemberSelected = false
     
+    var memberViewModel: MemberViewModel?
+    
     enum CellType {
         case show
         case select
