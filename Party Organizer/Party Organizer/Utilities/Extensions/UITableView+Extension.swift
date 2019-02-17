@@ -8,14 +8,14 @@
 
 import UIKit
 
+// MARK: - UITableView extension used for easier registering cells
 extension UITableView {
     
+    /// Register cell
+    ///
+    /// - Parameter type: Cell type
     func register<T:UIView>(type: T.Type) {
         register(type.nib, forCellReuseIdentifier: type.identifier)
-    }
-    
-    func register<T:UIView>(type: T.Type, reuseIdentifier: String) {
-        register(type.nib, forCellReuseIdentifier: reuseIdentifier)
     }
     
 }

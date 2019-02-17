@@ -10,10 +10,16 @@ import CoreFoundation
 import CoreData
 import AERecord
 
+
+/// CoreData Manager
 class CoreDataManager {
     
+    /// Shared instane
     static let shared = CoreDataManager()
     
+    // MARK: - Basic methods for loading and saving CoreData stack / context
+    
+    /// Load stack
     func loadStack() {
         do {
             try AERecord.loadCoreDataStack()
@@ -22,6 +28,7 @@ class CoreDataManager {
         }
     }
     
+    /// Save context
     func saveContext() {
         AERecord.saveAndWait()
     }

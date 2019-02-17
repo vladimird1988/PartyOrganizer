@@ -10,10 +10,17 @@ import Foundation
 import Alamofire
 import PromiseKit
 
+
+/// Metwork Manager
 class NetworkManager: NSObject {
     
+    /// Shared instance
     static let shared = NetworkManager()
     
+    /// Perform GET request
+    ///
+    /// - Parameter url: URL address
+    /// - Returns: Request result encapsulated in a Promise
     @discardableResult func performGetRequest(url: URL) -> Promise<Any> {
         return Promise { handler in
             Alamofire.request(url, method: .get, encoding: JSONEncoding.default)

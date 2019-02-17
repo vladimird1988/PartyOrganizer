@@ -8,20 +8,33 @@
 
 import UIKit
 
+
+// MARK: - UIView extension used for easier handling UIView manipulation
 extension UIView {
     
+    /// Load view from nib if xib file has the same name as the UIView subclass
     static var viewFromNib: UIView? {
         return nib.instantiate(withOwner: nil, options: nil).first as? UIView
     }
     
+    /// UIView identifier, i.e. class name used for getting views from the xib files (mostly used for UITableViewCells)
     static var identifier: String {
         return String(describing: self.classForCoder())
     }
     
+    /// nib fetched from the xib file if file name is same as class name, i.e. identifier
     static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
     
+}
+
+// MARK: - UIView extension used for easier customizing UIView appearance
+extension UIView {
+    
+    // MARK: Properties
+    
+    /// Corner radius
     @IBInspectable
     var cornerRadius: CGFloat {
         get {
@@ -33,6 +46,8 @@ extension UIView {
         }
     }
     
+    
+    /// Border width
     @IBInspectable
     var borderWidth: CGFloat {
         get {
@@ -43,6 +58,8 @@ extension UIView {
         }
     }
     
+    
+    /// Bottom border color
     @IBInspectable
     var bottomBorderColor: UIColor? {
         get {
@@ -60,6 +77,8 @@ extension UIView {
         }
     }
     
+    
+    /// Border color
     @IBInspectable
     var borderColor: UIColor? {
         get {
@@ -74,6 +93,8 @@ extension UIView {
         }
     }
     
+    
+    /// Set view to be a circle
     @IBInspectable
     var asCircle: Bool {
         get {
@@ -89,6 +110,9 @@ extension UIView {
         }
     }
     
+    // MARK: Static properties
+    
+    /// Default tint color
     static let defaultTintColor = UIView().tintColor
     
 }

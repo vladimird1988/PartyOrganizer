@@ -39,4 +39,6 @@ enum PartyOrganizerError: Error, LocalizedError {
 
 /// Void method
 typealias voidMethod = () -> Void
+
+/// int method
 typealias intMethod = (Int) -> Void
