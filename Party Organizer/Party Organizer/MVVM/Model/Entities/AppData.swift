@@ -60,7 +60,7 @@ class AppData: NSObject {
                     let member = members.value.first(where: { member in
                         return member.id == partyDBMember.id
                     }) ?? Member(dbMember: partyDBMember)
-                    party.partyMembers.append(member)
+                    party.partyMembers.accept(party.partyMembers.value + [member])
                     member.parties.append(party)
                 }
                 return party

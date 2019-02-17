@@ -44,7 +44,7 @@ class PartyTableViewController: POTableViewController {
             let profilePage = segue.destination as? ProfileViewController,
             let partyViewModel = partyViewModel,
             let indexPath = sender as? IndexPath {
-                profilePage.profileViewModel = MemberViewModel(member: partyViewModel.party.partyMembers[indexPath.row - 1])
+                profilePage.profileViewModel = MemberViewModel(member: partyViewModel.party.partyMembers.value[indexPath.row - 1])
             }
     }
     
@@ -59,7 +59,7 @@ class PartyTableViewController: POTableViewController {
         case 0:
             return 2
         case 1:
-            return 1 + (partyViewModel?.party.partyMembers.count ?? 0)
+            return 1 + (partyViewModel?.viewPartyMembers.value.count ?? 0)
         case 2:
             return 1
         default:
@@ -95,13 +95,13 @@ class PartyTableViewController: POTableViewController {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: PartyMembersTableViewCell.identifier, for: indexPath)
                 if let partyMembersTableViewCell = cell as? PartyMembersTableViewCell {
-                    partyMembersTableViewCell.memberLabel.text = "Members (\(partyViewModel?.party.partyMembers.count ?? 0))"
+                    partyMembersTableViewCell.memberLabel.text = "Members (\(partyViewModel?.party.partyMembers.value.count ?? 0))"
                 }
                 return cell
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: PartySingleMemberTableViewCell.identifier, for: indexPath)
                 if let partySingleMemberTableViewCell = cell as? PartySingleMemberTableViewCell {
-                    partySingleMemberTableViewCell.userNameLabel.text = partyViewModel?.party.partyMembers[indexPath.row - 1].username
+                    partySingleMemberTableViewCell.userNameLabel.text = partyViewModel?.viewPartyMembers.value[indexPath.row - 1].username
                 }
                 return cell
             }
@@ -140,4 +140,17 @@ class PartyTableViewController: POTableViewController {
         }
     }
 
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.section == 1 && indexPath.row > 0
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            partyViewModel?.deleteMember(at: indexPath.row - 1)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+        }
+    }
+    
 }

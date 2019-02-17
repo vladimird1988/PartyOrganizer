@@ -22,7 +22,7 @@ class Party: NSObject {
     let partyName = BehaviorRelay<String>(value: "")
     let startTime = BehaviorRelay<Date?>(value: nil)
     let partyDescription = BehaviorRelay<String>(value: "")
-    var partyMembers = [Member]()
+    var partyMembers = BehaviorRelay<[Member]>(value: [])
     
     static var newParty: Party {
         return Party(partyName: "", partyDescription: "")

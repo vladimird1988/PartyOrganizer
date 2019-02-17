@@ -25,7 +25,7 @@ class PartyMembersTableViewController: POTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return partyViewModel?.party.partyMembers.count ?? 5
+        return partyViewModel?.party.partyMembers.value.count ?? 5
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

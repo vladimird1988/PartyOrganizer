@@ -33,8 +33,8 @@ final class Member: NSObject {
     var parties = [Party]() {
         didSet {
             parties.forEach {
-                if !$0.partyMembers.contains(self) {
-                    $0.partyMembers.append(self)
+                if !$0.partyMembers.value.contains(self) {
+                    $0.partyMembers.accept($0.partyMembers.value + [self])
                 }
             }
         }
