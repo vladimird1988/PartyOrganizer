@@ -10,8 +10,11 @@ import Foundation
 
 struct Server {
     
-    static let baseUrl = "http://api-coin.quantox.tech"
+    static var baseUrl: String {
+         return Bundle.main.object(forInfoDictionaryKey: "ServerBaseUrl") as? String ?? ""
+    }
     
     static let members = "profiles.json"
+    
     
 }

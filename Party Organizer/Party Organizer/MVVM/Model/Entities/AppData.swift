@@ -11,17 +11,39 @@ import RxSwift
 import RxCocoa
 import AERecord
 
+/// Entity used for handling global app data
 class AppData: NSObject {
 
+    // MARK: - Internal types
+    
+    /// Enum for handling changes in parties data
+    ///
+    /// - noEvents: Nothing happened
+    /// - addNewParty: New party created
+    /// - deleteParty: A party deleted
     enum DataEvent {
         case noEvents
         case addNewParty
         case deleteParty(Int)
     }
     
-    private var onAddParty: voidMethod = { }
-    private var onDeleteParty: (Int) -> Void = { _ in }
+    // MARK: - Static properties
     
+    /// Shared instance
+    static let shared = AppData()
+    
+    // MARK: - Instance properties
+    
+    /// Handler for creation of new party
+    private var onAddParty: voidMethod = { }
+    
+    /// Handler for deletion of a single party
+    private var onDeleteParty: intMethod = { _ in }
+    
+    let parties = BehaviorRelay<[Party]>(value: [])
+    let members = BehaviorRelay<[Member]>(value: [])
+    
+    /// Observer for changes in parties data (creation and deletion)
     lazy var dataEventObserver: Observable<DataEvent> = {
         return Observable<DataEvent>.create { [weak self] observer in
             self?.onAddParty = {
@@ -34,18 +56,22 @@ class AppData: NSObject {
         }
     }()
     
-    static let shared = AppData()
+    // MARK: - Calculated properties
     
+    
+    /// Parties fetched from the CoreData
     private var allDBParties: [DBParty] {
         return (DBParty.all() as? [DBParty] ?? [])
     }
+    
+    /// Members fetched from the CoreData
     private var allDBMembers: [DBMember] {
         return DBMember.all() as? [DBMember] ?? []
     }
     
-    let parties = BehaviorRelay<[Party]>(value: [])
-    let members = BehaviorRelay<[Member]>(value: [])
+    // MARK: - Constructor
     
+    /// Constructor
     override init() {
         
         super.init()
@@ -68,6 +94,12 @@ class AppData: NSObject {
         }())
     }
     
+    // MARK: - Methods
+    
+    
+    /// Add new party
+    ///
+    /// - Parameter party: Party instance
     func add(party: Party) {
         if !parties.value.contains(party) {
             parties.accept(parties.value + [party])
@@ -75,6 +107,10 @@ class AppData: NSObject {
         }
     }
     
+    
+    /// Delete a party
+    ///
+    /// - Parameter position: Position of a party in parties array which should be deleted
     func deleteParty(at position: Int) {
         if parties.value.count > position {
             let party = parties.value[position]

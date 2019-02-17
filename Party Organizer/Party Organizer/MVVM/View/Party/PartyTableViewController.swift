@@ -39,7 +39,9 @@ class PartyTableViewController: POTableViewController {
     
     @IBAction func savePressed(_ sender: Any) {
         partyViewModel?.save()
-        navigationController?.popViewController(animated: true)
+        .done { [weak self] in self?.navigationController?.popViewController(animated: true) }
+        .catch { [weak self] in self?.showAlert(title: "Error", message: $0.localizedDescription) }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

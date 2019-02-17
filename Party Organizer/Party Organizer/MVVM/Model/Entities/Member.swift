@@ -10,8 +10,12 @@ import Foundation
 import AERecord
 import SwiftyJSON
 
+
+/// Member entity
 final class Member: NSObject {
 
+    // MARK: - Internal types
+    
     private enum Key: String {
         case id
         case username
@@ -21,6 +25,8 @@ final class Member: NSObject {
         case photo
         case aboutMe
     }
+    
+    // MARK: - Instance properties
     
     var id: Int64
     var username: String = ""
@@ -40,6 +46,11 @@ final class Member: NSObject {
         }
     }
     
+    // MARK: - Constructor
+    
+    /// Constructor
+    ///
+    /// - Parameter dbMember: Member from the CoreData
     init(dbMember: DBMember) {
         id = dbMember.id
         aboutMe = dbMember.aboutMe ?? ""

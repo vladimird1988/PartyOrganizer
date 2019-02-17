@@ -23,8 +23,9 @@ class PartyMembersTableViewController: POTableViewController {
     }
 
     @IBAction func savePressed(_ sender: Any) {
-        partyViewModel?.save()
-        navigationController?.popViewController(animated: true)
+        partyViewModel?.save().done { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }.cauterize()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

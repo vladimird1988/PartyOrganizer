@@ -1,0 +1,14 @@
+//
+//  AppConfig-Release.xcconfig
+//  Party Organizer
+//
+//  Created by Vladimir Dinic on 2/17/19.
+//  Copyright © 2019 Vladimir Dinic. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-Party Organizer/Pods-Party Organizer.release.xcconfig"
+
+SERVER_BASE_URL = http:/$()/api-coin.quantox.tech

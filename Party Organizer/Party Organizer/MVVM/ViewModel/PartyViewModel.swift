@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import PromiseKit
 
 class PartyViewModel: NSObject {
     
@@ -61,25 +62,48 @@ class PartyViewModel: NSObject {
         return PartyViewModel(party: Party.newParty)
     }
     
-    func save() {
-        party.partyId = partyId
-        party.partyDescription.accept(viewPartyDescription.value)
-        party.partyName.accept(viewPartyName.value)
-        party.startTime.accept(viewPartyTime.value)
-        party.partyMembers.value.forEach {
-            $0.parties.removeAll(where: { $0.partyId == partyId })
-            $0.save()
-        }
-        party.partyMembers.accept(viewPartyMembers.value)
-        party.partyMembers.value.forEach {
-            if !$0.parties.contains(party) {
-                $0.parties.append(party)
+    func save() -> Promise<Void> {
+        return Promise { handler in
+            guard viewPartyName.value.isEmpty else {
+                handler.reject(PartyOrganizerError.custom("Party name is empty"))
+                return
+            }
+            guard viewPartyName.value.count > 5 else {
+                handler.reject(PartyOrganizerError.custom("Party name is too short"))
+                return
+            }
+            guard viewPartyTime.value != nil else {
+                handler.reject(PartyOrganizerError.custom("Party start time is not set"))
+                return
+            }
+            guard viewPartyDescription.value.isEmpty else {
+                handler.reject(PartyOrganizerError.custom("Party description is empty"))
+                return
+            }
+            guard viewPartyDescription.value.count > 20 else {
+                handler.reject(PartyOrganizerError.custom("Party description is too short"))
+                return
+            }
+            party.partyId = partyId
+            party.partyDescription.accept(viewPartyDescription.value)
+            party.partyName.accept(viewPartyName.value)
+            party.startTime.accept(viewPartyTime.value)
+            party.partyMembers.value.forEach {
+                $0.parties.removeAll(where: { $0.partyId == partyId })
                 $0.save()
             }
+            party.partyMembers.accept(viewPartyMembers.value)
+            party.partyMembers.value.forEach {
+                if !$0.parties.contains(party) {
+                    $0.parties.append(party)
+                    $0.save()
+                }
+            }
+            party.save()
+            AppData.shared.add(party: party)
+            partyEvent.accept({ }())
+            handler.fulfill_()
         }
-        party.save()
-        AppData.shared.add(party: party)
-        partyEvent.accept({ }())
     }
     
     func deleteMember(at position: Int) {

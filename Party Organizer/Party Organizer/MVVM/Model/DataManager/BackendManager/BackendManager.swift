@@ -12,12 +12,11 @@ import PromiseKit
 /// Backend manager used for fetching data from the server
 class BackendManager: NSObject {
 
-    
     /// Shared instance
     static let sharedInstance = BackendManager()
     
     
-    /// Method for fetching members
+    /// Fetch members from the backend
     ///
     /// - Returns: Promise which returns json fetched from the server
     func getMembers() -> Promise<[String: Any]> {

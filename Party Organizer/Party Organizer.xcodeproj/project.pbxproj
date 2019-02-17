@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D66ED6DD567CD90D0435F6FA /* Pods_Party_Organizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9305A2DF8736029EE10DA04B /* Pods_Party_Organizer.framework */; };
+		73D39D47235DBF10E57F6B45 /* Pods_Party_Organizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E5B044B0E584548913A66F /* Pods_Party_Organizer.framework */; };
 		F51554432216090300515928 /* Party_Organizer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F51554382216090300515928 /* Party_Organizer.xcdatamodeld */; };
 		F51554442216090300515928 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F515543B2216090300515928 /* LaunchScreen.storyboard */; };
 		F51554452216090300515928 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F515543C2216090300515928 /* Main.storyboard */; };
@@ -55,9 +55,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		12BA55A3A5A17052520BD795 /* Pods-Party Organizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Party Organizer.debug.xcconfig"; path = "Target Support Files/Pods-Party Organizer/Pods-Party Organizer.debug.xcconfig"; sourceTree = "<group>"; };
-		431E3CE7D17942BA63D626ED /* Pods-Party Organizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Party Organizer.release.xcconfig"; path = "Target Support Files/Pods-Party Organizer/Pods-Party Organizer.release.xcconfig"; sourceTree = "<group>"; };
-		9305A2DF8736029EE10DA04B /* Pods_Party_Organizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Party_Organizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EA0D896D2D886A5689933B7 /* Pods-Party Organizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Party Organizer.debug.xcconfig"; path = "Target Support Files/Pods-Party Organizer/Pods-Party Organizer.debug.xcconfig"; sourceTree = "<group>"; };
+		A1C23DE9A8E1E395E0584353 /* Pods-Party Organizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Party Organizer.release.xcconfig"; path = "Target Support Files/Pods-Party Organizer/Pods-Party Organizer.release.xcconfig"; sourceTree = "<group>"; };
 		F515541D2215F4F300515928 /* Party Organizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party Organizer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51554392216090300515928 /* Party_Organizer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Party_Organizer.xcdatamodel; sourceTree = "<group>"; };
 		F515543B2216090300515928 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,6 +80,8 @@
 		F535F95C22177CF700594EA9 /* PartyInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartyInfoTableViewCell.xib; sourceTree = "<group>"; };
 		F535F96122178D6500594EA9 /* POTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POTableViewController.swift; sourceTree = "<group>"; };
 		F535F96522178E6D00594EA9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		F5422E1922197F3C00648C3D /* AppConfig-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "AppConfig-Debug.xcconfig"; sourceTree = "<group>"; };
+		F5422E1A2219811400648C3D /* AppConfig-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "AppConfig-Release.xcconfig"; sourceTree = "<group>"; };
 		F56803ED22160DC400CA3A1B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F56803F022160EA400CA3A1B /* CustomTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTypes.swift; sourceTree = "<group>"; };
 		F56803F622160F7800CA3A1B /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 		F5FE7B3E2218752200B5B12E /* AddMemberToPartyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMemberToPartyTableViewCell.xib; sourceTree = "<group>"; };
 		F5FE7B422218851300B5B12E /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		F5FE7B4422188C1300B5B12E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		F6E5B044B0E584548913A66F /* Pods_Party_Organizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Party_Organizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,17 +113,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D66ED6DD567CD90D0435F6FA /* Pods_Party_Organizer.framework in Frameworks */,
+				73D39D47235DBF10E57F6B45 /* Pods_Party_Organizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2613943ACCA2F3AEFA869EC9 /* Frameworks */ = {
+		A197B4D7E0BC54F5122D41D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9305A2DF8736029EE10DA04B /* Pods_Party_Organizer.framework */,
+				F6E5B044B0E584548913A66F /* Pods_Party_Organizer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,8 +131,8 @@
 		C8DA3E311161412BCD972457 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				12BA55A3A5A17052520BD795 /* Pods-Party Organizer.debug.xcconfig */,
-				431E3CE7D17942BA63D626ED /* Pods-Party Organizer.release.xcconfig */,
+				7EA0D896D2D886A5689933B7 /* Pods-Party Organizer.debug.xcconfig */,
+				A1C23DE9A8E1E395E0584353 /* Pods-Party Organizer.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -141,7 +143,7 @@
 				F515541F2215F4F300515928 /* Party Organizer */,
 				F515541E2215F4F300515928 /* Products */,
 				C8DA3E311161412BCD972457 /* Pods */,
-				2613943ACCA2F3AEFA869EC9 /* Frameworks */,
+				A197B4D7E0BC54F5122D41D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,8 +218,10 @@
 		F515543F2216090300515928 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				F51554402216090300515928 /* Info.plist */,
 				F56803FA221610B800CA3A1B /* Server.swift */,
+				F51554402216090300515928 /* Info.plist */,
+				F5422E1922197F3C00648C3D /* AppConfig-Debug.xcconfig */,
+				F5422E1A2219811400648C3D /* AppConfig-Release.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -452,11 +456,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F51554322215F4F600515928 /* Build configuration list for PBXNativeTarget "Party Organizer" */;
 			buildPhases = (
-				11DBE2683399BD37D55EA4F2 /* [CP] Check Pods Manifest.lock */,
+				E3B636F61AC14C453DAE7F5C /* [CP] Check Pods Manifest.lock */,
 				F51554192215F4F300515928 /* Sources */,
 				F515541A2215F4F300515928 /* Frameworks */,
 				F515541B2215F4F300515928 /* Resources */,
-				0E8B18EB0AF271DE022ECDCA /* [CP] Embed Pods Frameworks */,
+				2E32DCE89C15A09F74C63BC8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -521,7 +525,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E8B18EB0AF271DE022ECDCA /* [CP] Embed Pods Frameworks */ = {
+		2E32DCE89C15A09F74C63BC8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -561,7 +565,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Party Organizer/Pods-Party Organizer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		11DBE2683399BD37D55EA4F2 /* [CP] Check Pods Manifest.lock */ = {
+		E3B636F61AC14C453DAE7F5C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -748,7 +752,7 @@
 		};
 		F51554332215F4F600515928 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12BA55A3A5A17052520BD795 /* Pods-Party Organizer.debug.xcconfig */;
+			baseConfigurationReference = F5422E1922197F3C00648C3D /* AppConfig-Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -762,12 +766,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		F51554342215F4F600515928 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 431E3CE7D17942BA63D626ED /* Pods-Party Organizer.release.xcconfig */;
+			baseConfigurationReference = F5422E1A2219811400648C3D /* AppConfig-Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -781,6 +786,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
