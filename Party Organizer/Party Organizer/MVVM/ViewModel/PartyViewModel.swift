@@ -66,6 +66,10 @@ class PartyViewModel: NSObject {
         party.partyDescription.accept(viewPartyDescription.value)
         party.partyName.accept(viewPartyName.value)
         party.startTime.accept(viewPartyTime.value)
+        party.partyMembers.value.forEach {
+            $0.parties.removeAll(where: { $0.partyId == partyId })
+            $0.save()
+        }
         party.partyMembers.accept(viewPartyMembers.value)
         party.partyMembers.value.forEach {
             if !$0.parties.contains(party) {
@@ -79,7 +83,8 @@ class PartyViewModel: NSObject {
     }
     
     func deleteMember(at position: Int) {
-        viewPartyMembers.accept(viewPartyMembers.value.filter { $0.id != viewPartyMembers.value[position].id })
+        let deletedMember = viewPartyMembers.value[position]
+        viewPartyMembers.accept(viewPartyMembers.value.filter { $0.id != deletedMember.id })
     }
     
     var selectionObserver: Observable<(selected: Bool, name: String)> {
