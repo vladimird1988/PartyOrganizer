@@ -54,12 +54,12 @@ class MemberViewModel: NSObject {
     }
     
     func select(party: Party) {
-        parties.accept(parties.value + [party])
+        parties.accept(Array(Set(parties.value + [party])))
         save()
     }
     
     func deselect(party: Party) {
-        parties.accept(parties.value.filter { $0.partyId != party.partyId })
+        parties.accept(Array(Set(parties.value.filter { $0.partyId != party.partyId })))
         save()
     }
     
@@ -73,7 +73,9 @@ class MemberViewModel: NSObject {
     }
     
     func partyViewModel(at position: Int) -> PartyViewModel {
-        let partyViewModel = PartyViewModel(party: AppData.shared.parties.value[position])
+        let party = AppData.shared.parties.value[position]
+        let partyViewModel = PartyViewModel(party: party)
+        partyViewModel.isSelected.accept(member.parties.contains(party))
         partyViewModel.memberViewModel = self
         return partyViewModel
     }
