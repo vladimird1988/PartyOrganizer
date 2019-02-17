@@ -54,7 +54,6 @@ class Party: NSObject {
     
     // MARK: - Contructors
     
-    
     /// Constructor which initializes new instance using DBParty elemenet fetched from the CoreData
     ///
     /// - Parameter dbParty: DBParty instance fetched from the CoreData

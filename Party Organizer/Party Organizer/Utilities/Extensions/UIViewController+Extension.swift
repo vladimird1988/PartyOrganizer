@@ -48,7 +48,12 @@ extension UIViewController {
             })
         }
         
-        /// Constructor
+        /// Constructor which initializes new instance using DBParty elemenet fetched from the CoreData
+        ///
+        /// - Parameters:
+        ///   - title: Alert title
+        ///   - style: Alert style
+        ///   - action: Alert action
         init(title: String = "OK", style: UIAlertAction.Style = .default, action: @escaping voidMethod = { }) {
             self.title = title
             self.style = style
