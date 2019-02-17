@@ -73,7 +73,6 @@ class AppData: NSObject {
             parties.accept(parties.value + [party])
             onAddParty()
         }
-        save()
     }
     
     func deleteParty(at position: Int) {
@@ -81,16 +80,6 @@ class AppData: NSObject {
             let party = parties.value[position]
             parties.accept(parties.value.filter { $0.partyId != party.partyId })
             onDeleteParty(position)
-        }
-        save()
-    }
-    
-    func save() {
-        allDBParties.forEach {
-            $0.delete()
-        }
-        parties.value.forEach {
-            $0.save()
         }
     }
     

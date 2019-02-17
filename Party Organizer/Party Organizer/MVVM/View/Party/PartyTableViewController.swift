@@ -103,8 +103,8 @@ class PartyTableViewController: POTableViewController {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: PartyMembersTableViewCell.identifier, for: indexPath)
                 if let partyMembersTableViewCell = cell as? PartyMembersTableViewCell {
-                    partyViewModel?.partyMembers.asObservable().subscribe(onNext: {
-                        partyMembersTableViewCell.memberLabel.text = "Members (\($0.count))"
+                    partyViewModel?.membersObservable.subscribe(onNext: {
+                        partyMembersTableViewCell.memberLabel.text = "Members (\($0))"
                     }).disposed(by: bag)
                 }
                 return cell

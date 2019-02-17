@@ -12,6 +12,10 @@ import RxCocoa
 
 class PartyViewModel: NSObject {
     
+    enum Key: String {
+        case partyId
+    }
+    
     var memberViewModel: MemberViewModel?
     
     var party: Party
@@ -30,6 +34,10 @@ class PartyViewModel: NSObject {
     var partyName: BehaviorRelay<String> { return party.partyName }
     var partyTime: BehaviorRelay<Date?> { return party.startTime }
     var partyDescription: BehaviorRelay<String> { return party.partyDescription }
+    
+    var membersObservable: Observable<Int> {
+        return Observable.combineLatest(partyEvent.asObservable(), viewPartyMembers.asObservable(), resultSelector: { $1.count })
+    }
     
     init(party: Party) {
         self.party = party
@@ -65,6 +73,7 @@ class PartyViewModel: NSObject {
                 $0.save()
             }
         }
+        party.save()
         AppData.shared.add(party: party)
         partyEvent.accept({ }())
     }
