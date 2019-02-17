@@ -23,6 +23,17 @@ class PartyMembersTableViewController: POTableViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowProfile" {
+            guard let indexPath = sender as? IndexPath else {
+                return
+            }
+            if let dest = segue.destination as? ProfileViewController {
+                dest.profileViewModel = MemberViewModel(member: AppData.shared.members.value[indexPath.row])
+            }
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,6 +53,9 @@ class PartyMembersTableViewController: POTableViewController {
             memberTableViewCell.cellType = .select
             memberTableViewCell.userLabel.text = memberViewModel.fullName
             if let placeholder = UIImage(named: "profileIcon") {
+                memberTableViewCell.onOpenProfilePagePressed = { [weak self] in
+                    self?.performSegue(withIdentifier: "ShowProfile", sender: indexPath)
+                }
                 memberTableViewCell.userImage.setImage(url: memberViewModel.imageUrl, placeholder: placeholder)
             }
             

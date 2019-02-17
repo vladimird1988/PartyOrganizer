@@ -41,6 +41,15 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8v-0b-S3N">
+                        <rect key="frame" x="10" y="10" width="35.5" height="35.5"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="asCircle" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="openProfilePagePressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JMV-ea-Be1"/>
+                        </connections>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5g-Zt-xMX">
                         <rect key="frame" x="55.5" y="18" width="44" height="20"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -61,12 +70,16 @@
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="R8v-0b-S3N" firstAttribute="height" secondItem="UnU-Rv-RaB" secondAttribute="height" id="9JR-c4-FBn"/>
                     <constraint firstItem="37K-OA-WWZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="HNn-pb-VKD"/>
                     <constraint firstAttribute="bottom" secondItem="EAe-jn-GHS" secondAttribute="bottom" id="Pne-LX-wrA"/>
                     <constraint firstItem="UnU-Rv-RaB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="S9i-Uu-d26"/>
                     <constraint firstItem="P5g-Zt-xMX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="SC4-WU-gTJ"/>
                     <constraint firstItem="UnU-Rv-RaB" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" constant="-20" id="U3b-m5-64y"/>
+                    <constraint firstItem="R8v-0b-S3N" firstAttribute="centerY" secondItem="UnU-Rv-RaB" secondAttribute="centerY" id="Xrc-Ty-YeB"/>
+                    <constraint firstItem="R8v-0b-S3N" firstAttribute="centerX" secondItem="UnU-Rv-RaB" secondAttribute="centerX" id="fsL-kL-vQW"/>
                     <constraint firstItem="EAe-jn-GHS" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gTu-E2-Q0M"/>
+                    <constraint firstItem="R8v-0b-S3N" firstAttribute="width" secondItem="UnU-Rv-RaB" secondAttribute="width" id="hcg-vJ-eTi"/>
                     <constraint firstAttribute="trailing" secondItem="37K-OA-WWZ" secondAttribute="trailing" constant="10" id="jto-sk-N3J"/>
                     <constraint firstItem="EAe-jn-GHS" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="tPx-he-r5W"/>
                     <constraint firstItem="P5g-Zt-xMX" firstAttribute="leading" secondItem="UnU-Rv-RaB" secondAttribute="trailing" constant="10" id="wt5-6P-eiD"/>
@@ -76,6 +89,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cellRightIcon" destination="37K-OA-WWZ" id="1eO-wp-AiV"/>
+                <outlet property="imageButton" destination="R8v-0b-S3N" id="8x6-0q-cHb"/>
                 <outlet property="userImage" destination="UnU-Rv-RaB" id="IoX-di-zKJ"/>
                 <outlet property="userLabel" destination="P5g-Zt-xMX" id="XDW-ze-nxn"/>
             </connections>

@@ -165,6 +165,9 @@ Create some!</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="F0G-Z9-Pf6" kind="show" identifier="ShowProfile" id="xff-Rw-HKJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGm-xK-UfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -479,7 +482,7 @@ Create some!</string>
         <image name="starIcon" width="28" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="z0b-j2-WwP"/>
+        <segue reference="xff-Rw-HKJ"/>
         <segue reference="rBz-Gx-JG1"/>
     </inferredMetricsTieBreakers>
 </document>

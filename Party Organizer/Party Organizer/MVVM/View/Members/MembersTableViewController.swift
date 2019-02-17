@@ -46,6 +46,7 @@ class MembersTableViewController: POTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MemberTableViewCell.identifier, for: indexPath)
         if let memberCell = cell as? MemberTableViewCell {
+            memberCell.cellType = .show
             memberCell.userLabel.text = AppData.shared.members.value[indexPath.row].username
             if let placeholder = UIImage(named: "profileIcon") {
                 memberCell.userImage.setImage(url: AppData.shared.members.value[indexPath.row].photo, placeholder: placeholder)

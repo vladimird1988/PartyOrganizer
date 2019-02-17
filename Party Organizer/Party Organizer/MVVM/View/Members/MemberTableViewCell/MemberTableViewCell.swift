@@ -9,7 +9,9 @@
 import UIKit
 
 class MemberTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var imageButton: UIButton!
+    
+    var onOpenProfilePagePressed: voidMethod = { }
     var isMemberSelected = false
     
     enum CellType {
@@ -22,10 +24,12 @@ class MemberTableViewCell: UITableViewCell {
             switch cellType {
             case .show:
                 selectionStyle = .default
+                imageButton.isHidden = true
                 cellRightIcon.image = UIImage(named: "arrowIcon")
                 cellRightIcon.tintColor = UIColor.lightGray.withAlphaComponent(0.5)
             case .select:
                 selectionStyle = .none
+                imageButton.isHidden = false
                 cellRightIcon.image = UIImage(named: "checkMarkIcon")
                 cellRightIcon.isHidden = !isMemberSelected
                 cellRightIcon.tintColor = UIView.defaultTintColor
@@ -42,4 +46,7 @@ class MemberTableViewCell: UITableViewCell {
         // Initialization code
     }
     
+    @IBAction func openProfilePagePressed(_ sender: Any) {
+        onOpenProfilePagePressed()
+    }
 }
