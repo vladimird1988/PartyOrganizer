@@ -1,0 +1,19 @@
+/* 
+  Strings.strings
+  Party Organizer
+
+  Created by Vladimir Dinic on 2/17/19.
+  Copyright © 2019 Vladimir Dinic. All rights reserved.
+*/
+
+"PartyName" = "Party Name";
+"PartyDateAndTime" = "Party date and time";
+"Name" = "Name";
+"StartDateAndTime" = "Start date and time";
+"Error" = "Error";
+"OK" = "OK";
+"PartyNameIsEmpty" = "Party name is empty";
+"PartyNameIsTooShort" = "Party name is too short";
+"PartyStartTimeIsNotSet" = "Party start time is not set";
+"PartyDescriptionIsEmpty" = "Party description is empty";
+"PartyDescriptionIsTooShort" = "Party description is too short";

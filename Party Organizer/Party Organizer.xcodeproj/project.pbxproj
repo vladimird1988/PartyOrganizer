@@ -42,6 +42,9 @@
 		F56E8FCA22163E990008ED75 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E8FC922163E990008ED75 /* UIView+Extension.swift */; };
 		F56E8FCD22163FAD0008ED75 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E8FCB22163FAD0008ED75 /* MemberTableViewCell.swift */; };
 		F56E8FCE22163FAD0008ED75 /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56E8FCC22163FAD0008ED75 /* MemberTableViewCell.xib */; };
+		F57ADCFE22198D6700FC1B37 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F57ADCFD22198D6700FC1B37 /* Localizable.strings */; };
+		F57ADD0022198DB200FC1B37 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57ADCFF22198DB200FC1B37 /* AppStrings.swift */; };
+		F57ADD022219905100FC1B37 /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57ADD012219905100FC1B37 /* AppImages.swift */; };
 		F5FE7B322218242800B5B12E /* PartySingleMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B302218242800B5B12E /* PartySingleMemberTableViewCell.swift */; };
 		F5FE7B332218242800B5B12E /* PartySingleMemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FE7B312218242800B5B12E /* PartySingleMemberTableViewCell.xib */; };
 		F5FE7B3622182EE000B5B12E /* PartyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B3522182EE000B5B12E /* PartyViewModel.swift */; };
@@ -95,6 +98,9 @@
 		F56E8FC922163E990008ED75 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		F56E8FCB22163FAD0008ED75 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		F56E8FCC22163FAD0008ED75 /* MemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberTableViewCell.xib; sourceTree = "<group>"; };
+		F57ADCFD22198D6700FC1B37 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		F57ADCFF22198DB200FC1B37 /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
+		F57ADD012219905100FC1B37 /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
 		F5FE7B302218242800B5B12E /* PartySingleMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartySingleMemberTableViewCell.swift; sourceTree = "<group>"; };
 		F5FE7B312218242800B5B12E /* PartySingleMemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartySingleMemberTableViewCell.xib; sourceTree = "<group>"; };
 		F5FE7B3522182EE000B5B12E /* PartyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewModel.swift; sourceTree = "<group>"; };
@@ -229,7 +235,8 @@
 		F51554412216090300515928 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F51554422216090300515928 /* Assets.xcassets */,
+				F57ADCFC22198D5300FC1B37 /* Strings */,
+				F57ADCFB22198D4B00FC1B37 /* Images */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -431,6 +438,24 @@
 			path = Parties;
 			sourceTree = "<group>";
 		};
+		F57ADCFB22198D4B00FC1B37 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F51554422216090300515928 /* Assets.xcassets */,
+				F57ADD012219905100FC1B37 /* AppImages.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		F57ADCFC22198D5300FC1B37 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				F57ADCFD22198D6700FC1B37 /* Localizable.strings */,
+				F57ADCFF22198DB200FC1B37 /* AppStrings.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		F5FE7B342218243C00B5B12E /* PartySingleMemberTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +534,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F57ADCFE22198D6700FC1B37 /* Localizable.strings in Resources */,
 				F52666D022179472007FDE7E /* PartyMembersTableViewCell.xib in Resources */,
 				F5FE7B332218242800B5B12E /* PartySingleMemberTableViewCell.xib in Resources */,
 				F51554442216090300515928 /* LaunchScreen.storyboard in Resources */,
@@ -595,6 +621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F56803EE22160DC400CA3A1B /* NetworkManager.swift in Sources */,
+				F57ADD022219905100FC1B37 /* AppImages.swift in Sources */,
 				F56803F722160F7800CA3A1B /* Member.swift in Sources */,
 				F56803F922160F8000CA3A1B /* Party.swift in Sources */,
 				F51554462216090300515928 /* AppDelegate.swift in Sources */,
@@ -612,6 +639,7 @@
 				F535F96622178E6D00594EA9 /* UIViewController+Extension.swift in Sources */,
 				F535F95A221779CE00594EA9 /* PartyTableViewController.swift in Sources */,
 				F535F95022173AE900594EA9 /* AddMemberToPartyTableViewController.swift in Sources */,
+				F57ADD0022198DB200FC1B37 /* AppStrings.swift in Sources */,
 				F5FE7B322218242800B5B12E /* PartySingleMemberTableViewCell.swift in Sources */,
 				F56803FF2216111A00CA3A1B /* BackendManager.swift in Sources */,
 				F535F9482217078E00594EA9 /* UIImageView+Extension.swift in Sources */,

@@ -40,7 +40,7 @@ class PartyTableViewController: POTableViewController {
     @IBAction func savePressed(_ sender: Any) {
         partyViewModel?.save()
         .done { [weak self] in self?.navigationController?.popViewController(animated: true) }
-        .catch { [weak self] in self?.showAlert(title: "Error", message: $0.localizedDescription) }
+        .catch { [weak self] in self?.showAlert(title: AppStrings.error.localized, message: $0.localizedDescription) }
         
     }
     

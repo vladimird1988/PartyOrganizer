@@ -65,23 +65,23 @@ class PartyViewModel: NSObject {
     func save() -> Promise<Void> {
         return Promise { handler in
             guard !viewPartyName.value.isEmpty else {
-                handler.reject(PartyOrganizerError.custom("Party name is empty"))
+                handler.reject(PartyOrganizerError.custom(AppStrings.partyNameIsEmpty.localized))
                 return
             }
             guard viewPartyName.value.count > 5 else {
-                handler.reject(PartyOrganizerError.custom("Party name is too short"))
+                handler.reject(PartyOrganizerError.custom(AppStrings.partyNameIsTooShort.localized))
                 return
             }
             guard viewPartyTime.value != nil else {
-                handler.reject(PartyOrganizerError.custom("Party start time is not set"))
+                handler.reject(PartyOrganizerError.custom(AppStrings.partyStartTimeIsNotSet.localized))
                 return
             }
             guard !viewPartyDescription.value.isEmpty else {
-                handler.reject(PartyOrganizerError.custom("Party description is empty"))
+                handler.reject(PartyOrganizerError.custom(AppStrings.partyDescriptionIsEmpty.localized))
                 return
             }
             guard viewPartyDescription.value.count > 20 else {
-                handler.reject(PartyOrganizerError.custom("Party description is too short"))
+                handler.reject(PartyOrganizerError.custom(AppStrings.partyDescriptionIsTooShort.localized))
                 return
             }
             party.partyId = partyId

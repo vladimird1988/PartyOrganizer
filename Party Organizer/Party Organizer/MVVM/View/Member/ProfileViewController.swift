@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController {
         aboutLabel.text = profileViewModel?.about ?? "-"
         if
             let profileImageUrl = profileViewModel?.imageUrl,
-            let placeholder = UIImage(named: "profileIcon") {
+            let placeholder = AppImages.profileIcon.image {
             profileImageView.setImage(url: profileImageUrl, placeholder: placeholder)
         }
         

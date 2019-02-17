@@ -29,7 +29,6 @@ class HomeViewModel: NSObject {
                     let members = membersDataArray.map { Member.createOrUpdate(data: $0) }
                     members.forEach { $0.save() }
                     AppData.shared.members.accept(members)
-                    print("Members parsed")
                 }
             }
             .cauterize()

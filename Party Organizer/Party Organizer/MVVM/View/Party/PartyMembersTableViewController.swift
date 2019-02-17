@@ -63,7 +63,7 @@ class PartyMembersTableViewController: POTableViewController {
             memberTableViewCell.isMemberSelected = memberViewModel.isSelected.value
             memberTableViewCell.cellType = .select
             memberTableViewCell.userLabel.text = memberViewModel.fullName
-            if let placeholder = UIImage(named: "profileIcon") {
+            if let placeholder = AppImages.profileIcon.image {
                 memberTableViewCell.onOpenProfilePagePressed = { [weak self] in
                     self?.performSegue(withIdentifier: "ShowProfile", sender: indexPath)
                 }

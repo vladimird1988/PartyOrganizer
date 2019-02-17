@@ -49,7 +49,7 @@ class MembersTableViewController: POTableViewController {
         if let memberCell = cell as? MemberTableViewCell {
             memberCell.cellType = .show
             memberCell.userLabel.text = AppData.shared.members.value[indexPath.row].username
-            if let placeholder = UIImage(named: "profileIcon") {
+            if let placeholder = AppImages.profileIcon.image {
                 memberCell.userImage.setImage(url: AppData.shared.members.value[indexPath.row].photo, placeholder: placeholder)
             }
         }

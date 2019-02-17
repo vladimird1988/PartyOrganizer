@@ -27,18 +27,18 @@ class PartyInfoTableViewCell: UITableViewCell {
         var title: String {
             switch self {
             case .name:
-                return "Name"
+                return AppStrings.name.localized
             case .startTime:
-                return "Start date and time"
+                return AppStrings.startDateAndTime.localized
             }
         }
         
         var placeholder: String {
             switch self {
             case .name:
-                return "Party Name"
+                return AppStrings.partyName.localized
             case .startTime:
-                return "Party date and time"
+                return AppStrings.partyDateAndTime.localized
             }
         }
         
@@ -54,9 +54,9 @@ class PartyInfoTableViewCell: UITableViewCell {
         var toolbarTitle: String {
             switch self {
             case .name:
-                return "Party name"
+                return AppStrings.partyName.localized
             case .startTime:
-                return "Party date and time"
+                return AppStrings.partyDateAndTime.localized
             }
         }
     }

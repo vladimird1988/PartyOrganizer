@@ -27,12 +27,12 @@ class MemberTableViewCell: UITableViewCell {
             case .show:
                 selectionStyle = .default
                 imageButton.isHidden = true
-                cellRightIcon.image = UIImage(named: "arrowIcon")
+                cellRightIcon.image = AppImages.arrowIcon.image
                 cellRightIcon.tintColor = UIColor.lightGray.withAlphaComponent(0.5)
             case .select:
                 selectionStyle = .none
                 imageButton.isHidden = false
-                cellRightIcon.image = UIImage(named: "checkMarkIcon")
+                cellRightIcon.image = AppImages.checkMarkIcon.image
                 cellRightIcon.isHidden = !isMemberSelected
                 cellRightIcon.tintColor = UIView.defaultTintColor
             }

@@ -45,7 +45,7 @@ extension UIViewController {
         showComplexAlert(title: title, message: message)
     }
     
-    func showComplexAlert(alertStyle: UIAlertController.Style = .alert, title: String? = nil, message: String? = nil, actions: [AlertAction] = [AlertAction(title: "OK")]) {
+    func showComplexAlert(alertStyle: UIAlertController.Style = .alert, title: String? = nil, message: String? = nil, actions: [AlertAction] = [AlertAction(title: AppStrings.ok.localized)]) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: alertStyle)
         actions.forEach {
             alertController.addAction($0.alertAction)
