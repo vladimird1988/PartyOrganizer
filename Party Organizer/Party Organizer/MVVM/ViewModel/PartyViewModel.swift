@@ -57,6 +57,12 @@ class PartyViewModel: NSObject {
         party.partyName.accept(viewPartyName.value)
         party.startTime.accept(viewPartyTime.value)
         party.partyMembers.accept(viewPartyMembers.value)
+        party.partyMembers.value.forEach {
+            if $0.parties.contains(party) {
+                $0.parties.append(party)
+            }
+        }
+        party.save()
         AppData.shared.add(party: party)
     }
     
@@ -86,6 +92,13 @@ class PartyViewModel: NSObject {
     
     var allMembers: [Member] {
         return AppData.shared.members.value
+    }
+    
+    func memberViewModel(at position: Int) -> MemberViewModel {
+        let member = allMembers[position]
+        let memberViewModel = MemberViewModel(member: member)
+        memberViewModel.isSelected.accept(member.parties.contains(party))
+        return memberViewModel
     }
     
 }

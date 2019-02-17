@@ -20,6 +20,7 @@ class PartyMembersTableViewController: POTableViewController {
 
     @IBAction func savePressed(_ sender: Any) {
         partyViewModel?.save()
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Table view data source
@@ -34,12 +35,14 @@ class PartyMembersTableViewController: POTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MemberTableViewCell.identifier, for: indexPath)
-        if let memberTableViewCell = cell as? MemberTableViewCell {
-            memberTableViewCell.isMemberSelected = indexPath.row % 2 == 0
+        if
+            let memberTableViewCell = cell as? MemberTableViewCell,
+            let memberViewModel = partyViewModel?.memberViewModel(at: indexPath.row) {
+            memberTableViewCell.isMemberSelected = memberViewModel.isSelected.value
             memberTableViewCell.cellType = .select
-            memberTableViewCell.userLabel.text = partyViewModel?.allMembers[indexPath.row].username
+            memberTableViewCell.userLabel.text = memberViewModel.fullName
             if let placeholder = UIImage(named: "profileIcon") {
-                memberTableViewCell.userImage.setImage(url: partyViewModel?.allMembers[indexPath.row].photo ?? "", placeholder: placeholder)
+                memberTableViewCell.userImage.setImage(url: memberViewModel.imageUrl, placeholder: placeholder)
             }
             
         }
@@ -51,14 +54,14 @@ class PartyMembersTableViewController: POTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let member = partyViewModel?.viewPartyMembers.value[indexPath.row] {
+        if let member = partyViewModel?.allMembers[indexPath.row] {
             partyViewModel?.select(member: member)
         }
         
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let member = partyViewModel?.viewPartyMembers.value[indexPath.row] {
+        if let member = partyViewModel?.allMembers[indexPath.row] {
             partyViewModel?.deselect(member: member)
         }
     }

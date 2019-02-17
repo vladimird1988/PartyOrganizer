@@ -14,6 +14,8 @@ class MemberViewModel: NSObject {
 
     let parties = BehaviorRelay<[Party]>(value: [])
     
+    let isSelected = BehaviorRelay<Bool>(value: false)
+    
     let member: Member
     
     init(member: Member) {
