@@ -11,12 +11,14 @@ import RxSwift
 import RxCocoa
 
 class PartyViewModel: NSObject {
-
+    
     var memberViewModel: MemberViewModel?
     
     var party: Party
     
     let isSelected = BehaviorRelay<Bool>(value: false)
+    
+    let partyEvent = BehaviorRelay<Void>(value: { }())
     
     let partyId: Int64
     let viewPartyMembers = BehaviorRelay<[Member]>(value: [])
@@ -58,12 +60,13 @@ class PartyViewModel: NSObject {
         party.startTime.accept(viewPartyTime.value)
         party.partyMembers.accept(viewPartyMembers.value)
         party.partyMembers.value.forEach {
-            if $0.parties.contains(party) {
+            if !$0.parties.contains(party) {
                 $0.parties.append(party)
             }
         }
         party.save()
         AppData.shared.add(party: party)
+        partyEvent.accept({ }())
     }
     
     func deleteMember(at position: Int) {

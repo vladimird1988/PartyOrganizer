@@ -25,6 +25,10 @@ class PartyTableViewController: POTableViewController {
         tableView.register(type: PartyMembersTableViewCell.self)
         tableView.register(type: PartySingleMemberTableViewCell.self)
         tableView.register(type: PartyDescriptionTableViewCell.self)
+        
+        partyViewModel?.partyEvent.asObservable()
+        .subscribe(onNext: { [weak self] in self?.tableView.reloadData() })
+        .disposed(by: bag)
     }
     
     override func didMove(toParent parent: UIViewController?) {

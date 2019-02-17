@@ -23,6 +23,7 @@ class MemberViewModel: NSObject {
     init(member: Member) {
         self.member = member
         self.parties.accept(member.parties)
+        
     }
     
     var fullName: String {
