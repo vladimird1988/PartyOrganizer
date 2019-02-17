@@ -23,6 +23,8 @@ enum AppStrings: String{
     case partyStartTimeIsNotSet = "PartyStartTimeIsNotSet"
     case partyDescriptionIsEmpty = "PartyDescriptionIsEmpty"
     case partyDescriptionIsTooShort = "PartyDescriptionIsTooShort"
+    case parties = "Parties"
+    case members = "Members"
     
     
     /// Returns localized string for a given key

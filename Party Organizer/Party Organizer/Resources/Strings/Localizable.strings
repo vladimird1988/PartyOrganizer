@@ -17,3 +17,5 @@
 "PartyStartTimeIsNotSet" = "Party start time is not set";
 "PartyDescriptionIsEmpty" = "Party description is empty";
 "PartyDescriptionIsTooShort" = "Party description is too short";
+"Parties" = "Parties";
+"Members" = "Members";

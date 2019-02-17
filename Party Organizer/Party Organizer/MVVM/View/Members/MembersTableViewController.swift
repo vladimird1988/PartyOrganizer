@@ -30,7 +30,7 @@ class MembersTableViewController: POTableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBarController?.navigationItem.title = "Members"
+        tabBarController?.navigationItem.title = AppStrings.members.localized
         tabBarController?.navigationItem.rightBarButtonItem = nil
     }
 
@@ -69,8 +69,8 @@ class MembersTableViewController: POTableViewController {
             guard let indexPath = sender as? IndexPath else {
                 return
             }
-            if let dest = segue.destination as? ProfileViewController {
-                dest.profileViewModel = MemberViewModel(member: AppData.shared.members.value[indexPath.row])
+            if let profilePage = segue.destination as? ProfileViewController {
+                profilePage.profileViewModel = MemberViewModel(member: AppData.shared.members.value[indexPath.row])
             }
         }
     }
