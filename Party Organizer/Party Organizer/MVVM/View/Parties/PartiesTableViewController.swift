@@ -41,10 +41,15 @@ class PartiesTableViewController: POTableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.navigationItem.title = "Parties"
+        tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addNewParty))
+    }
+    
+    @objc func addNewParty() {
+        performSegue(withIdentifier: "AddNewPartySegue", sender: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddNewPartySegue1" || segue.identifier == "AddNewPartySegue2" {
+        if segue.identifier == "AddNewPartySegue" {
             if let partyPage = segue.destination as? PartyTableViewController {
                 partyPage.partyViewModel = PartyViewModel.newPartyViewModel
             }

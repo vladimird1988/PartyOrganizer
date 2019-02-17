@@ -94,7 +94,7 @@ Create some!</string>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <segue destination="fe4-3Q-Rvq" kind="show" identifier="AddNewPartySegue2" id="4Wr-iS-AJW"/>
+                                <segue destination="fe4-3Q-Rvq" kind="show" identifier="AddNewPartySegue" id="4Wr-iS-AJW"/>
                             </connections>
                         </button>
                     </subviews>
@@ -483,6 +483,6 @@ Create some!</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xff-Rw-HKJ"/>
-        <segue reference="rBz-Gx-JG1"/>
+        <segue reference="4Wr-iS-AJW"/>
     </inferredMetricsTieBreakers>
 </document>
