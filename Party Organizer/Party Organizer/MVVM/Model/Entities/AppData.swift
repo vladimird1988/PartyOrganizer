@@ -66,7 +66,6 @@ class AppData: NSObject {
                 return party
             }
         }())
-        
     }
     
     func add(party: Party) {

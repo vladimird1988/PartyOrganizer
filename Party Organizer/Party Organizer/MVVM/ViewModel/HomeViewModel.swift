@@ -14,16 +14,14 @@ class HomeViewModel: NSObject {
 
     static let shared = HomeViewModel()
     
-    let appData = AppData.shared
-    
     func getMembers() {
         BackendManager.sharedInstance.getMembers()
             .done { [weak self] in
                 print("Members: \($0)")
                 if let membersDataArray = $0["profiles"] as? [[String: Any]] {
-                    let members = membersDataArray.map { Member(data: $0) }
+                    let members = membersDataArray.map { Member.createOrUpdate(data: $0) }
                     members.forEach { $0.save() }
-                    self?.appData.members.accept(members)
+                    AppData.shared.members.accept(members)
                     print("Members parsed")
                 }
             }
@@ -31,15 +29,15 @@ class HomeViewModel: NSObject {
     }
     
     var partiesObserver: Observable<AppData.DataEvent> {
-        return appData.dataEventObserver
+        return AppData.shared.dataEventObserver
     }
     
     func partyViewModel(at position: Int) -> PartyViewModel {
-        return PartyViewModel(party: appData.parties.value[position])
+        return PartyViewModel(party: AppData.shared.parties.value[position])
     }
     
     func deleteParty(at position: Int) {
-        appData.deleteParty(at: position)
+        AppData.shared.deleteParty(at: position)
     }
     
 }

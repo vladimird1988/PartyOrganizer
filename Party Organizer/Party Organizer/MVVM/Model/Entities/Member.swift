@@ -23,12 +23,12 @@ final class Member: NSObject {
     }
     
     var id: Int64
-    var username: String
-    var cell: String
-    var photo: String
-    var email: String
-    var gender: String
-    var aboutMe: String
+    var username: String = ""
+    var cell: String = ""
+    var photo: String = ""
+    var email: String = ""
+    var gender: String = ""
+    var aboutMe: String = ""
     
     var parties = [Party]() {
         didSet {
@@ -50,7 +50,18 @@ final class Member: NSObject {
         username = dbMember.username ?? ""
     }
     
-    init(data: [String: Any]) {
+    static func createOrUpdate(data: [String: Any]) -> Member {
+        let json = JSON(data)
+        let id = json[Key.id.rawValue].int64Value
+        if let member = AppData.shared.members.value.first(where: { $0.id == id }) {
+            member.update(data: data)
+            return member
+        } else {
+            return Member(data: data)
+        }
+    }
+    
+    private func update(data: [String: Any]) {
         let json = JSON(data)
         id = json[Key.id.rawValue].int64Value
         aboutMe = json[Key.aboutMe.rawValue].stringValue
@@ -59,6 +70,13 @@ final class Member: NSObject {
         gender = json[Key.gender.rawValue].stringValue
         username = json[Key.username.rawValue].stringValue
         photo = json[Key.photo.rawValue].stringValue
+    }
+    
+    init(data: [String: Any]) {
+        let json = JSON(data)
+        id = json[Key.id.rawValue].int64Value
+        super.init()
+        update(data: data)
     }
     
     @discardableResult func save() -> DBMember {
