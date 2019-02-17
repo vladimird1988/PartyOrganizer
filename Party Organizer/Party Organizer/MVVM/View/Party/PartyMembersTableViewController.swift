@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import RxSwift
 
 class PartyMembersTableViewController: POTableViewController {
 
+    let bag = DisposeBag()
+    
     var partyViewModel: PartyViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.register(type: MemberTableViewCell.self)
+        
     }
 
     @IBAction func savePressed(_ sender: Any) {
@@ -50,6 +54,11 @@ class PartyMembersTableViewController: POTableViewController {
             let memberTableViewCell = cell as? MemberTableViewCell,
             let memberViewModel = partyViewModel?.memberViewModel(at: indexPath.row) {
             memberTableViewCell.memberViewModel = memberViewModel
+            memberViewModel.selectionObserver
+                .subscribe(onNext: {
+                    memberTableViewCell.cellRightIcon.isHidden = !$0
+                })
+            .disposed(by: bag)
             memberTableViewCell.isMemberSelected = memberViewModel.isSelected.value
             memberTableViewCell.cellType = .select
             memberTableViewCell.userLabel.text = memberViewModel.fullName
