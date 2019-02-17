@@ -45,6 +45,7 @@
 		F57ADCFE22198D6700FC1B37 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F57ADCFD22198D6700FC1B37 /* Localizable.strings */; };
 		F57ADD0022198DB200FC1B37 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57ADCFF22198DB200FC1B37 /* AppStrings.swift */; };
 		F57ADD022219905100FC1B37 /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57ADD012219905100FC1B37 /* AppImages.swift */; };
+		F580DEE02219AA8A00E5785B /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F580DEDF2219AA8A00E5785B /* SegueHandlerType.swift */; };
 		F5FE7B322218242800B5B12E /* PartySingleMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B302218242800B5B12E /* PartySingleMemberTableViewCell.swift */; };
 		F5FE7B332218242800B5B12E /* PartySingleMemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FE7B312218242800B5B12E /* PartySingleMemberTableViewCell.xib */; };
 		F5FE7B3622182EE000B5B12E /* PartyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B3522182EE000B5B12E /* PartyViewModel.swift */; };
@@ -100,6 +101,7 @@
 		F57ADCFD22198D6700FC1B37 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F57ADCFF22198DB200FC1B37 /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
 		F57ADD012219905100FC1B37 /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
+		F580DEDF2219AA8A00E5785B /* SegueHandlerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
 		F5FE7B302218242800B5B12E /* PartySingleMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartySingleMemberTableViewCell.swift; sourceTree = "<group>"; };
 		F5FE7B312218242800B5B12E /* PartySingleMemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PartySingleMemberTableViewCell.xib; sourceTree = "<group>"; };
 		F5FE7B3522182EE000B5B12E /* PartyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyViewModel.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				F52666E12217A373007FDE7E /* TextEditingProtocol.swift */,
+				F580DEDF2219AA8A00E5785B /* SegueHandlerType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				F56803F122160EA400CA3A1B /* CustomTypes.swift in Sources */,
 				F5FE7B3F2218752200B5B12E /* AddMemberToPartyTableViewCell.swift in Sources */,
 				F56E8FC822163E810008ED75 /* UITableView+Extension.swift in Sources */,
+				F580DEE02219AA8A00E5785B /* SegueHandlerType.swift in Sources */,
 				F5FE7B3A2218611F00B5B12E /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

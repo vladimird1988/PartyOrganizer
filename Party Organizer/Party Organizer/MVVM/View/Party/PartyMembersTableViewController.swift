@@ -9,8 +9,12 @@
 import UIKit
 import RxSwift
 
-class PartyMembersTableViewController: POTableViewController {
+class PartyMembersTableViewController: POTableViewController, SegueHandlerType {
 
+    enum SegueIdentifier: String {
+        case ShowProfile
+    }
+    
     let bag = DisposeBag()
     
     var partyViewModel: PartyViewModel?
@@ -65,7 +69,7 @@ class PartyMembersTableViewController: POTableViewController {
             memberTableViewCell.userLabel.text = memberViewModel.fullName
             if let placeholder = AppImages.profileIcon.image {
                 memberTableViewCell.onOpenProfilePagePressed = { [weak self] in
-                    self?.performSegue(withIdentifier: "ShowProfile", sender: indexPath)
+                    self?.performSegueWithIdentifier(segueIdentifier: .ShowProfile, sender: indexPath as AnyObject)
                 }
                 memberTableViewCell.userImage.setImage(url: memberViewModel.imageUrl, placeholder: placeholder)
             }

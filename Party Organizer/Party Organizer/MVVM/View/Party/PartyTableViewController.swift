@@ -9,7 +9,12 @@
 import UIKit
 import RxSwift
 
-class PartyTableViewController: POTableViewController {
+class PartyTableViewController: POTableViewController, SegueHandlerType {
+    
+    enum SegueIdentifier: String {
+        case ShowPartyMembersSegue
+        case ShowProfileSegue
+    }
 
     let bag = DisposeBag()
     var partyViewModel: PartyViewModel? {
@@ -146,9 +151,9 @@ class PartyTableViewController: POTableViewController {
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 && indexPath.row == 0 {
-            performSegue(withIdentifier: "ShowPartyMembersSegue", sender: indexPath)
+            performSegueWithIdentifier(segueIdentifier: .ShowPartyMembersSegue, sender: indexPath as AnyObject)
         } else if indexPath.section == 1 && indexPath.row > 0 {
-            performSegue(withIdentifier: "ShowProfileSegue", sender: indexPath)
+            performSegueWithIdentifier(segueIdentifier: .ShowProfileSegue, sender: indexPath as AnyObject)
         }
     }
 

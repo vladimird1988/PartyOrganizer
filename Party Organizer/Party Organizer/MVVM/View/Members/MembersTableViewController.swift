@@ -9,8 +9,12 @@
 import UIKit
 import RxSwift
 
-class MembersTableViewController: POTableViewController {
+class MembersTableViewController: POTableViewController, SegueHandlerType {
 
+    enum SegueIdentifier: String {
+        case ShowProfile
+    }
+    
     let membersViewModel = HomeViewModel.shared
     
     let bag = DisposeBag()
@@ -61,11 +65,11 @@ class MembersTableViewController: POTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowProfile", sender: indexPath)
+        performSegueWithIdentifier(segueIdentifier: .ShowProfile, sender: indexPath as AnyObject)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowProfile" {
+        if segue.identifier == SegueIdentifier.ShowProfile.rawValue {
             guard let indexPath = sender as? IndexPath else {
                 return
             }

@@ -9,7 +9,12 @@
 import UIKit
 import RxSwift
 
-class PartiesTableViewController: POTableViewController {
+class PartiesTableViewController: POTableViewController, SegueHandlerType {
+    
+    enum SegueIdentifier: String {
+        case AddNewPartySegue
+        case ShowPartySegue
+    }
     
     let bag = DisposeBag()
     
@@ -45,15 +50,15 @@ class PartiesTableViewController: POTableViewController {
     }
     
     @objc func addNewParty() {
-        performSegue(withIdentifier: "AddNewPartySegue", sender: nil)
+        performSegueWithIdentifier(segueIdentifier: .AddNewPartySegue, sender: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddNewPartySegue" {
+        if segue.identifier == SegueIdentifier.AddNewPartySegue.rawValue {
             if let partyPage = segue.destination as? PartyTableViewController {
                 partyPage.partyViewModel = PartyViewModel.newPartyViewModel
             }
-        } else if segue.identifier == "ShowPartySegue" {
+        } else if segue.identifier == SegueIdentifier.ShowPartySegue.rawValue {
             if
                 let partyViewModel = sender as? PartyViewModel,
                 let partyPage = segue.destination as? PartyTableViewController {
@@ -100,7 +105,7 @@ class PartiesTableViewController: POTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let partyViewModel = (tableView.cellForRow(at: indexPath) as? PartyTableViewCell)?.partyViewModel
-        performSegue(withIdentifier: "ShowPartySegue", sender: partyViewModel)
+        performSegueWithIdentifier(segueIdentifier: .ShowPartySegue, sender: partyViewModel)
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
