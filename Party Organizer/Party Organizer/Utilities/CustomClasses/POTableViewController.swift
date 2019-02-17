@@ -13,6 +13,8 @@ import Device
 /// Custom UITableViewController subclass used for setting content inset for different devices, since on some devices (tested on simulator) the navigationBar covers the top of the tableView, so we have to fix it. I suppose that it is a XCode bug, or maybe it works well on a real device
 class POTableViewController: UITableViewController {
 
+    
+    /// Lifecycle method viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -72,7 +72,7 @@ final class Member: NSObject {
     
     // MARK: - Constructors
     
-    /// Constructor
+    /// Constructor which generates new instance using DBMember instance fetched from the CoreData
     ///
     /// - Parameter dbMember: Member from the CoreData
     init(dbMember: DBMember) {
@@ -85,6 +85,10 @@ final class Member: NSObject {
         username = dbMember.username ?? ""
     }
     
+    
+    /// Constructor which generates new instance using data fetched from the server / backend
+    ///
+    /// - Parameter data: Data fetched from the backend
     init(data: [String: Any]) {
         let json = JSON(data)
         id = json[Key.id.rawValue].int64Value
@@ -92,17 +96,12 @@ final class Member: NSObject {
         update(data: data)
     }
     
-    static func createOrUpdate(data: [String: Any]) -> Member {
-        let json = JSON(data)
-        let id = json[Key.id.rawValue].int64Value
-        if let member = AppData.shared.members.value.first(where: { $0.id == id }) {
-            member.update(data: data)
-            return member
-        } else {
-            return Member(data: data)
-        }
-    }
+    // MARK: Instance methods
     
+    
+    /// Helper method for updating instance properties with data / json pulled from the backend
+    ///
+    /// - Parameter data: Data / json fetched from the server
     private func update(data: [String: Any]) {
         let json = JSON(data)
         id = json[Key.id.rawValue].int64Value
@@ -114,6 +113,27 @@ final class Member: NSObject {
         photo = json[Key.photo.rawValue].stringValue
     }
     
+    // MARK: - Static methods
+    
+    /// Static method for creating new Member instance or updating existing if there is a member with the same id
+    ///
+    /// - Parameter data: Data / json fetched from the server
+    /// - Returns: Generated Member instance
+    static func createOrUpdate(data: [String: Any]) -> Member {
+        let json = JSON(data)
+        let id = json[Key.id.rawValue].int64Value
+        if let member = AppData.shared.members.value.first(where: { $0.id == id }) {
+            member.update(data: data)
+            return member
+        } else {
+            return Member(data: data)
+        }
+    }
+    
+    
+    /// Save Member instance in CoreData
+    ///
+    /// - Returns: DBmember instane, i.e. object saved in CoreData
     @discardableResult func save() -> DBMember {
         let dbMember = DBMember.first(with: [Key.id.rawValue: id]) ?? DBMember.create()
         dbMember.id = id
