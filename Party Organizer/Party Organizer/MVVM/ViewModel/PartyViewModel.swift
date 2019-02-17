@@ -76,4 +76,16 @@ class PartyViewModel: NSObject {
         })
     }
     
+    func select(member: Member) {
+        viewPartyMembers.accept(Array(Set(viewPartyMembers.value + [member])))
+    }
+    
+    func deselect(member: Member) {
+        viewPartyMembers.accept(Array(Set(viewPartyMembers.value.filter { $0.id != member.id })))
+    }
+    
+    var allMembers: [Member] {
+        return AppData.shared.members.value
+    }
+    
 }

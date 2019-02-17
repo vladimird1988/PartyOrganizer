@@ -45,7 +45,11 @@ class PartyTableViewController: POTableViewController {
             let partyViewModel = partyViewModel,
             let indexPath = sender as? IndexPath {
                 profilePage.profileViewModel = MemberViewModel(member: partyViewModel.party.partyMembers.value[indexPath.row - 1])
-            }
+        } else if
+            segue.identifier == "ShowPartyMembersSegue",
+            let addMembersPage = segue.destination as? PartyMembersTableViewController {
+            addMembersPage.partyViewModel = partyViewModel
+        }
     }
     
     // MARK: - Table view data source

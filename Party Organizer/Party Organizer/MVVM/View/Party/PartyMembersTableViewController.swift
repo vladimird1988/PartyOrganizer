@@ -18,6 +18,10 @@ class PartyMembersTableViewController: POTableViewController {
         tableView.register(type: MemberTableViewCell.self)
     }
 
+    @IBAction func savePressed(_ sender: Any) {
+        partyViewModel?.save()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -25,7 +29,7 @@ class PartyMembersTableViewController: POTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return partyViewModel?.party.partyMembers.value.count ?? 5
+        return partyViewModel?.allMembers.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -33,12 +37,30 @@ class PartyMembersTableViewController: POTableViewController {
         if let memberTableViewCell = cell as? MemberTableViewCell {
             memberTableViewCell.isMemberSelected = indexPath.row % 2 == 0
             memberTableViewCell.cellType = .select
+            memberTableViewCell.userLabel.text = partyViewModel?.allMembers[indexPath.row].username
+            if let placeholder = UIImage(named: "profileIcon") {
+                memberTableViewCell.userImage.setImage(url: partyViewModel?.allMembers[indexPath.row].photo ?? "", placeholder: placeholder)
+            }
+            
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70.0
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let member = partyViewModel?.viewPartyMembers.value[indexPath.row] {
+            partyViewModel?.select(member: member)
+        }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let member = partyViewModel?.viewPartyMembers.value[indexPath.row] {
+            partyViewModel?.deselect(member: member)
+        }
     }
 
 }

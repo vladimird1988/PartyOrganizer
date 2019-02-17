@@ -159,7 +159,11 @@ Create some!</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Members" id="lKG-OZ-WGI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="17z-ru-JJt"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="17z-ru-JJt">
+                            <connections>
+                                <action selector="savePressed:" destination="60c-dg-939" id="5R3-op-JFb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGm-xK-UfY" userLabel="First Responder" sceneMemberID="firstResponder"/>
