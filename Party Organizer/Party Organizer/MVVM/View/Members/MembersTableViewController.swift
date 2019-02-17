@@ -27,6 +27,11 @@ class MembersTableViewController: POTableViewController {
         
         membersViewModel.getMembers()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.navigationItem.title = "Members"
+    }
 
     // MARK: - Table view data source
 

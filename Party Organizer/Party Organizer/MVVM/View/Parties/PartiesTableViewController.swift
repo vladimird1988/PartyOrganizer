@@ -37,6 +37,11 @@ class PartiesTableViewController: POTableViewController {
             }
         }).disposed(by: bag)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.navigationItem.title = "Parties"
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddNewPartySegue1" || segue.identifier == "AddNewPartySegue2" {
