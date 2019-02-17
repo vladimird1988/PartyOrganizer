@@ -15,7 +15,7 @@ class PartyDescriptionTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        descriptionTextView.addEndEditingToolbar(title: "Party description")
+        descriptionTextView.addEndEditingToolbar(title: AppStrings.partyDescription.localized)
     }
     
 }

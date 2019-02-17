@@ -41,7 +41,7 @@ class PartiesTableViewController: POTableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.navigationItem.title = AppStrings.parties.localized
-        tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addNewParty))
+        tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: AppStrings.add.localized, style: .plain, target: self, action: #selector(addNewParty))
     }
     
     @objc func addNewParty() {

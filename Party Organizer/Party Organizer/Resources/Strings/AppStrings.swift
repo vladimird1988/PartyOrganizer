@@ -25,6 +25,8 @@ enum AppStrings: String{
     case partyDescriptionIsTooShort = "PartyDescriptionIsTooShort"
     case parties = "Parties"
     case members = "Members"
+    case partyDescription = "PartyDescription"
+    case add = "Add"
     
     
     /// Returns localized string for a given key

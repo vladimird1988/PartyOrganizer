@@ -19,3 +19,5 @@
 "PartyDescriptionIsTooShort" = "Party description is too short";
 "Parties" = "Parties";
 "Members" = "Members";
+"PartyDescription" = "Party description";
+"Add" = "Add";
