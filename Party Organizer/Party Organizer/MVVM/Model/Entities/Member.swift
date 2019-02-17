@@ -16,6 +16,15 @@ final class Member: NSObject {
 
     // MARK: - Internal types
     
+    /// Properties keys used for parsing data from the server and for the CoreData querying
+    ///
+    /// - id: Member id
+    /// - username: Member username (full name)
+    /// - cell: Member cell (phone number)
+    /// - email: Member email
+    /// - gender: Member gender
+    /// - photo: Member photo url
+    /// - aboutMe: Member 'about me'
     private enum Key: String {
         case id
         case username
@@ -28,14 +37,29 @@ final class Member: NSObject {
     
     // MARK: - Instance properties
     
+    /// Member id
     var id: Int64
+    
+    /// Member username (full name)
     var username: String = ""
+    
+    /// Member cell (phone number)
     var cell: String = ""
+    
+    /// Member photo url
     var photo: String = ""
+    
+    /// Member email
     var email: String = ""
+    
+    /// Member gender
     var gender: String = ""
+    
+    /// Member 'about me'
     var aboutMe: String = ""
     
+    
+    /// Member parties
     var parties = [Party]() {
         didSet {
             parties.forEach {
@@ -46,7 +70,7 @@ final class Member: NSObject {
         }
     }
     
-    // MARK: - Constructor
+    // MARK: - Constructors
     
     /// Constructor
     ///
@@ -59,6 +83,13 @@ final class Member: NSObject {
         gender = dbMember.gender ?? ""
         photo = dbMember.photo ?? ""
         username = dbMember.username ?? ""
+    }
+    
+    init(data: [String: Any]) {
+        let json = JSON(data)
+        id = json[Key.id.rawValue].int64Value
+        super.init()
+        update(data: data)
     }
     
     static func createOrUpdate(data: [String: Any]) -> Member {
@@ -81,13 +112,6 @@ final class Member: NSObject {
         gender = json[Key.gender.rawValue].stringValue
         username = json[Key.username.rawValue].stringValue
         photo = json[Key.photo.rawValue].stringValue
-    }
-    
-    init(data: [String: Any]) {
-        let json = JSON(data)
-        id = json[Key.id.rawValue].int64Value
-        super.init()
-        update(data: data)
     }
     
     @discardableResult func save() -> DBMember {
