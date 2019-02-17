@@ -97,6 +97,7 @@ class PartyViewModel: NSObject {
     func memberViewModel(at position: Int) -> MemberViewModel {
         let member = allMembers[position]
         let memberViewModel = MemberViewModel(member: member)
+        memberViewModel.partyViewModel = self
         memberViewModel.isSelected.accept(member.parties.contains(party))
         return memberViewModel
     }
