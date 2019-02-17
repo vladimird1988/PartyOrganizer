@@ -62,9 +62,9 @@ class PartyViewModel: NSObject {
         party.partyMembers.value.forEach {
             if !$0.parties.contains(party) {
                 $0.parties.append(party)
+                $0.save()
             }
         }
-        party.save()
         AppData.shared.add(party: party)
         partyEvent.accept({ }())
     }
