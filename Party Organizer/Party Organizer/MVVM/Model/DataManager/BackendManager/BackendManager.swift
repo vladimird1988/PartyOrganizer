@@ -9,10 +9,17 @@
 import Foundation
 import PromiseKit
 
+/// Backend manager used for fetching data from the server
 class BackendManager: NSObject {
 
+    
+    /// Shared instance
     static let sharedInstance = BackendManager()
     
+    
+    /// Method for fetching members
+    ///
+    /// - Returns: Promise which returns json fetched from the server
     func getMembers() -> Promise<[String: Any]> {
         return Promise { handler in
             guard let url = URL(string: Server.baseUrl)?.appendingPathComponent(Server.members) else {

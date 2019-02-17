@@ -180,7 +180,6 @@
 			children = (
 				F56803FC221610FB00CA3A1B /* DataManager */,
 				F56803F522160F6800CA3A1B /* Entities */,
-				F51554372216090300515928 /* CoreDataModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,6 +356,7 @@
 		F56803FC221610FB00CA3A1B /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				F51554372216090300515928 /* CoreDataModel */,
 				F56803FD2216110600CA3A1B /* BackendManager */,
 			);
 			path = DataManager;
