@@ -64,7 +64,7 @@ class PartyViewModel: NSObject {
     
     func save() -> Promise<Void> {
         return Promise { handler in
-            guard viewPartyName.value.isEmpty else {
+            guard !viewPartyName.value.isEmpty else {
                 handler.reject(PartyOrganizerError.custom("Party name is empty"))
                 return
             }
@@ -76,7 +76,7 @@ class PartyViewModel: NSObject {
                 handler.reject(PartyOrganizerError.custom("Party start time is not set"))
                 return
             }
-            guard viewPartyDescription.value.isEmpty else {
+            guard !viewPartyDescription.value.isEmpty else {
                 handler.reject(PartyOrganizerError.custom("Party description is empty"))
                 return
             }
