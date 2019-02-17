@@ -53,7 +53,6 @@
 		F5FE7B3C22186F0400B5B12E /* PartyMembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B3B22186F0400B5B12E /* PartyMembersTableViewController.swift */; };
 		F5FE7B3F2218752200B5B12E /* AddMemberToPartyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B3D2218752200B5B12E /* AddMemberToPartyTableViewCell.swift */; };
 		F5FE7B402218752200B5B12E /* AddMemberToPartyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FE7B3E2218752200B5B12E /* AddMemberToPartyTableViewCell.xib */; };
-		F5FE7B432218851300B5B12E /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B422218851300B5B12E /* UITextField+Extension.swift */; };
 		F5FE7B4522188C1300B5B12E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FE7B4422188C1300B5B12E /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -109,7 +108,6 @@
 		F5FE7B3B22186F0400B5B12E /* PartyMembersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyMembersTableViewController.swift; sourceTree = "<group>"; };
 		F5FE7B3D2218752200B5B12E /* AddMemberToPartyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberToPartyTableViewCell.swift; sourceTree = "<group>"; };
 		F5FE7B3E2218752200B5B12E /* AddMemberToPartyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMemberToPartyTableViewCell.xib; sourceTree = "<group>"; };
-		F5FE7B422218851300B5B12E /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		F5FE7B4422188C1300B5B12E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		F6E5B044B0E584548913A66F /* Pods_Party_Organizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Party_Organizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -405,7 +403,6 @@
 				F56E8FC922163E990008ED75 /* UIView+Extension.swift */,
 				F535F9472217078E00594EA9 /* UIImageView+Extension.swift */,
 				F535F96522178E6D00594EA9 /* UIViewController+Extension.swift */,
-				F5FE7B422218851300B5B12E /* UITextField+Extension.swift */,
 				F5FE7B4422188C1300B5B12E /* Date+Extension.swift */,
 			);
 			path = Extensions;
@@ -627,7 +624,6 @@
 				F51554462216090300515928 /* AppDelegate.swift in Sources */,
 				F535F95D22177CF700594EA9 /* PartyInfoTableViewCell.swift in Sources */,
 				F56804092216148300CA3A1B /* CoreDataManager.swift in Sources */,
-				F5FE7B432218851300B5B12E /* UITextField+Extension.swift in Sources */,
 				F56E8FC322163CBC0008ED75 /* PartiesTableViewController.swift in Sources */,
 				F52666D42217960B007FDE7E /* PartyDescriptionTableViewCell.swift in Sources */,
 				F5FE7B4522188C1300B5B12E /* Date+Extension.swift in Sources */,
