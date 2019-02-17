@@ -12,6 +12,8 @@ import RxCocoa
 
 class MemberViewModel: NSObject {
 
+    var partyViewModel: PartyViewModel?
+    
     let parties = BehaviorRelay<[Party]>(value: [])
     
     let isSelected = BehaviorRelay<Bool>(value: false)
@@ -84,13 +86,13 @@ class MemberViewModel: NSObject {
     }
     
     var selectionObserver: Observable<Bool> {
-        return isSelected.asObservable().do(onNext: { [weak self] _ in
+        return isSelected.asObservable().do(onNext: { [weak self] in
             guard let member = self?.member else { return }
-//            if $0.selected {
-//                self?.memberViewModel?.select(party: party)
-//            } else {
-//                self?.memberViewModel?.deselect(party: party)
-//            }
+            if $0 {
+                self?.partyViewModel?.select(member: member)
+            } else {
+                self?.partyViewModel?.deselect(member: member)
+            }
         })
     }
     
