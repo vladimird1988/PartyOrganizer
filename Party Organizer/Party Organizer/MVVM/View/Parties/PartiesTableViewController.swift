@@ -47,6 +47,7 @@ class PartiesTableViewController: POTableViewController, SegueHandlerType {
         super.viewWillAppear(animated)
         tabBarController?.navigationItem.title = AppStrings.parties.localized
         tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: AppStrings.add.localized, style: .plain, target: self, action: #selector(addNewParty))
+        tableView.reloadData()
     }
     
     @objc func addNewParty() {
