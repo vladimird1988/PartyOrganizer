@@ -26,7 +26,7 @@ class PartiesTableViewController: POTableViewController {
             switch $0 {
             case .addNewParty:
                 self?.tableView.beginUpdates()
-                self?.tableView.insertRows(at: [IndexPath(row: (self?.partiesViewModel.appData.parties.value.count ?? 1) - 1, section: 0)], with: .automatic)
+                self?.tableView.insertRows(at: [IndexPath(row: AppData.shared.parties.value.count - 1, section: 0)], with: .automatic)
                 self?.tableView.endUpdates()
             case .deleteParty(let position):
                 self?.tableView.beginUpdates()
@@ -59,7 +59,7 @@ class PartiesTableViewController: POTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numberOfParties = partiesViewModel.appData.parties.value.count
+        let numberOfParties = AppData.shared.parties.value.count
         if numberOfParties > 0 {
             tableView.backgroundView = nil
         } else {
